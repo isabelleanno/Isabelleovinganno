@@ -61,6 +61,9 @@
         <title lang="en">Content</title>
       </meta>
     </property>
-    
+    <xi:include
+      href="./../components/buttons.xml"
+      xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:properties/sulu:*)"
+    />
   </properties>
 </template>

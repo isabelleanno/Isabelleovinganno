@@ -1,0 +1,104 @@
+<properties
+  xmlns="http://schemas.sulu.io/template/template"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
+>
+        <property name="color" type="single_select" colspan="3">
+            <meta>
+            <title lang="en">Button background color</title>
+            </meta>
+            <params>
+            <param name="default_value" value="primary" />
+            <param name="values" type="collection">
+                 <param name="primary">
+                <meta>
+                    <title lang="en">Primary</title>
+                </meta>
+                </param>
+                <param name="secondary">
+                <meta>
+                    <title lang="en">Secondary</title>
+                </meta>
+                </param>
+                 <param name="tertiary">
+                <meta>
+                    <title lang="en">Tertiary</title>
+                </meta>
+                </param>
+                <param name="quaternary">
+                <meta>
+                    <title lang="en">Quaternary</title>
+                </meta>
+                </param>
+            </param>
+            </params>
+        </property>
+       
+<property name="arrow" type="single_select" colspan="3">
+            <meta>
+            <title lang="en">Arrow</title>
+            </meta>
+            <params>
+            <param name="default_value" value="null" />
+            <param name="values" type="collection">
+                <param name="null">
+                <meta>
+                    <title lang="en">No arrow</title>
+                </meta>
+                </param>
+                <param name="">
+                <meta>
+                    <title lang="en">After text</title>
+                </meta>
+                </param>
+                 <param name="flex-row-reverse">
+                <meta>
+                    <title lang="en">Before text</title>
+                </meta>
+                </param>
+            </param>
+            </params>
+        </property>
+
+         <property name="text_color" type="single_select" colspan="3">
+            <meta>
+            <title lang="en">Button text color</title>
+            </meta>
+            <params>
+            <param name="default_value" value="quaternary" />
+            <param name="values" type="collection">
+                <param name="primary">
+                <meta>
+                    <title lang="en">Primary</title>
+                </meta>
+                </param>
+                <param name="secondary">
+                <meta>
+                    <title lang="en">Secondary</title>
+                </meta>
+                </param>
+                 <param name="tertiary">
+                <meta>
+                    <title lang="en">Tertiary</title>
+                </meta>
+                </param>
+                <param name="quaternary">
+                <meta>
+                    <title lang="en">Quaternary</title>
+                </meta>
+                </param>
+            </param>
+            </params>
+        </property>
+
+        <property name="outlined" type="checkbox" colspan="3">
+            <params>
+                <param name="type" value="toggler" />
+                <param name="label">
+                    <meta>
+                        <title lang="en">Outlined?</title>
+                    </meta>
+                </param>
+            </params>
+        </property>
+</properties>

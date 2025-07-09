@@ -1,0 +1,87 @@
+<properties xmlns="http://schemas.sulu.io/template/template"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
+    <block name="buttons" default-type="internal-link" maxOccurs="2">
+        <meta>
+            <title lang="en">Buttons</title>
+        </meta>
+
+        <params>
+            <param name="add_button_text">
+                <meta>
+                    <title lang="en">Add button</title>
+                </meta>
+            </param>
+        </params>
+
+        <types>
+            <type name="internal-link">
+                <meta>
+                    <title lang="en">Internal link</title>
+                </meta>
+
+                <properties>
+                    <property name="text" type="text_line" mandatory="true" colspan="6">
+                        <meta>
+                            <title lang="en">Text</title>
+                        </meta>
+                    </property>
+                    <property name="uuid" type="single_page_selection" mandatory="true" colspan="6">
+                        <meta>
+                            <title lang="en">Internal link</title>
+                        </meta>
+                    </property>
+
+                    <section name="settings">
+                        <meta>
+                            <title lang="en">Settings</title>
+                        </meta>
+                        <properties>
+                            <xi:include href="../components/buttons/theme.xml"
+                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:properties/*)" />
+                        </properties>
+                    </section>
+                </properties>
+            </type>
+            <type name="external-link">
+                <meta>
+                    <title lang="en">External link</title>
+                </meta>
+
+                <properties>
+                    <property name="text" type="text_line" mandatory="true" colspan="6">
+                        <meta>
+                            <title lang="en">Text</title>
+                        </meta>
+                    </property>
+                    <property name="url" type="url" mandatory="true" colspan="6">
+                        <meta>
+                            <title lang="en">External link</title>
+                        </meta>
+                            <params>
+                            <param name="defaults" type="collection">
+                                <param name="scheme" value="https://" />
+                            </param>
+                            <param name="schemes" type="collection">
+                                <param name="https://" />
+                                <param name="http://" />
+                                <param name="mailto:" />
+                                <param name="tel:" />
+                            </param>
+                        </params>
+                    </property>
+                    <section name="settings">
+                        <meta>
+                            <title lang="en">Settings</title>
+                        </meta>
+                        <properties>
+                            <xi:include href="../components/buttons/theme.xml"
+                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:properties/*)" />
+                        </properties>
+                    </section>
+                </properties>
+            </type>
+        </types>
+    </block>
+</properties>
