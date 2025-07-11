@@ -1,0 +1,25 @@
+ /*
+
+Main SCSS File
+================================================== 
+Import all the necessary SCSS files to compile the final CSS.
+
+*/
+
+// Abstracts
+@use 'abstracts/functions';
+@use 'abstracts/overrides';
+@use 'abstracts/utilities';
+
+// Vendors
+@use 'vendors/bootstrap';
+
+// Base
+@use 'base/base';
+
+// Components
+@use 'components/btn';
+
+// Layout
+
+// Pages
