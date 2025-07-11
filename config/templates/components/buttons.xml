@@ -2,7 +2,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:xi="http://www.w3.org/2001/XInclude"
     xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
-    <block name="buttons" default-type="internal-link" maxOccurs="2">
+    <block name="buttons" default-type="internal-link" minOccurs="1" maxOccurs="2">
         <meta>
             <title lang="en">Buttons</title>
         </meta>

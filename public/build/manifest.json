@@ -1,6 +1,5 @@
 {
   "build/app.css": "/build/app.css",
   "build/app.js": "/build/app.js",
-  "build/runtime.js": "/build/runtime.js",
-  "build/fonts/galimer-extralight.ttf": "/build/fonts/galimer-extralight.2b1f0dc0.ttf"
+  "build/runtime.js": "/build/runtime.js"
 }

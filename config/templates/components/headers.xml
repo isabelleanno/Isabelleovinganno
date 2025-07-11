@@ -1,79 +1,59 @@
-<properties xmlns="http://schemas.sulu.io/template/template"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:xi="http://www.w3.org/2001/XInclude"
-    xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
-    <block name="headers" default-type="header" maxOccurs="2">
-        <meta>
-            <title lang="en">Header</title>
-        </meta>
-
-        <params>
-            <param name="add_button_text">
-                <meta>
-                    <title lang="en">Add Header</title>
-                </meta>
-            </param>
-        </params>
-
-        <types>
-            <type name="header">
-                <meta>
-                    <title lang="en">Header</title>
-                </meta>
-
-                <properties>
-                    <property name="heading_size" type="single_select">
+<?xml version="1.0" ?>
+<template
+  xmlns="http://schemas.sulu.io/template/template"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
+>
+    <properties>
+        <property name="heading_size" type="single_select">
+            <meta>
+                <title lang="en">Header Size</title>
+            </meta>
+            <params>
+                <param name="default_value" value="h1" />
+                <param name="values" type="collection">
+                    <param name="h0">
                         <meta>
-                            <title lang="en">Header Size</title>
+                            <title lang="en">H0</title>
                         </meta>
-                        <params>
-                            <param name="default_value" value="h1" />
-                            <param name="values" type="collection">
-                                <param name="h0">
-                                    <meta>
-                                        <title lang="en">H0</title>
-                                    </meta>
-                                </param>
-                                <param name="h1">
-                                    <meta>
-                                        <title lang="en">H1</title>
-                                    </meta>
-                                </param>
-                                <param name="h2">
-                                    <meta>
-                                        <title lang="en">H2</title>
-                                    </meta>
-                                </param>
-                                <param name="h3">
-                                    <meta>
-                                        <title lang="en">H3</title>
-                                    </meta>
-                                </param>
-                                <param name="h4">
-                                    <meta>
-                                        <title lang="en">H4</title>
-                                    </meta>
-                                </param>
-                                <param name="h5">
-                                    <meta>
-                                        <title lang="en">H5</title>
-                                    </meta>
-                                </param>
-                                <param name="h6">
-                                    <meta>
-                                        <title lang="en">H6</title>
-                                    </meta>
-                                </param>
-                            </param>
-                        </params>
-                    </property>
-                    <property name="header" type="text_line">
+                    </param>
+                    <param name="h1">
                         <meta>
-                            <title lang="en">Header text</title>
+                            <title lang="en">H1</title>
                         </meta>
-                    </property>
-                </properties>
-            </type>
-        </types>
-    </block>
-</properties>
+                    </param>
+                    <param name="h2">
+                        <meta>
+                            <title lang="en">H2</title>
+                        </meta>
+                    </param>
+                    <param name="h3">
+                        <meta>
+                            <title lang="en">H3</title>
+                        </meta>
+                    </param>
+                    <param name="h4">
+                        <meta>
+                            <title lang="en">H4</title>
+                        </meta>
+                    </param>
+                    <param name="h5">
+                        <meta>
+                            <title lang="en">H5</title>
+                        </meta>
+                    </param>
+                    <param name="h6">
+                        <meta>
+                            <title lang="en">H6</title>
+                        </meta>
+                    </param>
+                </param>
+            </params>
+        </property>
+        <property name="header" type="text_line">
+            <meta>
+                <title lang="en">Header text</title>
+            </meta>
+        </property>
+    </properties>
+</template>

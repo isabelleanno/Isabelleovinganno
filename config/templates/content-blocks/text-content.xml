@@ -6,17 +6,6 @@
       xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
     >
   	<properties>
-		<xi:include
-			href="./../components/headers.xml"
-			xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:properties/sulu:*)"
-		/>
-		<xi:include
-			href="./../components/text.xml"
-			xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:properties/sulu:*)"
-		/>
-		<xi:include
-			href="./../components/buttons.xml"
-			xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:properties/sulu:*)"
-		/>
+		<xi:include href="./../components/text-content-components.xml" xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/*)"/>
   	</properties>
 </template>
