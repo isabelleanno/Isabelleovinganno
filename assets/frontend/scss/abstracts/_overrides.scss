@@ -6,7 +6,6 @@ Bootstrap overrides & variables
 Overrides for Bootstrap variableas we well as site-specific variables used throughout the project.
 
 */
-@use 'functions';
 
 $enable-responsive-font-sizes: true;
 
@@ -41,9 +40,9 @@ $theme-colors: (
 
 // Typography
 $headings-color: $secondary;
-$font-family-base: 'Figtree', sans-serif; // Paragraph font family
-$headings-font-family: 'Anton', sans-serif; // Heading font family
-$font-size-base: functions.px-to-rem(16);
+$font-family-base: "IBM Plex Mono", monospace; // Paragraph font family
+$headings-font-family: "Menbere", sans-serif; // Heading font family
+$font-size-base: px-to-rem(16);
 // Font sizes
 $h1-font-size: $font-size-base * 3.7222; // 67px
 $h2-font-size: $font-size-base * 3; // 54px
@@ -86,8 +85,8 @@ $border-radius-sm: 10px;
 $border-radius: 20px;
 
 // Buttons
-$btn-padding-y: functions.px-to-rem(19);
-$btn-padding-x: functions.px-to-rem(20);
+$btn-padding-y: px-to-rem(19);
+$btn-padding-x: px-to-rem(20);
 $btn-border-radius: $border-radius-sm;
 $btn-lg-border-radius: $border-radius;
 $btn-border-width: 1px;
@@ -95,8 +94,8 @@ $btn-color: $primary;
 $btn-line-height: 1;
 
 //Cards
-$card-border-radius: functions.px-to-rem(10);
-$card-spacer-x: functions.px-to-rem(33);
+$card-border-radius: px-to-rem(10);
+$card-spacer-x: px-to-rem(33);
 $card-spacer-y: $card-spacer-x;
 
 //Links

@@ -1,0 +1,6 @@
+<span class="icon icon-{{ icon }}{% if class is defined and class is not empty %} {{ class }}{% endif %}">
+    {% include '@icons/' ~ icon ~ '.svg' %}
+</span>
+{#{% include 'utilities/icon.html.twig' with {#}
+{#    icon: 'check'#}
+{#} %}#}

@@ -7,18 +7,18 @@ Import all the necessary SCSS files to compile the final CSS.
 */
 
 // Abstracts
-@use 'abstracts/functions';
-@use 'abstracts/overrides';
-@use 'abstracts/utilities';
+@import 'abstracts/functions';
+@import 'abstracts/overrides';
+@import 'abstracts/utilities';
 
 // Vendors
-@use 'vendors/bootstrap';
+@import 'vendors/bootstrap';
 
 // Base
-@use 'base/base';
+@import 'base/base';
 
 // Components
-@use 'components/btn';
+@import 'components/btn';
 
 // Layout
 

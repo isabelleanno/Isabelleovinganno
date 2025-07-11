@@ -1,6 +1,13 @@
 twig:
     file_name_pattern: '*.twig'
+    paths:
+        '%kernel.project_dir%/assets/frontend/icons': icons
+
 
 when@test:
     twig:
         strict_variables: true
+
+when@dev:
+    twig:
+      cache: false
