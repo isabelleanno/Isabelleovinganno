@@ -11,15 +11,15 @@
                 <title lang="en">Content blocks</title>
             </meta>
             <properties>
-                <block name="content_blocks" default-type="text">
+                <block name="content_blocks" default-type="text-content">
                     <types>
-                        <type name="text">
+                        <type name="text-content">
                             <meta>
-                                <title lang="en">Text</title>
+                                <title lang="en">Text content</title>
                             </meta>
                             <properties>
                                 <xi:include
-                                href="./../content-blocks/text.xml"
+                                href="./../content-blocks/text-content.xml"
                                 xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
                                 />
                             </properties>
