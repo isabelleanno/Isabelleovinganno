@@ -1,0 +1,9 @@
+<div class="nav-dropdown-container p-xl-5">
+    <ul class="navbar-nav-child">
+        {% for child in item.children %}
+            <li class="nav-item-child {{ loop.last ? 'border-0 m-0' }}">
+            <sulu-link class="text-secondary ms-3 ms-xl-0 {{ loop.last ? 'mb-0' }}" href="{{ child.uuid }}" title="{{ child.title }}">{{ child.title }}</sulu-link>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

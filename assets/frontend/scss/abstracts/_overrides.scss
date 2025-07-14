@@ -1,4 +1,3 @@
- 
 /*
 
 Bootstrap overrides & variables
@@ -24,25 +23,34 @@ $black: #000;
 $light: #f8f9fa;
 $dark: #343a40;
 
-$primary: #1B162C; //Text
-$secondary: #FBF8F0;
-$tertiary: #DDCFEB;
-$quaternary: #F4C5C2;
-$quinary: #E6E8C0;
-$senary: #E6EFEC;
+$primary: #1b162c; //Text
+$secondary: #fdf0e6;
+$tertiary: #ddcfeb;
+$quaternary: #f4c5c2;
+$quinary: #e6e8c0;
+$senary: #e6efec;
 
 $theme-colors: (
-    'primary': $primary,
-    'secondary': $secondary,
-    'tertiary': $tertiary,
-    'quaternary': $quaternary,
-    'quinary': $quinary,
+  "primary": $primary,
+  "secondary": $secondary,
+  "tertiary": $tertiary,
+  "quaternary": $quaternary,
+  "quinary": $quinary,
 );
 
 // Typography
 $headings-color: $primary;
-$headings-font-family: 'New Spirit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-$font-family-base: "IBM Plex Mono", monospace; 
+$headings-font-family:
+  "New Spirit",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Roboto,
+  Oxygen,
+  Ubuntu,
+  Cantarell,
+  sans-serif;
+$font-family-base: "IBM Plex Mono", monospace;
 $font-size-base: px-to-rem(16);
 // Font sizes
 $h1-font-size: $font-size-base * 3.7222; // 67px
@@ -54,32 +62,30 @@ $h6-font-size: $font-size-base * 1.2222; // 22px
 
 // Spacers
 $spacers: (
-    0: 0,
-    1: 0.25rem,
-    2: 0.5rem,
-    3: 1rem,
-    4: 1.5rem,
-    5: 2.5rem,
-    6: 3rem,
+  0: 0,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 1rem,
+  4: 1.5rem,
+  5: 2.5rem,
+  6: 3rem,
 );
 
 // Container widths
 $container-max-widths: (
-    sm: 540px,
-    md: 720px,
-    lg: 960px,
-    xl: 1140px,
-    xxl: 1400px,
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1400px,
 );
 
 // Gutters
 $container-gutter-x: 20px;
 
-
 // Body
 $body-bg: $secondary;
 $body-color: $primary;
-
 
 // Borders
 $border-radius-sm: 10px;

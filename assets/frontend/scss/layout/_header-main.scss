@@ -1,0 +1,9 @@
+.header-main {
+  min-height: px-to-rem(80);
+  border-bottom: 1px solid $primary;
+  background-color: #fef5ee;
+}
+
+.main-nav {
+  gap: px-to-rem(25);
+}

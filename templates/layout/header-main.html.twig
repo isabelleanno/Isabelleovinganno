@@ -1,8 +1,9 @@
-<header>
-    {% block header %}
-        <nav>
+<header class="header-main d-flex align-items-center">
+	<div class="container header-main-container d-flex align-items-center justify-content-between">
+		{% block header %}
+			<p class="m-0">Isabelle Anno</p>
+			{% include 'layout/navigation/main-nav.html.twig' %}
 
-            
-        </nav>
-    {% endblock %}
+		{% endblock %}
+	</div>
 </header>
