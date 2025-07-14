@@ -1,3 +1,11 @@
-{% if content_block|default(null) %}
-{{dump(content_block)}}
+{% set content_blocks = content_block.text_content_blocks %}
+
+{% if content_blocks|default(null) %}
+
+{% for content_block in content_blocks %}
+    {% include 'components/' ~ content_block.type ~ '.html.twig' with { 
+        content_block: content_block
+    } %}
+{% endfor %}
+
 {% endif %}

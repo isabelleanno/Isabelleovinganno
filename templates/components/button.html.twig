@@ -1,7 +1,6 @@
-{% for button in buttons %}
-
-	{% if button.type == 'external-link' %}
-		<a href="{{ button.url }}" class="btn btn-{% if button.outlined %}outline-{% endif %}{{button.color}}" target="_blank" rel="noopener">
+{%  for button in content_block.buttons %}
+  {% if button.type == 'external-link' %}
+    <a href="{{ button.url }}" class="btn btn-{% if button.outlined %}outline-{% endif %}{{button.color}}" target="_blank" rel="noopener">
             <span class="d-flex align-items-center gap-2 {{button.arrow}}">
               <span class="{% if button.text_color %}text-{{button.text_color}}{% endif %}">
                 {{ button.text }}
@@ -12,10 +11,10 @@
                     } %}
                 {% endif %}
             </span>
-		</a>
-	{% else %}
-		<sulu-link href="{{ button.uuid }}" class="btn btn-{% if button.outlined %}outline-{% endif %}{{button.color}}">
-			<span class="d-flex align-items-center gap-2 {{button.arrow}}">
+    </a>
+  {% else %}
+    <sulu-link href="{{ button.uuid }}" class="btn btn-{% if button.outlined %}outline-{% endif %}{{button.color}}">
+      <span class="d-flex align-items-center gap-2 {{button.arrow}}">
                 <span class="{% if button.text_color %}text-{{button.text_color}}{% endif %}">
                   {{ button.text }}
                 </span>
@@ -25,6 +24,6 @@
                       } %}
                   {% endif %}
               </span>
-		</sulu-link>
-	{% endif %}
+    </sulu-link>
+  {% endif %}
 {% endfor %}

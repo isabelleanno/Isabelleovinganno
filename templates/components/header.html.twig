@@ -1,1 +1,10 @@
-{{dump(content)}}
+{% set headingSize = content_block.heading_size |default('h1') %}
+{% set content = content_block.header|default(null) %}
+
+{% if headingSize == 'h0' %}
+{% set headingSize = "h1 class= display-1" %}
+{% endif %}
+
+{% if content|default(null) %}
+    <{{headingSize}}>{{ content }}</{{headingSize}}>
+{% endif %}

@@ -1,0 +1,6 @@
+
+{% if content_block.content is not empty and content_block.content is not null %}
+    <div class="text-component">
+        {{ content_block.content|raw }}
+    </div>
+{% endif %}
