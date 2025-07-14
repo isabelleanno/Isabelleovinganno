@@ -1,4 +1,4 @@
- /*
+/*
 
 Main SCSS File
 ================================================== 
@@ -7,20 +7,21 @@ Import all the necessary SCSS files to compile the final CSS.
 */
 
 // Abstracts
-@import 'abstracts/functions';
-@import 'abstracts/overrides';
-@import 'abstracts/utilities';
+@import "abstracts/functions";
+@import "abstracts/overrides";
+@import "abstracts/utilities";
 
 // Vendors
-@import 'vendors/bootstrap';
+@import "vendors/bootstrap";
 
 // Base
-@import 'base/base';
+@import "base/base";
 
 // Components
-@import 'components/btn';
+@import "components/btn";
 
 // Layout
-@import 'layout/header-main';
+@import "layout/component-blocks";
+@import "layout/header-main";
 
 // Pages
