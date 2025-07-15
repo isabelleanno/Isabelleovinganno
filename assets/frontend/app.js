@@ -3,4 +3,5 @@
 // Import main css file
 import './scss/main.scss';
 
-console.log('App is running!');
+// Import Bootstrap JavaScript (this includes offcanvas)
+import 'bootstrap';
