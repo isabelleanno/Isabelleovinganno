@@ -1,79 +1,98 @@
 <?xml version="1.0" ?>
 <template
   xmlns="http://schemas.sulu.io/template/template"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
 >
     <properties>
-        <property name="heading_size" type="single_select">
+        <block name="columns" default-type="column" minOccurs="1">
             <meta>
-                <title lang="en">Column width</title>
+                <title lang="en">Columns</title>
             </meta>
-            <params>
-                <param name="default_value" value="6" />
-                <param name="values" type="collection">
-                    <param name="1">
-                        <meta>
-                            <title lang="en">1</title>
-                        </meta>
-                    </param>
-                    <param name="2">
-                        <meta>
-                            <title lang="en">2</title>
-                        </meta>
-                    </param>
-                    <param name="3">
-                        <meta>
-                            <title lang="en">3</title>
-                        </meta>
-                    </param>
-                    <param name="4">
-                        <meta>
-                            <title lang="en">4</title>
-                        </meta>
-                    </param>
-                    <param name="5">
-                        <meta>
-                            <title lang="en">5</title>
-                        </meta>
-                    </param>
-                    <param name="6">
-                        <meta>
-                            <title lang="en">6</title>
-                        </meta>
-                    </param>
-                    <param name="7">
-                        <meta>
-                            <title lang="en">7</title>
-                        </meta>
-                    </param>
-                    <param name="8">
-                        <meta>
-                            <title lang="en">8</title>
-                        </meta>
-                    </param>
-                    <param name="9">
-                        <meta>
-                            <title lang="en">9</title>
-                        </meta>
-                    </param>
-                    <param name="10">
-                        <meta>
-                            <title lang="en">10</title>
-                        </meta>
-                    </param>
-                    <param name="11">
-                        <meta>
-                            <title lang="en">11</title>
-                        </meta>
-                    </param>
-                    <param name="12">
-                        <meta>
-                            <title lang="en">12</title>
-                        </meta>
-                    </param>
-                </param>
-            </params>
-        </property>
+            <types>
+                <type name="column">
+                    <meta>
+                        <title lang="en">Column</title>
+                    </meta>
+                    <properties>
+                        <property name="column_width" type="single_select">
+                            <meta>
+                                <title lang="en">Column width</title>
+                            </meta>
+                            <params>
+                                <param name="default_value" value="6" />
+                                <param name="values" type="collection">
+                                    <param name="1">
+                                        <meta>
+                                            <title lang="en">1</title>
+                                        </meta>
+                                    </param>
+                                    <param name="2">
+                                        <meta>
+                                            <title lang="en">2</title>
+                                        </meta>
+                                    </param>
+                                    <param name="3">
+                                        <meta>
+                                            <title lang="en">3</title>
+                                        </meta>
+                                    </param>
+                                    <param name="4">
+                                        <meta>
+                                            <title lang="en">4</title>
+                                        </meta>
+                                    </param>
+                                    <param name="5">
+                                        <meta>
+                                            <title lang="en">5</title>
+                                        </meta>
+                                    </param>
+                                    <param name="6">
+                                        <meta>
+                                            <title lang="en">6</title>
+                                        </meta>
+                                    </param>
+                                    <param name="7">
+                                        <meta>
+                                            <title lang="en">7</title>
+                                        </meta>
+                                    </param>
+                                    <param name="8">
+                                        <meta>
+                                            <title lang="en">8</title>
+                                        </meta>
+                                    </param>
+                                    <param name="9">
+                                        <meta>
+                                            <title lang="en">9</title>
+                                        </meta>
+                                    </param>
+                                    <param name="10">
+                                        <meta>
+                                            <title lang="en">10</title>
+                                        </meta>
+                                    </param>
+                                    <param name="11">
+                                        <meta>
+                                            <title lang="en">11</title>
+                                        </meta>
+                                    </param>
+                                    <param name="12">
+                                        <meta>
+                                            <title lang="en">12</title>
+                                        </meta>
+                                    </param>
+                                </param>
+                            </params>
+                        </property>
+                        <xi:include
+                        href="./../components/column-types.xml"
+                        xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
+                        />
+                    </properties>
+                </type>
+            </types>
+        </block>
     </properties>
 </template>
