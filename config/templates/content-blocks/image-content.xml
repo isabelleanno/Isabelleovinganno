@@ -12,6 +12,13 @@
             </meta>
             <properties>
                 <block name="image_content_blocks" default-type="image">
+                    <params>
+                        <param name="add_button_text">
+                            <meta>
+                                <title lang="en">Add component</title>
+                            </meta>
+                        </param>
+                    </params>
                     <types>
                         <type name="image">
                             <meta>
