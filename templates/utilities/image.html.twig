@@ -1,0 +1,13 @@
+{% if src is defined and src is not empty %}
+	<img class="lazyload img-fluid{% if class is defined and class is not empty %} {{ class }}{% endif %}" src="{{ src }}" {% if alt is defined and alt is not empty %} alt="{{ alt }}" {% endif %} data-sizes="auto">
+{% endif %}
+
+
+{#
+    Usage:
+    {% include 'utilities/image.html.twig' with {
+        src: '',
+        alt: '',
+        class: ''
+    } %}
+#}

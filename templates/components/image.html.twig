@@ -1,0 +1,11 @@
+{% set image = content_block.image|default(null) %}
+
+{% if image %}
+	<div class="image-component">
+		{% include 'utilities/image.html.twig' with {
+            src: image.url,
+            alt: image.title,
+            class: '',
+            } %}
+	</div>
+{% endif %}

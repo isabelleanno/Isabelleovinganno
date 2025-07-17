@@ -24,6 +24,17 @@
                                 />
                             </properties>
                         </type>
+                        <type name="image-content">
+                            <meta>
+                                <title lang="en">Image content</title>
+                            </meta>
+                            <properties>
+                                <xi:include
+                                href="./../content-blocks/image-content.xml"
+                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
+                                />
+                            </properties>
+                        </type>
                     </types>
                 </block>
             </properties>

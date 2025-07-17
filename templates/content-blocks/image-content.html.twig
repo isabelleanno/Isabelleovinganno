@@ -1,4 +1,4 @@
-{% set content_blocks = content_block.text_content_blocks %}
+{% set content_blocks = content_block.image_content_blocks %}
 {% if content_blocks|default(null) %}
 	{% for content_block in content_blocks %}
 		{% include 'components/' ~ content_block.type ~ '.html.twig' with { 
