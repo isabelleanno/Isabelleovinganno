@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<template
+  xmlns="http://schemas.sulu.io/template/template"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
+>
+    <properties>
+        <property name="content_type" type="single_select">
+            <meta>
+                <title lang="en">Content Type</title>
+            </meta>
+            <params>
+                <param name="default_value" value="text-content" />
+                <param name="values" type="collection">
+                    <param name="text-content">
+                        <meta>
+                            <title lang="en">Text content</title>
+                        </meta>
+                    </param>
+                    <param name="image-content">
+                        <meta>
+                            <title lang="en">Image content</title>
+                        </meta>
+                    </param>
+                </param>
+            </params>
+        </property>
+        <!-- Group text content fields in a section for easier targeting -->
+        <section name="text_content_fields">
+            <properties>
+                <xi:include
+                    href="./../content-blocks/text-content.xml"
+                    xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
+                />
+            </properties>
+        </section>
+        <!-- Group image content fields in a section for easier targeting -->
+        <section name="image_content_fields">
+            <properties>
+                <xi:include
+                    href="./../content-blocks/image-content.xml"
+                    xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
+                />
+            </properties>
+        </section>
+    </properties>
+</template>

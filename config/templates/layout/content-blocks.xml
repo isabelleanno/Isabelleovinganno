@@ -35,6 +35,17 @@
                                 />
                             </properties>
                         </type>
+                        <type name="columns">
+                            <meta>
+                                <title lang="en">Columns</title>
+                            </meta>
+                            <properties>
+                                <xi:include
+                                href="./../content-blocks/columns.xml"
+                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
+                                />
+                            </properties>
+                        </type>
                     </types>
                 </block>
             </properties>
