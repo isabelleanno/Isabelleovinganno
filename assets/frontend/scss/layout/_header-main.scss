@@ -1,9 +1,14 @@
+$header-height: px-to-rem(60);
+
+.header-main,
 .header-main-container {
-  position: fixed; /* or absolute */
-  top: 0;
+  height: $header-height;
+}
+
+.header-main-container {
+  position: fixed;
   left: 0;
   width: 100%;
-  height: px-to-rem(60);
   color: white;
   z-index: 1000;
 }

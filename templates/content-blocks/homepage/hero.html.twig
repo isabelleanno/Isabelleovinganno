@@ -1,8 +1,8 @@
-<section class="bg-{{content.background_color}}">
+<section class="hero bg-{{content.hero.background_color}}">
 	{% include 'components/header.html.twig'  
     with {
-    'headerSize': content.header_size, 
-    'content': content.header, 
-    'headerColor': content.header_color
+    'headerSize': content.hero.header_size, 
+    'content': content.hero.header, 
+    'headerColor': content.hero.header_color
     }  %}
 </section>

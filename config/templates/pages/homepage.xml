@@ -30,8 +30,12 @@
             <tag name="sulu.rlp"/>
         </property>
         <xi:include
-        href="./../content-blocks/homepage/hero.xml"
-        xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:section)"
+            href="../content-blocks/homepage/hero.xml"
+            xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:section)"
+        />
+        <xi:include
+            href="../content-blocks/homepage/areas_of_expertise.xml"
+            xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:section)"
         />
     </properties>
 </template>

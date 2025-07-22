@@ -5,16 +5,16 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
     >
-    <section name="hero">
+    <section name="areas_of_expertise">
         <meta>
-            <title lang="en">Hero Section</title>
+            <title lang="en">Areas of Expertise</title>
         </meta>
         <properties>
-            <block name="hero" default-type="hero"  minOccurs="1" maxOccurs="1">
+            <block name="areas_of_expertise" default-type="areas_of_expertise"  minOccurs="1" maxOccurs="1">
                 <types>
-                    <type name="hero">
+                    <type name="areas_of_expertise">
                         <meta>
-                            <title lang="en">Hero</title>
+                            <title lang="en">Areas of Expertise</title>
                         </meta>
                         <properties>
                             <property name="background_color" type="single_select">

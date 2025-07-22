@@ -1,29 +1,29 @@
 {%  for button in content_block.buttons %}
-  {% if button.type == 'external-link' %}
-    <a href="{{ button.url }}" class="btn btn-{% if button.outlined %}outline-{% endif %}{{button.color}}" target="_blank" rel="noopener">
-            <span class="d-flex align-items-center gap-2 {{button.arrow}}">
-              <span class="{% if button.text_color %}text-{{button.text_color}}{% endif %}">
-                {{ button.text }}
-              </span>
-                 {% if button.arrow != "null" %}
-                    {% include 'utilities/icon.html.twig' with {
+	{% if button.type == 'external-link' %}
+		<a href="{{ button.url }}" class="btn btn-{% if button.outlined %}outline-{% endif %}{{button.text_color}}" target="_blank" rel="noopener">
+			<span class="d-flex align-items-center gap-2 {{button.arrow}}">
+				<span class="{% if button.text_color %}text-{{button.text_color}}{% endif %}">
+					{{ button.text }}
+				</span>
+				{% if button.arrow != "null" %}
+					{% include 'utilities/icon.html.twig' with {
                       icon: 'arrow'
                     } %}
-                {% endif %}
-            </span>
-    </a>
-  {% else %}
-    <sulu-link href="{{ button.uuid }}" class="btn btn-{% if button.outlined %}outline-{% endif %}{{button.color}}">
-      <span class="d-flex align-items-center gap-2 {{button.arrow}}">
-                <span class="{% if button.text_color %}text-{{button.text_color}}{% endif %}">
-                  {{ button.text }}
-                </span>
-                {% if button.arrow != "null" %}
-                      {% include 'utilities/icon.html.twig' with {
+				{% endif %}
+			</span>
+		</a>
+	{% else %}
+		<sulu-link href="{{ button.uuid }}" class="btn btn-{% if button.outlined %}outline-{% endif %}{{button.text_color}}">
+			<span class="d-flex align-items-center gap-2 {{button.arrow}}">
+				<span class="{% if button.text_color %}text-{{button.text_color}}{% endif %}">
+					{{ button.text }}
+				</span>
+				{% if button.arrow != "null" %}
+					{% include 'utilities/icon.html.twig' with {
                         icon: 'arrow'
                       } %}
-                  {% endif %}
-              </span>
-    </sulu-link>
-  {% endif %}
+				{% endif %}
+			</span>
+		</sulu-link>
+	{% endif %}
 {% endfor %}
