@@ -6,7 +6,6 @@
         <meta>
             <title lang="en">Buttons</title>
         </meta>
-
         <params>
             <param name="add_button_text">
                 <meta>
@@ -14,13 +13,11 @@
                 </meta>
             </param>
         </params>
-
         <types>
             <type name="internal-link">
                 <meta>
                     <title lang="en">Internal link</title>
                 </meta>
-
                 <properties>
                     <property name="text" type="text_line" mandatory="true" colspan="6">
                         <meta>
@@ -32,14 +29,13 @@
                             <title lang="en">Internal link</title>
                         </meta>
                     </property>
-
                     <section name="settings">
                         <meta>
                             <title lang="en">Settings</title>
                         </meta>
                         <properties>
                             <xi:include href="../components/buttons/theme.xml"
-                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:properties/*)" />
+                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template)  xpointer(/sulu:template/sulu:properties/*)" />
                         </properties>
                     </section>
                 </properties>
@@ -48,7 +44,6 @@
                 <meta>
                     <title lang="en">External link</title>
                 </meta>
-
                 <properties>
                     <property name="text" type="text_line" mandatory="true" colspan="6">
                         <meta>
@@ -59,7 +54,7 @@
                         <meta>
                             <title lang="en">External link</title>
                         </meta>
-                            <params>
+                        <params>
                             <param name="defaults" type="collection">
                                 <param name="scheme" value="https://" />
                             </param>
@@ -77,7 +72,7 @@
                         </meta>
                         <properties>
                             <xi:include href="../components/buttons/theme.xml"
-                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:properties/*)" />
+                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/*)" />
                         </properties>
                     </section>
                 </properties>

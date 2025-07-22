@@ -11,7 +11,7 @@ $enable-responsive-font-sizes: true;
 // Color system
 $white: #fff;
 $gray-100: #fafafa;
-$gray-200: #f7f7f7;
+$gray-200: #f9f9f9;
 $gray-300: #d8d8d8;
 $gray-400: #ced4da;
 $gray-500: #adb5bd;
@@ -23,12 +23,12 @@ $black: #000;
 $light: #f8f9fa;
 $dark: #343a40;
 
-$primary: #1b162c; //Text
-$secondary: #fdf0e6;
-$tertiary: #ddcfeb;
-$quaternary: #f4c5c2;
-$quinary: #e6e8c0;
-$senary: #e6efec;
+$primary: #1d1923; //Text
+$secondary: #f9ebfe; //Light purple background
+$tertiary: #e28c90; //Pink accent
+$quaternary: #dfe7ff; //Light blue background
+$quinary: #394be7; //Royal blue
+$senary: #eff3ff; //Light blue background variant
 
 $theme-colors: (
   "primary": $primary,
@@ -41,7 +41,7 @@ $theme-colors: (
 // Typography
 $headings-color: $primary;
 $headings-font-family:
-  "New Spirit",
+  "BW Gradual",
   -apple-system,
   BlinkMacSystemFont,
   "Segoe UI",
@@ -50,7 +50,7 @@ $headings-font-family:
   Ubuntu,
   Cantarell,
   sans-serif;
-$font-family-base: "IBM Plex Mono", monospace;
+$font-family-base: "Manrope", sans-serif;
 $font-size-base: px-to-rem(16);
 // Font sizes
 $h1-font-size: $font-size-base * 3.7222; // 67px
@@ -84,7 +84,7 @@ $container-max-widths: (
 $container-gutter-x: 20px;
 
 // Body
-$body-bg: $secondary;
+$body-bg: $gray-200;
 $body-color: $primary;
 
 // Borders

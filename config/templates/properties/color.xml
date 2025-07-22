@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<template
+  xmlns="http://schemas.sulu.io/template/template"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
+>
+    <properties>
+        <property name="text_color" type="single_select">
+            <meta>
+                <title lang="en">Color</title>
+            </meta>
+            <params>
+                <param name="default_value" value='primary' />
+                <param name="values" type="collection">
+                    <param name="primary">
+                        <meta>
+                            <title lang="en">Dark Purple</title>
+                        </meta>
+                    </param>
+                    <param name="secondary">
+                        <meta>
+                            <title lang="en">Light Purple</title>
+                        </meta>
+                    </param>
+                    <param name="tertiary">
+                        <meta>
+                            <title lang="en">Pink</title>
+                        </meta>
+                    </param>
+                    <param name="quaternary">
+                        <meta>
+                            <title lang="en">Light Blue</title>
+                        </meta>
+                    </param>
+                    <param name="quinary">
+                        <meta>
+                            <title lang="en">Royal Blue</title>
+                        </meta>
+                    </param>
+                    <param name="gray-200">
+                        <meta>
+                            <title lang="en">Light gray</title>
+                        </meta>
+                    </param>
+                </param>
+            </params>
+        </property>
+    </properties>
+</template>

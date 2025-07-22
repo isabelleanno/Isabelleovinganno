@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<template
+  xmlns="http://schemas.sulu.io/template/template"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
+>
+    <properties>
+        <property name="background_color" type="single_select">
+            <meta>
+                <title lang="en">Background Color</title>
+            </meta>
+            <xi:include
+                href="../../properties/color.xml"
+                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:property/sulu:params)"
+            />
+        </property>
+    </properties>
+</template>
