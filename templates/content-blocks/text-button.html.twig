@@ -12,11 +12,15 @@
             with {
             'headerSize': headerSize, 
             'content': header, 
-            'headerColor': headerColor
+            'headerColor': headerColor,
+            'headerCssClasses': content.header_css_classes|default('')
         }  %}
 		{% include 'components/text.html.twig'  
             with {
-            'textContent': textContent
+            'textContent': textContent,
+            'textColor': content.text_color|default(''),
+            'textFont': content.text_font|default('manrope'),
+            'textCssClasses': content.text_css_classes|default('')
         }  %}
 		{% if buttons is not empty %}
 			{% include 'components/buttons.html.twig'  

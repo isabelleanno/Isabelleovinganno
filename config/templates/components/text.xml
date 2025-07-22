@@ -11,7 +11,7 @@ xmlns:xi="http://www.w3.org/2001/XInclude"
                 <title lang="en">Text content</title>
             </meta>
         </property>
-        <property name="text_color" type="single_select" colspan="6">
+        <property name="text_color" type="single_select" colspan="4">
             <meta>
                 <title lang="en">Text Color</title>
             </meta>
@@ -20,7 +20,7 @@ xmlns:xi="http://www.w3.org/2001/XInclude"
                 xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:property/sulu:params)"
             />
         </property>
-        <property name="text_font" type="single_select" colspan="6">
+        <property name="text_font" type="single_select" colspan="4">
             <meta>
                 <title lang="en">Font</title>
             </meta>
@@ -39,6 +39,11 @@ xmlns:xi="http://www.w3.org/2001/XInclude"
                     </param>
                 </param>
             </params>
+        </property>
+        <property name="text_css_classes" type="text_line" colspan="4">
+            <meta>
+                <title lang="en">CSS Classes</title>
+            </meta>
         </property>
     </properties>
 </template>

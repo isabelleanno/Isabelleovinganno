@@ -7,8 +7,12 @@
                     'content': content.hero,
                 }  %}
 			</div>
-			<div class="col-lg-6 d-flex align-items-center">
-				<div class="col-10 h-75 bg-secondary"></div>
+			<div class="col-lg-6 d-flex justify-content-end">
+				{% include 'components/image.html.twig' 
+					with {
+					'image': content.hero.image,
+					'image_css_classes': content.hero.image_css_classes,
+				} %}
 			</div>
 		</div>
 	</div>

@@ -27,6 +27,10 @@
                                 />
                             </property>
                             <xi:include
+                                href="../../components/image.xml"
+                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
+                            />
+                            <xi:include
                                 href="../text-button.xml"
                                 xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:section)"
                             />
