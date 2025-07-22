@@ -17,7 +17,7 @@
     "private": true,
     "scripts": {
         "dev-server": "encore dev-server",
-        "dev": "encore dev && npm run build-admin",
+        "dev": "encore dev && bin/console sulu:admin:update-build",
         "watch": "encore dev --watch",
         "build": "encore production --progress"
     },

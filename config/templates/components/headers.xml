@@ -2,10 +2,16 @@
 <template
   xmlns="http://schemas.sulu.io/template/template"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xi="http://www.w3.org/2001/XInclude"
   xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
 >
     <properties>
-        <property name="heading_size" type="single_select">
+        <property name="header" type="text_line">
+            <meta>
+                <title lang="en">Header text</title>
+            </meta>
+        </property>
+        <property name="header_size" type="single_select" colspan="6">
             <meta>
                 <title lang="en">Header Size</title>
             </meta>
@@ -50,10 +56,14 @@
                 </param>
             </params>
         </property>
-        <property name="header" type="text_line">
+        <property name="header_color" type="single_select" colspan="6">
             <meta>
-                <title lang="en">Header text</title>
+                <title lang="en">Header Color</title>
             </meta>
+            <xi:include
+                href="../properties/color.xml"
+                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:property/sulu:params)"
+            />
         </property>
     </properties>
 </template>

@@ -1,10 +1,32 @@
-{% set headingSize = content_block.heading_size |default('h1') %}
-{% set content = content_block.header|default(null) %}
+{# Params: 'headerSize', 'content', 'headerColor' 
+    ----------------------
+    Use example: 	
+    {% include 'components/header.html.twig'  
+        with {
+        'headerSize': content.header_size, 
+        'content': content.header, 
+        'headerColor': content.header_color
+    }  %}
+#}
 
-{% if headingSize == 'h0' %}
-{% set headingSize = "h1 class= display-1" %}
+{# Define parameters depending on context (as a content block or called by a section) #}
+{% if content_block is defined and content_block is not empty %}
+	{% set headerSize = content_block.heading_size |default('h1') %}
+	{% set content = content_block.header|default(null) %}
+	{% set classes = "text-" ~ (content_block.headerColor|default('primary')) %}
+{% else %}
+	{% set headerSize = headerSize|default('h1') %}
+	{% set content = content|default(null) %}
+	{% set classes = "text-" ~ (headerColor|default('primary')) %}
 {% endif %}
 
+{# if h0, it's really just an h1 with display-1 #}
+{% if headerSize == 'h0' %}
+	{% set headerSize = "h1" %}
+    {% set classes = classes|merge(["display-1"]) %}
+{% endif %}
+
+{# Render #}
 {% if content|default(null) %}
-    <{{headingSize}}>{{ content }}</{{headingSize}}>
+	<{{headerSize}} class="{{ classes|default('') }}"> {{ content }} </{{headerSize}}>
 {% endif %}

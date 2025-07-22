@@ -1,6 +1,11 @@
-.header-main {
-  height: px-to-rem(80);
-  background-color: transparent;
+.header-main-container {
+  position: fixed; /* or absolute */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: px-to-rem(60);
+  color: white;
+  z-index: 1000;
 }
 
 .main-nav {

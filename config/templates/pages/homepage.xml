@@ -31,7 +31,7 @@
         </property>
         <xi:include
         href="./../content-blocks/homepage/hero.xml"
-        xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
+        xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:section)"
         />
     </properties>
 </template>

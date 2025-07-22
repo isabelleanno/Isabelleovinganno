@@ -1,0 +1,8 @@
+<section class="bg-{{content.background_color}}">
+	{% include 'components/header.html.twig'  
+    with {
+    'headerSize': content.header_size, 
+    'content': content.header, 
+    'headerColor': content.header_color
+    }  %}
+</section>

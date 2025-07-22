@@ -5,15 +5,24 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
 >
-    <properties>
-        <property name="background_color" type="single_select">
-            <meta>
-                <title lang="en">Background Color</title>
-            </meta>
-            <xi:include
+    <section name="hero">
+        <meta>
+            <title lang="en">Hero Section</title>
+        </meta>
+        <properties>
+            <property name="background_color" type="single_select">
+                <meta>
+                    <title lang="en">Background Color</title>
+                </meta>
+                <xi:include
                 href="../../properties/color.xml"
                 xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:property/sulu:params)"
             />
-        </property>
-    </properties>
+            </property>
+            <xi:include
+             href="../../components/headers.xml"
+            xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/*)"
+            />
+        </properties>
+    </section>
 </template>
