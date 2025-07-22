@@ -26,7 +26,7 @@
                             </meta>
                             <properties>
                                 <xi:include
-                                href="./../components/text.xml"
+                                href="../../components/text.xml"
                                 xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
                                 />
                             </properties>
@@ -37,7 +37,7 @@
                             </meta>
                             <properties>
                                 <xi:include
-                                href="./../components/headers.xml"
+                                href="../../components/headers.xml"
                                 xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
                                 />
                             </properties>
@@ -48,7 +48,7 @@
                             </meta>
                             <properties>
                                 <xi:include
-                                href="./../components/buttons.xml"
+                                href="../../components/buttons.xml"
                                 xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:properties/sulu:*)"
                                 />
                             </properties>

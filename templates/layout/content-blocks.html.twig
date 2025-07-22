@@ -5,7 +5,7 @@
 
 		<section class="content-block-{{ content_block.type }} spacer-top{{ spacing ? '--' ~ spacing : " " }} ">
 			<div class="container {% if container_small %}container-small{% endif %}">
-				{% include 'content-blocks/' ~ content_block.type ~ '.html.twig' with { content_block: content_block } %}
+				{% include 'content-blocks/flexible/' ~ content_block.type ~ '.html.twig' with { content_block: content_block } %}
 			</div>
 		</section>
 	{% endfor %}

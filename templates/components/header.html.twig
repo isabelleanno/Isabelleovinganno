@@ -10,6 +10,7 @@
 #}
 
 {# Define parameters depending on context (as a content block or called by a section) #}
+
 {% if content_block is defined and content_block is not empty %}
 	{% set headerSize = content_block.heading_size |default('h1') %}
 	{% set content = content_block.header|default(null) %}
@@ -23,7 +24,7 @@
 {# if h0, it's really just an h1 with display-1 #}
 {% if headerSize == 'h0' %}
 	{% set headerSize = "h1" %}
-    {% set classes = classes|merge(["display-1"]) %}
+    {% set classes = classes ~ ' display-1' %}
 {% endif %}
 
 {# Render #}

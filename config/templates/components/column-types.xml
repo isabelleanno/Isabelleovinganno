@@ -14,7 +14,7 @@
                     </meta>
                     <properties>
                         <xi:include
-                        href="./../content-blocks/text-content.xml"
+                        href="./../content-blocks/flexible/text-content.xml"
                         xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
                         />
                     </properties>
@@ -25,7 +25,7 @@
                     </meta>
                     <properties>
                         <xi:include
-                        href="./../content-blocks/image-content.xml"
+                        href="./../content-blocks/flexible/image-content.xml"
                         xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
                         />
                     </properties>

@@ -1,15 +1,13 @@
 <section class="hero bg-{{content.hero.background_color}}">
 	<div class="container container-{{content.hero.settings.spacing_options}}">
 		<div class="row">
-			<div class="col-6">
-				{% include 'components/header.html.twig'  
+			<div class="col-lg-6">
+				{% include 'content-blocks/text-button.html.twig'  
                     with {
-                    'headerSize': content.hero.header_size, 
-                    'content': content.hero.header, 
-                    'headerColor': content.hero.header_color
+                    'content': content.hero,
                 }  %}
 			</div>
-			<div class="col-6 d-flex align-items-center">
+			<div class="col-lg-6 d-flex align-items-center">
 				<div class="col-10 h-75 bg-secondary"></div>
 			</div>
 		</div>

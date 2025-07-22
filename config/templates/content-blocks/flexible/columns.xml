@@ -94,7 +94,7 @@
                             </params>
                         </property>
                         <xi:include
-                        href="./../components/column-types.xml"
+                        href="../../components/column-types.xml"
                         xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
                         />
                     </properties>

@@ -1,6 +1,11 @@
-
-{% if content_block.content is not empty and content_block.content is not null %}
-    <div class="text-component">
-        {{ content_block.content|raw }}
-    </div>
+{% if content_block.content is defined and content_block.content is not empty %}
+	{% set content = content_block.content %}
 {% endif %}
+
+{% set textContent = content.text_content|raw %}
+{% set text_color = 'text-' ~ content.text_color|default('') %}
+{% set text_font = content.text_font|default('manrope') %}
+
+<div class="text-component">
+	{{ textContent|add_classes(text_color ~ ' ' ~ text_font)|raw }}
+</div>

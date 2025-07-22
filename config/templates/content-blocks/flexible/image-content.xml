@@ -26,7 +26,7 @@
                             </meta>
                             <properties>
                                 <xi:include
-                                href="./../components/image.xml"
+                                href="../../components/image.xml"
                                 xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
                                 />
                             </properties>
