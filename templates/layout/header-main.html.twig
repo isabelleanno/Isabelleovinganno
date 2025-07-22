@@ -1,10 +1,16 @@
 <header class="header-main d-flex align-items-center">
-	<div class="container header-main-container d-flex align-items-center justify-content-between">
-		{% block header %}
-			{# Logo #}
-			{% include 'components/logo.html.twig'  with {clickable : true}  %}
-			{# Main nav #}
-			{% include 'layout/navigation/main-nav.html.twig' %}
-		{% endblock %}
+	<div class="container">
+		<div class="row">
+			{% block header %}
+				{# Logo #}
+				<div class="col-auto d-flex align-items-center justify-content-center">
+					{% include 'components/logo.html.twig'  with {clickable : true}  %}
+				</div>
+				{# Main nav #}
+				<div class="col d-flex align-items-center justify-content-end">
+					{% include 'layout/navigation/main-nav.html.twig' %}
+				</div>
+			{% endblock %}
+		</div>
 	</div>
 </header>

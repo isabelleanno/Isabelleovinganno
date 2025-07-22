@@ -1,13 +1,17 @@
 /*
-Component blocks
+Content blocks
  ================================================== 
- Contains the styles for component blocks. See templates/layout/content-blocks.html.twig
+ Contains the styles for content blocks. See templates/layout/content-blocks.html.twig
 
 */
 
 @include media-breakpoint-up(lg) {
   .container-small {
     max-width: 856px;
+  }
+  .container-default {
+    padding-top: px-to-rem(120);
+    padding-bottom: px-to-rem(120);
   }
 }
 

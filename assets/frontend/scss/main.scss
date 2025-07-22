@@ -22,7 +22,9 @@ Import all the necessary SCSS files to compile the final CSS.
 @import "components/logo";
 
 // Layout
-@import "layout/component-blocks";
+@import "layout/content-blocks";
 @import "layout/header-main";
+@import "layout/sections";
 
 // Pages
+@import "pages/homepage";
