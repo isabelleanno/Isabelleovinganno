@@ -7,11 +7,15 @@
  */
 
 .manrope {
-  font-family: "Manrope", sans-serif;
+    font-family: "Manrope", sans-serif;
 }
 .fira-code {
-  font-family: "Fira Code", monospace;
+    font-family: "Fira Code", monospace;
 }
 .text-gray-200 {
-  color: $gray-200;
+    color: $gray-200;
+}
+h5,
+.h5 {
+    font-size: clamp(px-to-rem(14), 2.5vw + 0.5rem, px-to-rem(28)) !important;
 }

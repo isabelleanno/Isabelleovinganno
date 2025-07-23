@@ -1,12 +1,22 @@
 {% if content_block is defined %}
 	{% set image = content_block.image|default(null) %}
+	{% set format = content_block.image_format|default('none') %}
 {% endif %}
 {% set image = image|default(null) %}
+{% set format = format|default('none') %}
+
 {% if image %}
+	{% set url = image.url %}
+
+	{# Check if format exists in the image formats and use formatted URL #}
+	{% if format != 'none' and image.formats[format] is defined %}
+		{% set url = image.formats[format] %}
+	{% endif %}
+
 	<span class="d-inline-flex image-component">
 		{% include 'utilities/image.html.twig' with {
-		src: image.url,
-		alt: image.title
-		} %}
+        src: url,
+        alt: image.title
+        } %}
 	</span>
 {% endif %}

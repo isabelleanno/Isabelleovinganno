@@ -5,10 +5,35 @@
   xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
 >
     <properties>
-        <property name="image" type="single_media_selection">
+        <property name="image" type="single_media_selection" colspan="8">
             <meta>
                 <title lang="en">Image</title>
             </meta>
+        </property>
+        <property name="image_format" type="single_select" colspan="4">
+            <meta>
+                <title lang="en">Formats</title>
+            </meta>
+            <params>
+                <param name="default_value" value="none" />
+                <param name="values" type="collection">
+                    <param name="none">
+                        <meta>
+                            <title lang="en">None</title>
+                        </meta>
+                    </param>
+                    <param name="300x">
+                        <meta>
+                            <title lang="en">300x300</title>
+                        </meta>
+                    </param>
+                    <param name="425x525">
+                        <meta>
+                            <title lang="en">425x525</title>
+                        </meta>
+                    </param>
+                </param>
+            </params>
         </property>
     </properties>
 </template>
