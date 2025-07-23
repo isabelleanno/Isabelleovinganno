@@ -6,7 +6,7 @@
 			{% set content_block = column.column_content[0] %}
 			{% set content_block_type = column.column_content[0].type %}
 			<div class="col col-lg-{{ column_width }}">
-				{% include 'content-blocks/' ~ content_block_type ~ '.html.twig' with { content_block: content_block } %}
+				{% include 'content-blocks/' ~ content_block_type ~ '.html.twig' with { flexible_content: content_block } %}
 			</div>
 		{% endfor %}
 	</div>

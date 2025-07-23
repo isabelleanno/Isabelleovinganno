@@ -2,7 +2,7 @@
 {% if content_blocks|default(null) %}
 	{% for content_block in content_blocks %}
 		{% include 'components/' ~ content_block.type ~ '.html.twig' with { 
-            content_block: content_block
+            flexible_content: content_block
         } %}
 	{% endfor %}
 {% endif %}

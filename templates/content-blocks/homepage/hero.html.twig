@@ -1,19 +1,15 @@
-<section class="hero bg-{{content.hero.background_color}}">
-	<div class="container container-{{content.hero.settings.spacing_options}}">
-		<div class="row">
-			<div class="col-lg-6">
-				{% include 'content-blocks/text-button.html.twig'  
+<div class="row">
+	<div class="col-lg-6">
+		{% include 'content-blocks/text-button.html.twig'  
                     with {
                     'content': content.hero,
                 }  %}
-			</div>
-			<div class="col-lg-6 d-flex justify-content-end">
-				{% include 'components/image.html.twig' 
+	</div>
+	<div class="col-lg-6 d-flex justify-content-end">
+		{% include 'components/image.html.twig' 
 					with {
 					'image': content.hero.image,
 					'image_css_classes': content.hero.image_css_classes,
 				} %}
-			</div>
-		</div>
 	</div>
-</section>
+</div>

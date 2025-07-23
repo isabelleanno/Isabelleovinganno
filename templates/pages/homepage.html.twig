@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-	{% include './content-blocks/homepage/hero.html.twig' %}
-	{% include './content-blocks/homepage/areas-of-expertise.html.twig' %}
+	{% set homepage_blocks = ['hero', 'areas_of_expertise'] %}
+	{% include 'layout/content-blocks.html.twig' with { ridgid_content: content, block_order: homepage_blocks } %}
 {% endblock %}
