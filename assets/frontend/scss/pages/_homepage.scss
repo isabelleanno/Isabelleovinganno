@@ -1,7 +1,17 @@
-.homepage {
-  .hero-section {
+.hero-section {
+  min-height: 100vh;
+  .text-component {
+    margin: px-to-rem(20) 0;
+    > * {
+      line-height: 2;
+    }
   }
-
-  .about-section {
+  .image-component {
+    justify-content: flex-end;
+    img {
+      @include media-breakpoint-up(xxl) {
+        width: 75%;
+      }
+    }
   }
 }

@@ -22,7 +22,7 @@
 				{% set spacing = block_content.settings.spacing_options|default(null) %}
 				{% set container_small = block_content.settings.container_small|default(false) %}
 
-				<section class="{{ block_name }} bg-{{ block_content.background_color|default('white') }} ">
+				<section class="{{ block_name }}-section bg-{{ block_content.background_color|default('white') }} ">
 					<div class="container container-{{ spacing|default('default') }} {% if container_small %}container-small{% endif %}">
 						{% include 'content-blocks/homepage/' ~ block_name ~ '.html.twig' with { content: content } %}
 					</div>

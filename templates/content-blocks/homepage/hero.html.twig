@@ -1,15 +1,15 @@
 <div class="row">
 	<div class="col-lg-6">
 		{% include 'content-blocks/text-button.html.twig'  
-                    with {
-                    'content': content.hero,
-                }  %}
+			with {
+			'content': content.hero,
+		}  %}
 	</div>
 	<div class="col-lg-6 d-flex justify-content-end">
 		{% include 'components/image.html.twig' 
-					with {
-					'image': content.hero.image,
-					'image_css_classes': content.hero.image_css_classes,
-				} %}
+			with {
+			'image': content.hero.image|default(null),
+			format: '425x525',
+		} %}
 	</div>
 </div>

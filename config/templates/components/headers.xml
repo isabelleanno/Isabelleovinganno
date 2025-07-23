@@ -11,7 +11,7 @@ xmlns:xi="http://www.w3.org/2001/XInclude"
                 <title lang="en">Header text</title>
             </meta>
         </property>
-        <property name="header_size" type="single_select" colspan="4">
+        <property name="header_size" type="single_select" colspan="6">
             <meta>
                 <title lang="en">Header Size</title>
             </meta>
@@ -56,7 +56,7 @@ xmlns:xi="http://www.w3.org/2001/XInclude"
                 </param>
             </params>
         </property>
-        <property name="header_color" type="single_select" colspan="4">
+        <property name="header_color" type="single_select" colspan="6">
             <meta>
                 <title lang="en">Header Color</title>
             </meta>
@@ -64,11 +64,6 @@ xmlns:xi="http://www.w3.org/2001/XInclude"
                 href="../properties/color.xml"
                 xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:property/sulu:params)"
             />
-        </property>
-        <property name="header_css_classes" type="text_line" colspan="4">
-            <meta>
-                <title lang="en">CSS Classes</title>
-            </meta>
         </property>
     </properties>
 </template>

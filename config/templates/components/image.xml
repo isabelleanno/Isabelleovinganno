@@ -5,14 +5,9 @@
   xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
 >
     <properties>
-        <property name="image" type="single_media_selection" colspan="6">
+        <property name="image" type="single_media_selection">
             <meta>
                 <title lang="en">Image</title>
-            </meta>
-        </property>
-        <property name="image_css_classes" type="text_line" colspan="6">
-            <meta>
-                <title lang="en">CSS Classes</title>
             </meta>
         </property>
     </properties>

@@ -1,15 +1,12 @@
 {% if content_block is defined %}
 	{% set image = content_block.image|default(null) %}
-	{% set css_classes = content_block.image_css_classes|default(null) %}
 {% endif %}
 {% set image = image|default(null) %}
-{% set css_classes = image_css_classes|default(null) %}
 {% if image %}
-	<div class="image-component">
+	<span class="d-inline-flex image-component">
 		{% include 'utilities/image.html.twig' with {
-            src: image.url,
-            alt: image.title,
-            class: css_classes,
-            } %}
-	</div>
+		src: image.url,
+		alt: image.title
+		} %}
+	</span>
 {% endif %}

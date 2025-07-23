@@ -1,14 +1,12 @@
 {% if content_block is defined and content_block is not empty %}
 	{% set headerSize = content_block.heading_size |default('h1') %}
 	{% set content = content_block.header|default(null) %}
-	{% set header_css_classes = content_block.header_css_classes|default('') %}
-	{% set classes = "text-" ~ (headerColor|default('primary')) ~ ' ' ~ header_css_classes %}
+	{% set classes = "text-" ~ (headerColor|default('primary')) %}
 
 {% else %}
 	{% set headerSize = headerSize|default('h1') %}
 	{% set content = content|default(null) %}
-	{% set header_css_classes = headerCssClasses|default('') %}
-	{% set classes = "text-" ~ (headerColor|default('primary')) ~ ' ' ~ header_css_classes %}
+	{% set classes = "text-" ~ (headerColor|default('primary')) %}
 {% endif %}
 
 {# if h0, it's really just an h1 with display-1 #}
@@ -19,7 +17,9 @@
 
 {# Render #}
 {% if content|default(null) %}
-	<{{headerSize}} class="{{ classes|default('') }}">
-		{{ content }}
-	</{{headerSize}}>
+	<span class="d-inline-flex header-component">
+		<{{headerSize}} class="{{ classes|default('') }}">
+			{{ content }}
+		</{{headerSize}}>
+	</span>
 {% endif %}

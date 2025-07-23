@@ -1,9 +1,7 @@
 {% set buttons = content_block.buttons is defined and content_block.buttons is not empty ? content_block.buttons : (buttons is defined and buttons is not empty ? buttons : null) %}
 
 {% if buttons is not null %}
-	{% if buttons|length > 1 %}
-		<div class="button-group d-flex gap-4">
-		{% endif %}
+	<div class="d-inline-flex gap-4 button-component">
 		{% for button in buttons %}
 
 			{% set url = button.type == 'external-link' ? button.url : (button.type == 'internal-link' ? button.uuid : '') %}
@@ -23,7 +21,5 @@
 			</{{tag}}>
 
 		{% endfor %}
-		{% if buttons|length > 1 %}
-		</div>
-	{% endif %}
+	</div>
 {% endif %}

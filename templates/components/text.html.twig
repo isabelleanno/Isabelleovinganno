@@ -5,8 +5,7 @@
 {% set textContent = content.text_content|raw %}
 {% set text_color = 'text-' ~ content.text_color|default('') %}
 {% set text_font = content.text_font|default('manrope') %}
-{% set text_css_classes = content.text_css_classes|default('') %}
 
-<div class="text-component">
-	{{ textContent|add_classes(text_color ~ ' ' ~ text_font ~ ' ' ~ text_css_classes)|raw }}
-</div>
+<span class="d-inline-flex text-component">
+	{{ textContent|add_classes(text_color ~ ' ' ~ text_font )|raw }}
+</span>
