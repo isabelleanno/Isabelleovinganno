@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<template
+ xmlns="http://schemas.sulu.io/template/template"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
+    <properties>
+        <block name="card-button" default-type="card-button" minOccurs="1" maxOccurs="4">
+            <meta>
+                <title lang="en">Button Cards</title>
+            </meta>
+            <params>
+                <param name="add_card_text">
+                    <meta>
+                        <title lang="en">Add card</title>
+                    </meta>
+                </param>
+            </params>
+            <types>
+                <type name="card-button">
+                    <meta>
+                        <title lang="en">Cards</title>
+                    </meta>
+                    <properties>
+                        <xi:include
+                            href="../../components/image.xml"
+                            xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
+                        />
+                        <xi:include
+                            href="../../components/headers.xml"
+                            xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
+                        />
+                        <xi:include
+                            href="../../components/text.xml"
+                            xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
+                        />
+                        <xi:include
+                            href="../../components/buttons/buttons.xml"
+                            xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
+                        />
+                    </properties>
+                </type>
+            </types>
+        </block>
+    </properties>
+</template>

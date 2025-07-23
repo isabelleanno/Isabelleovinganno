@@ -5,7 +5,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
 >
-    <section name="text_content_blocks">
+    <section name="text_button">
         <properties>
             <xi:include
                     href="./../components/headers.xml"
