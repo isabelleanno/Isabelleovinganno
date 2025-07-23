@@ -34,7 +34,7 @@
                             <title lang="en">Settings</title>
                         </meta>
                         <properties>
-                            <xi:include href="../components/buttons/theme.xml"
+                            <xi:include href="theme.xml"
                                 xpointer="xmlns(sulu=http://schemas.sulu.io/template/template)  xpointer(/sulu:template/sulu:properties/*)" />
                         </properties>
                     </section>
@@ -71,7 +71,7 @@
                             <title lang="en">Settings</title>
                         </meta>
                         <properties>
-                            <xi:include href="../components/buttons/theme.xml"
+                            <xi:include href="theme.xml"
                                 xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/*)" />
                         </properties>
                     </section>

@@ -48,7 +48,7 @@
                             </meta>
                             <properties>
                                 <xi:include
-                                href="../../components/buttons.xml"
+                                href="../../components/buttons/buttons.xml"
                                 xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:properties/sulu:*)"
                                 />
                             </properties>

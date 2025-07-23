@@ -16,7 +16,7 @@
                     xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
                 />
             <xi:include
-                    href="./../components/buttons.xml"
+                    href="./../components/buttons/buttons.xml"
                     xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:properties/sulu:*)"
                 />
         </properties>
