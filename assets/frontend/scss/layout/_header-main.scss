@@ -2,8 +2,20 @@ $header-height: px-to-rem(60);
 
 .header-main {
   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: transparent;
   height: $header-height;
-  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.main-content > section:first-of-type {
+  padding-top: $header-height + px-to-rem(20);
+  @include media-breakpoint-up(lg) {
+    padding-top: $header-height;
+  }
 }
 
 .main-nav {
