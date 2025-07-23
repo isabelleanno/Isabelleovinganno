@@ -1,29 +1,29 @@
-{%  for button in content_block.buttons %}
-	{% if button.type == 'external-link' %}
-		<a href="{{ button.url }}" class="btn btn-{% if button.outlined %}outline-{% endif %}{{button.text_color}}" target="_blank" rel="noopener">
-			<span class="d-flex align-items-center gap-2 {{button.arrow}}">
-				<span class="{% if button.text_color %}text-{{button.text_color}}{% endif %}">
-					{{ button.text }}
-				</span>
-				{% if button.arrow != "null" %}
-					{% include 'utilities/icon.html.twig' with {
+{% set buttons = content_block.buttons is defined and content_block.buttons is not empty ? content_block.buttons : (buttons is defined and buttons is not empty ? buttons : null) %}
+
+{% if buttons is not null %}
+	{% if buttons|length > 1 %}
+		<div class="button-group d-flex gap-4">
+		{% endif %}
+		{% for button in buttons %}
+
+			{% set url = button.type == 'external-link' ? button.url : (button.type == 'internal-link' ? button.uuid : '') %}
+			{% set tag= button.type == 'external-link' ? "a" : (button.type == 'internal-link' ? "sulu-link" : '') %}
+
+			<{{tag}} href="{{ url }}" class="btn btn-{% if button.outlined %}outline-{% endif %}{{button.background_color}}" target="_blank" rel="noopener">
+				<span class="d-flex align-items-center gap-2 {{button.arrow}}">
+					<span class="{% if button.text_color %}text-{{button.text_color}}{% endif %}">
+						{{ button.text }}
+					</span>
+					{% if button.arrow != "null" %}
+						{% include 'utilities/icon.html.twig' with {
                       icon: 'arrow'
                     } %}
-				{% endif %}
-			</span>
-		</a>
-	{% else %}
-		<sulu-link href="{{ button.uuid }}" class="btn btn-{% if button.outlined %}outline-{% endif %}{{button.text_color}}">
-			<span class="d-flex align-items-center gap-2 {{button.arrow}}">
-				<span class="{% if button.text_color %}text-{{button.text_color}}{% endif %}">
-					{{ button.text }}
+					{% endif %}
 				</span>
-				{% if button.arrow != "null" %}
-					{% include 'utilities/icon.html.twig' with {
-                        icon: 'arrow'
-                      } %}
-				{% endif %}
-			</span>
-		</sulu-link>
+			</{{tag}}>
+
+		{% endfor %}
+		{% if buttons|length > 1 %}
+		</div>
 	{% endif %}
-{% endfor %}
+{% endif %}

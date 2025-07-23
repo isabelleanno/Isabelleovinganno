@@ -23,9 +23,9 @@
             'textCssClasses': content.text_css_classes|default('')
         }  %}
 		{% if buttons is not empty %}
-			{% include 'components/buttons.html.twig'  
+			{% include 'components/button.html.twig'  
                 with {
-                'buttons': buttons
+                buttons: buttons
             }  %}
 		{% endif %}
 	</div>

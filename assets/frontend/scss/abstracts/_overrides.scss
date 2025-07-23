@@ -26,9 +26,10 @@ $dark: #343a40;
 $primary: #1d1923; //Text
 $secondary: #f9ebfe; //Light purple background
 $tertiary: #e28c90; //Pink accent
-$quaternary: #dfe7ff; //Light blue background
-$quinary: #394be7; //Royal blue
-$senary: #eff3ff; //Light blue background variant
+$quaternary: $gray-200; //Gray background
+$quinary: #dfe7ff; //Light blue background
+$senary: #394be7; //Royal blue
+$septenary: #eff3ff; //Light blue background variant
 
 $theme-colors: (
   "primary": $primary,
@@ -36,6 +37,8 @@ $theme-colors: (
   "tertiary": $tertiary,
   "quaternary": $quaternary,
   "quinary": $quinary,
+  "senary": $senary,
+  "septenary": $septenary,
 );
 
 // Typography

@@ -30,17 +30,17 @@
                     </param>
                     <param name="quaternary">
                         <meta>
-                            <title lang="en">Light Blue</title>
+                            <title lang="en">Light Gray</title>
                         </meta>
                     </param>
                     <param name="quinary">
                         <meta>
-                            <title lang="en">Royal Blue</title>
+                            <title lang="en">Light Blue</title>
                         </meta>
                     </param>
-                    <param name="gray-200">
+                    <param name="senary">
                         <meta>
-                            <title lang="en">Light gray</title>
+                            <title lang="en">Royal Blue</title>
                         </meta>
                     </param>
                 </param>
