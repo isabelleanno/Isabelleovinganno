@@ -8,32 +8,32 @@
 </div>
 <div class="row">
 	<div class="col">
-		{% if content.areas_of_expertise.skill_cards is not empty %}
-			<div class="row mt-lg-4">
-				{% set cards = content.areas_of_expertise.skill_cards %}
-				{% set length = cards|length %}
-				{% set columns = 12 / length %}
-				{% set column_class = 'col-lg-' ~ columns ~ (length > 1 and length % 2 == 0 ? ' col-md-6' : ' col-md') %}
-				{% for card in cards %}
+		<div class="row mt-lg-4">
+			{% set cards = content.areas_of_expertise.skill_cards %}
+			{% set valid_cards = cards|filter(card => card.text_content or card.header or card.image) %}
+			{% set length = valid_cards|length %}
+			{% set columns = 12 / length %}
+			{% set column_class = 'col-lg-' ~ columns ~ (length > 1 and length % 2 == 0 ? ' col-md-6' : ' col-md') %}
+			{% for card in cards %}
+				{% if card.text_content or card.header or card.image %}
 					<div class="{{ column_class }}">
 						<div class="card card--skill h-100 d-flex flex-column justify-content-between">
 							<div class="d-flex align-items-center justify-content-center">
 								{% include 'components/image.html.twig' 
-									with {
-									image: card.image|default(null),
-									format: card.image_format|default('none'),
-									class: 'card-img-top',
-								} %}
+                                    with {
+                                    image: card.image|default(null),
+                                    format: card.image_format|default('none'),
+                                    class: 'card-img-top',
+                                } %}
 							</div>
 							<div class="card-body p-0 mt-3 d-flex flex-column justify-content-between">
-								<h2 class="h6 fira-code text-center card-title">{{card.card_header|default(null)}}</h2>
-								<p class="card-text text-center">{{card.card_description|default(null)}}</p>
+								<h2 class="h6 fira-code text-center card-title">{{card.header|default(null)}}</h2>
+								<p class="card-text text-center">{{card.text_content|default(null)}}</p>
 							</div>
 						</div>
 					</div>
-				{% endfor %}
-			</div>
-		{% endif %}
-
+				{% endif %}
+			{% endfor %}
+		</div>
 	</div>
 </div>

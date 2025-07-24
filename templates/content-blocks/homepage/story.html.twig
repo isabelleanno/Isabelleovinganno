@@ -10,25 +10,6 @@
 		</div>
 	</div>
 	{% if content.story.card %}
-		<div class="row mt-5">
-			{% for card in content.story.card %}
-				<div class="col card card--story d-flex">
-					<div class="row d-flex align-items-center">
-						<div class="col">
-							{% include 'content-blocks/text-button.html.twig'  
-								with {
-								'content': card,
-								}  %}
-						</div>
-						<div class="col-4">
-							{% include 'components/image.html.twig' with {
-								image: card.image|default(null),
-								format: card.image_format|default(null),
-							} %}
-						</div>
-					</div>
-				</div>
-			{% endfor %}
-		</div>
+		{% include 'components/cards/card-long.html.twig'  with {'cards': content.story.card}  %}
 	{% endif %}
 {% endif %}

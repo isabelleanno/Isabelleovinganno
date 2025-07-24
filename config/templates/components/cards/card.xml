@@ -5,7 +5,7 @@
     xmlns:xi="http://www.w3.org/2001/XInclude"
     xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
     <properties>
-        <block name="card" default-type="card" minOccurs="0" maxOccurs="4">
+        <block name="card" default-type="card" minOccurs="0">
             <meta>
                 <title lang="en">Cards</title>
             </meta>
@@ -26,11 +26,10 @@
                             href="../../components/image.xml"
                             xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
                         />
-                        <property name="header" type="text_line">
-                            <meta>
-                                <title lang="en">Header content</title>
-                            </meta>
-                        </property>
+                        <xi:include
+                            href="../../components/headers.xml"
+                            xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
+                        />
                         <property name="text_content" type="text_editor">
                             <meta>
                                 <title lang="en">Description</title>

@@ -60,12 +60,12 @@
                                                 href="../../components/image.xml"
                                                 xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
                                             />
-                                            <property name="card_header" type="text_line">
+                                            <property name="header" type="text_line">
                                                 <meta>
                                                     <title lang="en">Header text</title>
                                                 </meta>
                                             </property>
-                                            <property name="card_description" type="text_area">
+                                            <property name="text_content" type="text_area">
                                                 <meta>
                                                     <title lang="en">Description</title>
                                                 </meta>
