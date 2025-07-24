@@ -1,4 +1,4 @@
-{% if s_default is defined and s_default is not null and s_default is not empty %}
+{% if s_default is defined and s_default is not empty %}
 	{% set desktop_logo = s_default.desktop_logo.url|default(null) %}
 	{% set mobile_logo = s_default.mobile_logo.url|default(null) %}
 	{% if clickable %}

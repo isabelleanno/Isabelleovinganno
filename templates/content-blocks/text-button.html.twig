@@ -1,32 +1,10 @@
 {% if content is defined and content is not empty %}
 
 	{% set type = content.type|default('') %}
-	{% set header = content.header|default('')%}
-	{% set headerSize = content.header_size|default('') %}
-	{% set headerColor = content.header_color|default('') %}
-	{% set textContent = content.text_content|default('') %}
-	{% set buttons = content.buttons|default(null) %}
 
 	<div class="{{type}}-text-button">
-		{% include 'components/header.html.twig'  
-            with {
-            'headerSize': headerSize, 
-            'content': header, 
-            'headerColor': headerColor,
-            'headerCssClasses': content.header_css_classes|default('')
-        }  %}
-		{% include 'components/text.html.twig'  
-            with {
-            'textContent': textContent,
-            'textColor': content.text_color|default(''),
-            'textFont': content.text_font|default('manrope'),
-            'textCssClasses': content.text_css_classes|default('')
-        }  %}
-		{% if buttons is not empty %}
-			{% include 'components/button.html.twig'  
-                with {
-                buttons: buttons
-            }  %}
-		{% endif %}
+		{% include 'components/header.html.twig' with { content_block: content } %}
+		{% include 'components/text.html.twig' with { content_block: content } %}
+		{% include 'components/button.html.twig' with { content_block: content } %}
 	</div>
 {% endif %}

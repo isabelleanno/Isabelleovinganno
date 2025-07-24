@@ -1,11 +1,15 @@
-{% if content_block.content is defined and content_block.content is not empty %}
-	{% set content = content_block.content %}
+{# Extract data from content_block or use passed variables #}
+{% set content = content_block.content|default(content_block|default({})) %}
+{% set textContent = content.text_content|default(null) %}
+
+{# Only render if we have text content #}
+{% if textContent %}
+	{% set text_color = 'text-' ~ content.text_color|default('primary') %}
+	{% set text_font = content.text_font|default('manrope') %}
+	{% set text_css_classes = content.text_css_classes|default('') %}
+	{% set classes = text_color ~ ' ' ~ text_font ~ ' ' ~ text_css_classes %}
+
+	<div class="text-component">
+		{{ textContent|add_classes(classes|trim)|raw }}
+	</div>
 {% endif %}
-
-{% set textContent = content.text_content|raw %}
-{% set text_color = 'text-' ~ content.text_color|default('') %}
-{% set text_font = content.text_font|default('manrope') %}
-
-<span class="text-component">
-	{{ textContent|add_classes(text_color ~ ' ' ~ text_font )|raw }}
-</span>

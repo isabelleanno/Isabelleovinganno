@@ -1,24 +1,29 @@
-{% if content_block is defined and content_block is not empty %}
-	{% set headerSize = content_block.heading_size |default('h1') %}
+{# Extract data from content_block or use passed variables #}
+{% if content_block is defined %}
+	{% set headerSize = content_block.heading_size|default('h1') %}
 	{% set content = content_block.header|default(null) %}
-	{% set classes = "text-" ~ (headerColor|default('primary')) %}
-
+	{% set headerColor = content_block.header_color|default('primary') %}
+	{% set headerCssClasses = content_block.header_css_classes|default('') %}
 {% else %}
-	{% set headerSize = headerSize|default('h1') %}
-	{% set content = content|default(null) %}
-	{% set classes = "text-" ~ (headerColor|default('primary')) %}
+	{% set headerSize = heading_size|default('h1') %}
+	{% set content = header|default(null) %}
+	{% set headerColor = header_color|default('primary') %}
+	{% set headerCssClasses = header_css_classes|default('') %}
 {% endif %}
 
-{# if h0, it's really just an h1 with display-1 #}
+{# Handle h0 special case (h1 with display-1 class) #}
 {% if headerSize == 'h0' %}
-	{% set headerSize = "h1" %}
-	{% set classes = classes ~ ' display-1' %}
+	{% set headerSize = 'h1' %}
+	{% set headerCssClasses = headerCssClasses ~ ' display-1' %}
 {% endif %}
 
-{# Render #}
-{% if content|default(null) %}
+{# Build CSS classes #}
+{% set classes = 'text-' ~ headerColor ~ ' ' ~ headerCssClasses %}
+
+{# Render header if content exists #}
+{% if content %}
 	<span class="header-component">
-		<{{headerSize}} class="{{ classes|default('') }}">
+		<{{headerSize}} class="{{ classes|trim }}">
 			{{ content }}
 		</{{headerSize}}>
 	</span>

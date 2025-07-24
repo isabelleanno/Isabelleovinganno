@@ -5,19 +5,19 @@
     xmlns:xi="http://www.w3.org/2001/XInclude"
     xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
     <properties>
-        <block name="card-button" default-type="card-button" minOccurs="1" maxOccurs="4">
+        <block name="card" default-type="card" minOccurs="0" maxOccurs="4">
             <meta>
-                <title lang="en">Button Cards</title>
+                <title lang="en">Cards</title>
             </meta>
             <params>
-                <param name="add_card_text">
+                <param name="add_button_text">
                     <meta>
                         <title lang="en">Add card</title>
                     </meta>
                 </param>
             </params>
             <types>
-                <type name="card-button">
+                <type name="card">
                     <meta>
                         <title lang="en">Cards</title>
                     </meta>
@@ -26,17 +26,24 @@
                             href="../../components/image.xml"
                             xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
                         />
-                        <xi:include
-                            href="../../components/headers.xml"
-                            xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
-                        />
-                        <xi:include
-                            href="../../components/text.xml"
-                            xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
-                        />
+                        <property name="card_header" type="text_line">
+                            <meta>
+                                <title lang="en">Header content</title>
+                            </meta>
+                        </property>
+                        <property name="card_subheader" type="text_line">
+                            <meta>
+                                <title lang="en">Subheader content</title>
+                            </meta>
+                        </property>
+                        <property name="card_description" type="text_area">
+                            <meta>
+                                <title lang="en">Description</title>
+                            </meta>
+                        </property>
                         <xi:include
                             href="../../components/buttons/buttons.xml"
-                            xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
+                            xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:properties/sulu:*)"
                         />
                     </properties>
                 </type>

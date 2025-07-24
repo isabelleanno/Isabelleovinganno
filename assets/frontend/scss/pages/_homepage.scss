@@ -1,3 +1,11 @@
+/*
+
+homepage
+================================================== 
+Contains the styles for all the sections in the home page.
+*/
+
+// Hero section
 .hero-section {
     min-height: 100vh;
     .text-component {
@@ -12,5 +20,11 @@
         justify-content: flex-end;
     }
 }
-.areas_of_expertise-section {
+
+// Story Section
+.story-text-button {
+    .header-component,
+    .text-component {
+        text-align: center;
+    }
 }

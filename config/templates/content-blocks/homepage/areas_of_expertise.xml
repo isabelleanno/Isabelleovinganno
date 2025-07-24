@@ -28,10 +28,16 @@
                                 />
                             </property>
                             <!-- Header and text at the top of the section -->
-                            <xi:include
-                                href="../text-button.xml"
-                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:section)"
-                            />
+                            <property name="header" type="text_line">
+                                <meta>
+                                    <title lang="en">Header content</title>
+                                </meta>
+                            </property>
+                            <property name="text_content" type="text_editor">
+                                <meta>
+                                    <title lang="en">Text content</title>
+                                </meta>
+                            </property>
                             <!-- Skill cards -->
                             <block name="skill_cards" default-type="skill_card" minOccurs="1" maxOccurs="4">
                                 <meta>

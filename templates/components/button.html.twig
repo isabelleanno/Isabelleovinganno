@@ -1,25 +1,34 @@
-{% set buttons = content_block.buttons is defined and content_block.buttons is not empty ? content_block.buttons : (buttons is defined and buttons is not empty ? buttons : null) %}
+{# Extract buttons data #}
+{% set buttons = content_block.buttons|default(buttons|default(null)) %}
 
-{% if buttons is not null %}
+{% if buttons %}
 	<div class="d-inline-flex gap-4 button-component">
 		{% for button in buttons %}
+			{# Determine URL and tag based on button type #}
+			{% if button.type == 'external-link' %}
+				{% set url = button.url %}
+				{% set tag = 'a' %}
+				{% set target = 'target="_blank" rel="noopener"' %}
+			{% else %}
+				{% set url = button.uuid %}
+				{% set tag = 'sulu-link' %}
+				{% set target = '' %}
+			{% endif %}
 
-			{% set url = button.type == 'external-link' ? button.url : (button.type == 'internal-link' ? button.uuid : '') %}
-			{% set tag= button.type == 'external-link' ? "a" : (button.type == 'internal-link' ? "sulu-link" : '') %}
+			{# Build button classes #}
+			{% set btn_class = 'btn btn-' ~ (button.outlined ? 'outline-' : '') ~ button.background_color %}
+			{% set text_class = button.text_color ? 'text-' ~ button.text_color : '' %}
 
-			<{{tag}} href="{{ url }}" class="btn btn-{% if button.outlined %}outline-{% endif %}{{button.background_color}}" target="_blank" rel="noopener">
-				<span class="d-flex align-items-center gap-2 {{button.arrow}}">
-					<span class="{% if button.text_color %}text-{{button.text_color}}{% endif %}">
+			<{{tag}} href="{{ url }}" class="{{ btn_class }}" {{ target|raw }}>
+				<span class="d-flex align-items-center gap-2 {{ button.arrow }}">
+					<span class="{{ text_class }}">
 						{{ button.text }}
 					</span>
-					{% if button.arrow != "null" %}
-						{% include 'utilities/icon.html.twig' with {
-                      icon: 'arrow'
-                    } %}
+					{% if button.arrow and button.arrow != "null" %}
+						{% include 'utilities/icon.html.twig' with { icon: 'arrow' } %}
 					{% endif %}
 				</span>
 			</{{tag}}>
-
 		{% endfor %}
 	</div>
 {% endif %}

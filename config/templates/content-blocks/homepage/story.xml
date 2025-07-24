@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<template
+    xmlns="http://schemas.sulu.io/template/template"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
+    >
+    <section name="story">
+        <meta>
+            <title lang="en">Story Section</title>
+        </meta>
+        <properties>
+            <block name="story" default-type="story"  minOccurs="1" maxOccurs="1">
+                <types>
+                    <type name="story">
+                        <meta>
+                            <title lang="en">Story</title>
+                        </meta>
+                        <properties>
+                            <property name="background_color" type="single_select">
+                                <meta>
+                                    <title lang="en">Background Color</title>
+                                </meta>
+                                <xi:include
+                                    href="../../properties/color.xml"
+                                    xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:property/sulu:params)"
+                                />
+                            </property>
+                            <property name="header" type="text_line">
+                                <meta>
+                                    <title lang="en">Header content</title>
+                                </meta>
+                            </property>
+                            <property name="text_content" type="text_editor">
+                                <meta>
+                                    <title lang="en">Text content</title>
+                                </meta>
+                            </property>
+                            <xi:include
+                                href="../../components/cards/card.xml"
+                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:block)"
+                            />
+                        </properties>
+                    </type>
+                </types>
+            </block>
+        </properties>
+    </section>
+</template>
