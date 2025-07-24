@@ -10,8 +10,12 @@
 	<div class="col">
 		{% if content.areas_of_expertise.skill_cards is not empty %}
 			<div class="row mt-lg-4">
-				{% for card in content.areas_of_expertise.skill_cards %}
-					<div class="col">
+				{% set cards = content.areas_of_expertise.skill_cards %}
+				{% set length = cards|length %}
+				{% set columns = 12 / length %}
+				{% set column_class = 'col-lg-' ~ columns ~ (length > 1 and length % 2 == 0 ? ' col-md-6' : ' col-md') %}
+				{% for card in cards %}
+					<div class="{{ column_class }}">
 						<div class="card card--skill h-100 d-flex flex-column justify-content-between">
 							<div class="d-flex align-items-center justify-content-center">
 								{% include 'components/image.html.twig' 
