@@ -1,10 +1,18 @@
 {% if content is defined and content is not empty %}
-
 	{% set type = content.type|default('') %}
+	{% set classes = classes|default('') %}
 
-	<div class="{{type}}-text-button">
-		{% include 'components/header.html.twig' with { content_block: content } %}
-		{% include 'components/text.html.twig' with { content_block: content } %}
-		{% include 'components/button.html.twig' with { content_block: content } %}
+	<div class="{{ type }}-text-button {{ classes }}">
+		{% include 'components/header.html.twig' with { 
+            content_block: content,
+            headerCssClasses: headerCssClasses|default('')
+        } %}
+		{% include 'components/text.html.twig' with { 
+            content_block: content,
+            text_css_classes: text_css_classes|default('')
+        } %}
+		{% include 'components/button.html.twig' with { 
+            content_block: content 
+        } %}
 	</div>
 {% endif %}

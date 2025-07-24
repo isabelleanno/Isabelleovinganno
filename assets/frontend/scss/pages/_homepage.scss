@@ -8,23 +8,4 @@ Contains the styles for all the sections in the home page.
 // Hero section
 .hero-section {
     min-height: 100vh;
-    .text-component {
-        margin: px-to-rem(20) 0;
-        @include media-breakpoint-up(lg) {
-            > * {
-                line-height: 2;
-            }
-        }
-    }
-    .image-component {
-        justify-content: flex-end;
-    }
-}
-
-// Story Section
-.story-text-button {
-    .header-component,
-    .text-component {
-        text-align: center;
-    }
 }

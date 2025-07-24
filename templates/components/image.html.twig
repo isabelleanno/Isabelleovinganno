@@ -4,7 +4,7 @@
 {% endif %}
 {% set image = image|default(null) %}
 {% set format = format|default('none') %}
-
+{% set classes = classes|default('') %}
 {% if image %}
 	{% set url = image.url %}
 
@@ -13,11 +13,10 @@
 		{% set url = image.formats[format] %}
 	{% endif %}
 
-	<span class="d-inline-flex image-component">
+	<span class="d-inline-flex image-component {{ classes }}">
 		{% include 'utilities/image.html.twig' with {
         src: url,
         alt: image.title,
-		class: class|default(null),
         } %}
 	</span>
 {% endif %}

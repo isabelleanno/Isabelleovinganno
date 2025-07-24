@@ -6,10 +6,10 @@
 {% if textContent %}
 	{% set text_color = 'text-' ~ content.text_color|default('primary') %}
 	{% set text_font = content.text_font|default('manrope') %}
-	{% set text_css_classes = content.text_css_classes|default('') %}
+	{% set text_css_classes = text_css_classes|default('') %}
 	{% set classes = text_color ~ ' ' ~ text_font ~ ' ' ~ text_css_classes %}
 
-	<div class="text-component">
-		{{ textContent|add_classes(classes|trim)|raw }}
-	</div>
+
+	{{ textContent|add_classes(classes|trim)|raw }}
+
 {% endif %}
