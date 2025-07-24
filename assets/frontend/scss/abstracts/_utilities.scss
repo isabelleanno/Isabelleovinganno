@@ -6,11 +6,12 @@
 
  */
 
+// Important to override Bootstrap
 .manrope {
-    font-family: "Manrope", sans-serif;
+    font-family: "Manrope", sans-serif !important;
 }
 .fira-code {
-    font-family: "Fira Code", monospace;
+    font-family: "Fira Code", monospace !important;
 }
 .text-gray-200 {
     color: $gray-200;

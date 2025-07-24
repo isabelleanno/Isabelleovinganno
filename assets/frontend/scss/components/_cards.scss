@@ -1,0 +1,10 @@
+.card {
+    &--skill {
+        background-color: rgba(255, 255, 255, 0.25);
+        padding: 2rem 1rem;
+        .card-text {
+            opacity: 50%;
+            letter-spacing: 1.5%;
+        }
+    }
+}

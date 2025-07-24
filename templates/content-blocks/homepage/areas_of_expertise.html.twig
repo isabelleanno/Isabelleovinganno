@@ -8,6 +8,28 @@
 </div>
 <div class="row">
 	<div class="col">
-		Cheese
+		{% if content.areas_of_expertise.skill_cards is not empty %}
+			<div class="row mt-lg-4">
+				{% for card in content.areas_of_expertise.skill_cards %}
+					<div class="col">
+						<div class="card card--skill h-100 d-flex flex-column justify-content-between">
+							<div class="d-flex align-items-center justify-content-center">
+								{% include 'components/image.html.twig' 
+									with {
+									image: card.image|default(null),
+									format: card.image_format|default('none'),
+									class: 'card-img-top',
+								} %}
+							</div>
+							<div class="card-body p-0 mt-3 d-flex flex-column justify-content-between">
+								<h2 class="h6 fira-code text-center card-title">{{card.card_header|default(null)}}</h2>
+								<p class="card-text text-center">{{card.card_description|default(null)}}</p>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		{% endif %}
+
 	</div>
 </div>

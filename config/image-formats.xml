@@ -9,6 +9,12 @@
         </meta>
         <scale x="300"/>
     </format>
+    <format key="120x130-inset">
+        <meta>
+            <title lang="en">120x130 inset</title>
+        </meta>
+        <scale x="120" y="130" mode="inset"/>
+    </format>
     <format key="425x525">
         <meta>
             <title lang="en">425x525</title>

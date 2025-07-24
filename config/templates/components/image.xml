@@ -27,6 +27,11 @@
                             <title lang="en">300x300</title>
                         </meta>
                     </param>
+                    <param name="120x130-inset">
+                        <meta>
+                            <title lang="en">120x130 inset</title>
+                        </meta>
+                    </param>
                     <param name="425x525">
                         <meta>
                             <title lang="en">425x525</title>

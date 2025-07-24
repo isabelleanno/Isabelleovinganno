@@ -16,7 +16,8 @@
 	<span class="d-inline-flex image-component">
 		{% include 'utilities/image.html.twig' with {
         src: url,
-        alt: image.title
+        alt: image.title,
+		class: class|default(null),
         } %}
 	</span>
 {% endif %}
