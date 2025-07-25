@@ -1,11 +1,9 @@
 {# This file defines a standardized section and container for each content block, based on its type. #}
 
-
 {# Flexible content where order is movable #}
 	{% if flexible_content is defined and flexible_content is not empty %}
 		{% for content_block in flexible_content %}
 		{% set spacing = content_block.settings.spacing_options|default(null) %}
-
 			<section class="content-block-{{ content_block.type }} spacer-top{{ spacing ? '--' ~ spacing : " " }} "> <div class="container container-{{content_block.settings.spacing_options}}">
 				{% include 'content-blocks/flexible/' ~ content_block.type ~ '.html.twig' with { flexible_content: content_block } %}
 			</div>
@@ -24,7 +22,7 @@
 
 				<section class="{{ block_name }}-section bg-{{ block_content.background_color|default('white') }} ">
 					<div class="container container-{{ spacing|default('default') }} {% if container_small %}container-small{% endif %}">
-						{% include 'content-blocks/homepage/' ~ block_name ~ '.html.twig' with { content: content } %}
+						{% include 'content-blocks/homepage/' ~ block_name ~ '.html.twig' with { content: content[block_name] } %}
 					</div>
 				</section>
 			{% endif %}

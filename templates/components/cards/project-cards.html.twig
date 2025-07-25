@@ -1,0 +1,30 @@
+{% set valid_cards = cards|filter(card => card.text_content or card.header or card.image) %}
+{% set length = valid_cards|length %}
+{% if length > 0 %}
+	{% set columns = 12 / length %}
+	{% set column_class = 'col-lg-' ~ columns ~ (length > 1 and length % 2 == 0 ? ' col-md-6' : ' col-md') %}
+	{% for card in valid_cards %}
+		{% if card.text_content or card.header or card.image %}
+			<div class="row mt-5">
+				<div class="col card card--long d-flex">
+					<div class="row d-flex align-items-center p-5 flex-column {{ loop.index % 2 == 0 ? 'flex-lg-row-reverse' : 'flex-lg-row' }}">
+						<div class="col">
+							{% include 'content-blocks/text-button.html.twig'  
+								with {
+								'content': card,
+								'headerCssClasses': 'mb-3',
+								'header_size': 'h6',
+							}  %}
+						</div>
+						<div class="col col-lg-4">
+							{% include 'components/image.html.twig' with {
+                            image: card.image|default(null),
+                            format: card.image_format|default(null),
+                        } %}
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	{% endfor %}
+{% endif %}

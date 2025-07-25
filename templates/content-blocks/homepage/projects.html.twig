@@ -1,0 +1,13 @@
+<div class="row">
+	<div class="col">
+		{% include 'content-blocks/text-button.html.twig' with {
+            'content': content,
+			'classes': 'd-flex flex-column align-items-end',
+            'headerCssClasses': 'text-end mb-4',
+            'text_css_classes': 'text-end'
+        } %}
+	</div>
+</div>
+{% if content.project_card %}
+	{% include 'components/cards/project-cards.html.twig'  with {'cards': content.project_card}  %}
+{% endif %}

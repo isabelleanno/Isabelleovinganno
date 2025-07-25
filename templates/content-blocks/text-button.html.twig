@@ -5,7 +5,8 @@
 	<div class="{{ type }}-text-button {{ classes }}">
 		{% include 'components/header.html.twig' with { 
             content_block: content,
-            headerCssClasses: headerCssClasses|default('')
+            headerCssClasses: headerCssClasses|default(''),
+            header_size: header_size|default('h1'),
         } %}
 		{% include 'components/text.html.twig' with { 
             content_block: content,

@@ -6,7 +6,25 @@
   xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
 >
     <properties>
-        <property name="arrow" type="single_select" colspan="3">
+        <property name="text_color" type="single_select" colspan="6">
+            <meta>
+                <title lang="en">Text Color</title>
+            </meta>
+            <xi:include
+                href="../../properties/color.xml"
+                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:property/sulu:params)"
+            />
+        </property>
+        <property name="background_color" type="single_select" colspan="6">
+            <meta>
+                <title lang="en">Background Color</title>
+            </meta>
+            <xi:include
+                href="../../properties/color.xml"
+                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:property/sulu:params)"
+            />
+        </property>
+        <property name="arrow" type="single_select" colspan="6">
             <meta>
                 <title lang="en">Arrow</title>
             </meta>
@@ -31,25 +49,7 @@
                 </param>
             </params>
         </property>
-        <property name="text_color" type="single_select">
-            <meta>
-                <title lang="en">Text Color</title>
-            </meta>
-            <xi:include
-                href="../../properties/color.xml"
-                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:property/sulu:params)"
-            />
-        </property>
-        <property name="background_color" type="single_select">
-            <meta>
-                <title lang="en">Background Color</title>
-            </meta>
-            <xi:include
-                href="../../properties/color.xml"
-                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:property/sulu:params)"
-            />
-        </property>
-        <property name="outlined" type="checkbox" colspan="3">
+        <property name="outlined" type="checkbox" colspan="6">
             <params>
                 <param name="type" value="toggler" />
                 <param name="label">

@@ -1,0 +1,26 @@
+{% set valid_cards = cards|filter(card => card.text_content or card.header or card.image) %}
+{% set length = valid_cards|length %}
+{% if length > 0 %}
+	{% set columns = 12 / length %}
+	{% set column_class = 'col-lg-' ~ columns ~ (length > 1 and length % 2 == 0 ? ' col-md-6' : ' col-md') %}
+	{% for card in valid_cards %}
+		{% if card.text_content or card.header or card.image %}
+			<div class="{{ column_class }}">
+				<div class="card card--skill h-100 d-flex flex-column justify-content-between">
+					<div class="d-flex align-items-center justify-content-center">
+						{% include 'components/image.html.twig' 
+                        with {
+                        image: card.image|default(null),
+                        format: card.image_format|default('none'),
+                        class: 'card-img-top',
+                    } %}
+					</div>
+					<div class="card-body p-0 mt-3 d-flex flex-column justify-content-between">
+						<h2 class="h6 fira-code text-center card-title">{{card.header|default(null)}}</h2>
+						<p class="card-text text-center">{{card.text_content|default(null)}}</p>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	{% endfor %}
+{% endif %}

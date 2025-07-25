@@ -1,15 +1,13 @@
-{% if content.story is defined and content.story is not empty %}
-	<div class="row">
-		<div class="col">
-			{% include 'content-blocks/text-button.html.twig' with {
-            'content': content.story,
+<div class="row">
+	<div class="col">
+		{% include 'content-blocks/text-button.html.twig' with {
+            'content': content,
 			'classes': 'd-flex flex-column justify-content-center align-items-center',
             'headerCssClasses': 'text-center',
             'text_css_classes': 'text-center col-lg-10'
         } %}
-		</div>
 	</div>
-	{% if content.story.card %}
-		{% include 'components/cards/card-long.html.twig'  with {'cards': content.story.card}  %}
-	{% endif %}
+</div>
+{% if content.long_card %}
+	{% include 'components/cards/card-long.html.twig'  with {'cards': content.long_card}  %}
 {% endif %}

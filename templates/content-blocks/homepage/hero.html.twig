@@ -2,7 +2,7 @@
 	<div class="col-lg-6 d-flex align-items-center">
 		{% include 'content-blocks/text-button.html.twig'  
 			with {
-			'content': content.hero,
+			'content': content,
 			'headerCssClasses': 'mb-3',
             'text_css_classes': 'lh-lg mb-3'
 		}  %}
@@ -10,7 +10,7 @@
 	<div class="col-lg-6 d-flex justify-content-end">
 		{% include 'components/image.html.twig' 
 			with {
-			image: content.hero.image|default(null),
+			image: content.image|default(null),
 			format: '425x525',
 			classes:'d-flex justify-content-end'
 		} %}
