@@ -39,41 +39,10 @@
                                 </meta>
                             </property>
                             <!-- Skill cards -->
-                            <block name="skill_cards" default-type="skill_card" minOccurs="1" maxOccurs="4">
-                                <meta>
-                                    <title lang="en">Skill Cards</title>
-                                </meta>
-                                <params>
-                                    <param name="add_card_text">
-                                        <meta>
-                                            <title lang="en">Add skill card</title>
-                                        </meta>
-                                    </param>
-                                </params>
-                                <types>
-                                    <type name="skill_card">
-                                        <meta>
-                                            <title lang="en">Skill Card</title>
-                                        </meta>
-                                        <properties>
-                                            <xi:include
-                                                href="../../components/image.xml"
-                                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
-                                            />
-                                            <property name="header" type="text_line">
-                                                <meta>
-                                                    <title lang="en">Header text</title>
-                                                </meta>
-                                            </property>
-                                            <property name="text_content" type="text_area">
-                                                <meta>
-                                                    <title lang="en">Description</title>
-                                                </meta>
-                                            </property>
-                                        </properties>
-                                    </type>
-                                </types>
-                            </block>
+                            <xi:include
+                                    href="../../components/cards/image-text-cards.xml"
+                                    xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:block)"
+                                />
                             <!-- Skill cards end -->
                         </properties>
                     </type>

@@ -1,10 +1,21 @@
 .card {
-    &--skill {
+    &--image-text {
         background-color: rgba(255, 255, 255, 0.25);
         padding: 2rem 1rem;
         .card-text {
             opacity: 50%;
             letter-spacing: 1.5%;
+        }
+    }
+    &--project {
+        &-image > img {
+            width: 100%;
+            height: 375px;
+            object-fit: cover;
+        }
+        &-text {
+            z-index: 10;
+            margin-top: -25%;
         }
     }
 }

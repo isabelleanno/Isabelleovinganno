@@ -1,10 +1,18 @@
-{% if content_block is defined %}
-	{% set image = content_block.image|default(null) %}
-	{% set format = content_block.image_format|default('none') %}
-{% endif %}
+{#
+    Usage:
+    {% include 'components/image.html.twig' with {
+        image: image_object,
+        format: 'thumbnail',
+        classes: 'my-custom-class',
+        class: 'additional-img-class'
+    } %}
+#}
+
 {% set image = image|default(null) %}
 {% set format = format|default('none') %}
 {% set classes = classes|default('') %}
+{% set class = class|default('') %}
+
 {% if image %}
 	{% set url = image.url %}
 
@@ -14,9 +22,6 @@
 	{% endif %}
 
 	<span class="d-inline-flex image-component {{ classes }}">
-		{% include 'utilities/image.html.twig' with {
-        src: url,
-        alt: image.title,
-        } %}
+		<img class="lazyload img-fluid{% if class is not empty %} {{ class }}{% endif %}" src="{{ url }}" {% if image.title is not empty %} alt="{{ image.title }}" {% endif %} data-sizes="auto">
 	</span>
 {% endif %}

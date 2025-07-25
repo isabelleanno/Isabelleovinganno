@@ -9,9 +9,9 @@
 <div class="row">
 	<div class="col">
 		<div class="row mt-lg-4">
-			{% set cards = content.skill_cards %}
+			{% set cards = content.image_text_card %}
 			{% if cards %}
-				{% include 'components/cards/text-image-cards.html.twig' with {'cards': cards} %}
+				{% include 'components/cards/image-text-cards.html.twig' with {'cards': cards} %}
 			{% endif %}
 		</div>
 	</div>

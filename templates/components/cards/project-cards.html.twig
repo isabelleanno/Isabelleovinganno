@@ -1,30 +1,27 @@
 {% set valid_cards = cards|filter(card => card.text_content or card.header or card.image) %}
 {% set length = valid_cards|length %}
 {% if length > 0 %}
-	{% set columns = 12 / length %}
-	{% set column_class = 'col-lg-' ~ columns ~ (length > 1 and length % 2 == 0 ? ' col-md-6' : ' col-md') %}
-	{% for card in valid_cards %}
-		{% if card.text_content or card.header or card.image %}
-			<div class="row mt-5">
-				<div class="col card card--long d-flex">
-					<div class="row d-flex align-items-center p-5 flex-column {{ loop.index % 2 == 0 ? 'flex-lg-row-reverse' : 'flex-lg-row' }}">
-						<div class="col">
-							{% include 'content-blocks/text-button.html.twig'  
-								with {
-								'content': card,
-								'headerCssClasses': 'mb-3',
-								'header_size': 'h6',
-							}  %}
-						</div>
-						<div class="col col-lg-4">
-							{% include 'components/image.html.twig' with {
-                            image: card.image|default(null),
-                            format: card.image_format|default(null),
-                        } %}
-						</div>
+	<div class="row">
+		{% for card in valid_cards %}
+			<div class="col-4 mb-5">
+				<div class="position-relative d-flex flex-column align-items-center">
+					<div class="card card--project overflow-hidden">
+						{% include 'components/image.html.twig' with {
+							image: card.image|default(null),
+							format: 'x375',
+							classes: 'card--project-image',
+						} %}
+					</div>
+					<div class="card card-body card--project-text col-10 position-relative">
+						{% include 'content-blocks/text-button.html.twig'  
+							with {
+							'content': card,
+							'headerCssClasses': 'mb-3',
+							'header_size': 'h6',
+						}  %}
 					</div>
 				</div>
 			</div>
-		{% endif %}
-	{% endfor %}
+		{% endfor %}
+	</div>
 {% endif %}

@@ -21,4 +21,10 @@
         </meta>
         <scale x="425" y="525"/>
     </format>
+    <format key="x375">
+        <meta>
+            <title lang="en">x375</title>
+        </meta>
+        <scale y="375"/>
+    </format>
 </formats>
