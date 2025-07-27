@@ -40,6 +40,7 @@
         "scheb/2fa-email": "^7.2",
         "scheb/2fa-trusted-device": "^7.2",
         "stof/doctrine-extensions-bundle": "^1.11",
+        "sulu/article-bundle": "^2.6",
         "sulu/form-bundle": "^2.5",
         "sulu/search-bundle": "*",
         "sulu/sulu": "~2.6.9",
