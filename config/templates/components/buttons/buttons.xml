@@ -2,7 +2,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:xi="http://www.w3.org/2001/XInclude"
     xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
-    <block name="buttons" default-type="internal-link" minOccurs="0" maxOccurs="2">
+    <block name="buttons" default-type="internal-link" minOccurs="0" maxOccurs="3">
         <meta>
             <title lang="en">Buttons</title>
         </meta>
@@ -72,6 +72,38 @@
                         </meta>
                         <properties>
                             <xi:include href="theme.xml"
+                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/*)" />
+                        </properties>
+                    </section>
+                </properties>
+            </type>
+            <type name="socials">
+                <meta>
+                    <title lang="en">Socials (icon button)</title>
+                </meta>
+                <properties>
+                    <property name="url" type="url" mandatory="true">
+                        <meta>
+                            <title lang="en">External link</title>
+                        </meta>
+                        <params>
+                            <param name="defaults" type="collection">
+                                <param name="scheme" value="https://" />
+                            </param>
+                            <param name="schemes" type="collection">
+                                <param name="https://" />
+                                <param name="http://" />
+                                <param name="mailto:" />
+                                <param name="tel:" />
+                            </param>
+                        </params>
+                    </property>
+                    <section name="settings">
+                        <meta>
+                            <title lang="en">Settings</title>
+                        </meta>
+                        <properties>
+                            <xi:include href="icon-button.xml"
                                 xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/*)" />
                         </properties>
                     </section>

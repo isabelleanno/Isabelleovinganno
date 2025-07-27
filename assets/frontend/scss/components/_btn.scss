@@ -1,4 +1,4 @@
- /*
+/*
 
 Buttons
 ================================================== 
@@ -23,5 +23,9 @@ Contains the styles for all the buttns on the site.
         padding: 0;
         border: none;
         margin: px-to-rem(5);
+    }
+    &-round {
+        border-radius: 50%;
+        padding: px-to-rem(10);
     }
 }

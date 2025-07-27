@@ -43,6 +43,16 @@
                             <title lang="en">Royal Blue</title>
                         </meta>
                     </param>
+                    <param name="white">
+                        <meta>
+                            <title lang="en">White</title>
+                        </meta>
+                    </param>
+                    <param name="none">
+                        <meta>
+                            <title lang="en">None</title>
+                        </meta>
+                    </param>
                 </param>
             </params>
         </property>
