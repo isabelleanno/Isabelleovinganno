@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<template
+    xmlns="http://schemas.sulu.io/template/template"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
+    >
+    <section name="areas_of_expertise">
+        <meta>
+            <title lang="en">Areas of Expertise</title>
+        </meta>
+        <properties>
+            <block name="areas_of_expertise" default-type="areas_of_expertise" minOccurs="1" maxOccurs="1">
+                <types>
+                    <type name="areas_of_expertise">
+                        <meta>
+                            <title lang="en">Areas of Expertise</title>
+                        </meta>
+                        <properties>
+                            <!-- Background color -->
+                            <property name="background_color" type="single_select">
+                                <meta>
+                                    <title lang="en">Background Color</title>
+                                </meta>
+                                <xi:include
+                                    href="../../properties/color.xml"
+                                    xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:property/sulu:params)"
+                                />
+                            </property>
+                            <!-- Header and text at the top of the section -->
+                            <property name="header" type="text_line">
+                                <meta>
+                                    <title lang="en">Header content</title>
+                                </meta>
+                            </property>
+                            <property name="text_content" type="text_editor">
+                                <meta>
+                                    <title lang="en">Text content</title>
+                                </meta>
+                            </property>
+                            <!-- Skill cards -->
+                            <xi:include
+                                    href="../../components/cards/image-text-cards.xml"
+                                    xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:block)"
+                                />
+                            <!-- Skill cards end -->
+                        </properties>
+                    </type>
+                </types>
+            </block>
+            <!-- Areas of expertise block end -->
+        </properties>
+    </section>
+</template>

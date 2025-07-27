@@ -1,0 +1,14 @@
+{# Extract data from content_block or use passed variables #}
+{% set textContent = content.text_content|default(null) %}
+
+{# Only render if we have text content #}
+{% if textContent %}
+	{% set text_color = 'text-' ~ content.text_color|default('primary') %}
+	{% set text_font = content.text_font|default('') %}
+	{% set textCssClasses = textCssClasses|default('') %}
+	{% set classes = text_color ~ ' ' ~ text_font ~ ' ' ~ textCssClasses %}
+
+
+	{{ textContent|add_classes(classes|trim)|raw }}
+
+{% endif %}

@@ -1,0 +1,18 @@
+<div class="row">
+	<div class="col">
+		{% include 'content-blocks/text-button.html.twig'  
+        with {
+        'content': content,
+    }  %}
+	</div>
+</div>
+<div class="row">
+	<div class="col">
+		<div class="row mt-lg-4">
+			{% set cards = content.image_text_card %}
+			{% if cards %}
+				{% include 'components/cards/image-text-cards.html.twig' with {'cards': cards} %}
+			{% endif %}
+		</div>
+	</div>
+</div>

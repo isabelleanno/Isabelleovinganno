@@ -1,0 +1,8 @@
+{% set content_blocks = content_block.image_content_blocks %}
+{% if content_blocks|default(null) %}
+	{% for content_block in content_blocks %}
+		{% include 'components/' ~ content_block.type ~ '.html.twig' with { 
+            flexible_content: content_block
+        } %}
+	{% endfor %}
+{% endif %}

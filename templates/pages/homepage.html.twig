@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-{{dump(content)}}
+	{% set homepage_blocks = ['hero', 'areas_of_expertise', 'story', 'projects', 'contact'] %}
+	{% include 'layout/content-blocks.html.twig' with { ridgid_content: content, block_order: homepage_blocks } %}
 {% endblock %}

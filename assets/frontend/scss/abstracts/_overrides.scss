@@ -1,4 +1,3 @@
- 
 /*
 
 Bootstrap overrides & variables
@@ -12,7 +11,7 @@ $enable-responsive-font-sizes: true;
 // Color system
 $white: #fff;
 $gray-100: #fafafa;
-$gray-200: #f7f7f7;
+$gray-200: #f9f9f9;
 $gray-300: #d8d8d8;
 $gray-400: #ced4da;
 $gray-500: #adb5bd;
@@ -24,24 +23,37 @@ $black: #000;
 $light: #f8f9fa;
 $dark: #343a40;
 
-$primary: #272044;
-$secondary: #8057e3;
-$tertiary: #39457B;
-$quaternary: #BE94A3;
-$quinary: #f6F1E4;
+$primary: #1d1923; //Text
+$secondary: #f9ebfe; //Light purple background
+$tertiary: #e28c90; //Pink accent
+$quaternary: $gray-200; //Gray background
+$quinary: #dfe7ff; //Light blue background
+$senary: #394be7; //Royal blue
+$septenary: #eff3ff; //Light blue background variant
 
 $theme-colors: (
-    'primary': $primary,
-    'secondary': $secondary,
-    'tertiary': $tertiary,
-    'quaternary': $quaternary,
-    'quinary': $quinary,
+    "primary": $primary,
+    "secondary": $secondary,
+    "tertiary": $tertiary,
+    "quaternary": $quaternary,
+    "quinary": $quinary,
+    "senary": $senary,
+    "septenary": $septenary,
 );
 
 // Typography
-$headings-color: $secondary;
-$font-family-base: "IBM Plex Mono", monospace; // Paragraph font family
-$headings-font-family: "Menbere", sans-serif; // Heading font family
+$headings-color: $primary;
+$headings-font-family:
+    "BW Gradual",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    sans-serif;
+$font-family-base: "Manrope", sans-serif;
 $font-size-base: px-to-rem(16);
 // Font sizes
 $h1-font-size: $font-size-base * 3.7222; // 67px
@@ -74,15 +86,15 @@ $container-max-widths: (
 // Gutters
 $container-gutter-x: 20px;
 
-
 // Body
-$body-bg: $quinary;
+$body-bg: $gray-200;
 $body-color: $primary;
-
 
 // Borders
 $border-radius-sm: 10px;
-$border-radius: 20px;
+$border-radius: 15px;
+$border-width: 2px;
+$border-color: $primary;
 
 // Buttons
 $btn-padding-y: px-to-rem(19);
@@ -94,10 +106,11 @@ $btn-color: $primary;
 $btn-line-height: 1;
 
 //Cards
-$card-border-radius: px-to-rem(10);
+$card-border-radius: $border-radius;
 $card-spacer-x: px-to-rem(33);
 $card-spacer-y: $card-spacer-x;
+$card-border-color: $primary;
 
 //Links
 $link-decoration: none;
-$link-color: $secondary;
+$link-color: $tertiary;

@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<form xmlns="http://schemas.sulu.io/template/template"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/form-1.0.xsd">
+    <key>page_block_settings</key>
+    <properties>
+        <!-- Default Sulu hidden property -->
+        <property name="hidden" type="checkbox">
+            <params>
+                <param name="description">
+                    <meta>
+                        <title>sulu_page.hide_block_description</title>
+                    </meta>
+                </param>
+                <param name="icon" value="su-hide" />
+                <param name="label">
+                    <meta>
+                        <title>sulu_page.hide_block_label</title>
+                    </meta>
+                </param>
+                <param name="skin" value="heading" />
+                <param name="type" value="toggler" />
+            </params>
+            <tag name="sulu.block_setting_icon" icon="su-hide" />
+        </property>
+        <!-- Your existing custom section -->
+        <section name="custom">
+            <properties>
+                <property name="container_small" type="checkbox" colspan="6">
+                    <meta>
+                        <title lang="en">Small container?</title>
+                    </meta>
+                    <params>
+                        <param name="type" value="toggler"/>
+                        <param name="default_value" value="false"/>
+                    </params>
+                </property>
+                <property name="spacing_options" type="single_select" colspan="6">
+                    <meta>
+                        <title lang="en">Space above options</title>
+                    </meta>
+                    <params>
+                        <param name="default_value" value="default"/>
+                        <param name="values" type="collection">
+                            <param name="default">
+                                <meta>
+                                    <title lang="en">Default- Large (120px)</title>
+                                </meta>
+                            </param>
+                            <param name="medium">
+                                <meta>
+                                    <title lang="en">Medium (80px)</title>
+                                </meta>
+                            </param>
+                            <param name="small">
+                                <meta>
+                                    <title lang="en">Small (40px)</title>
+                                </meta>
+                            </param>
+                            <param name="none">
+                                <meta>
+                                    <title lang="en">No space above</title>
+                                </meta>
+                            </param>
+                        </param>
+                    </params>
+                </property>
+            </properties>
+        </section>
+    </properties>
+</form>

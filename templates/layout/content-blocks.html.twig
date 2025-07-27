@@ -1,25 +1,31 @@
-{% if content.content_blocks|default(null) %}
-{% for content_block in content.content_blocks %}
+{# This file defines a standardized section and container for each content block, based on its type. #}
 
-{% set spacing = content_block.settings.spacing_options|default(null) %} 
-{% set container_small = content_block.settings.container_small|default(null) %}
-{% set default_spacing = null %}
-
-{# By default small spacing for news articles, but still editable  #}
-    {% if content.article is defined and spacing is null %}
-    {% set default_spacing = 'small' %}
-    {% endif %}
-
-{# By default small container for news articles, but still editable  #}
-{% if content.article is defined and container_small is null %}
-{% set container_small = true %}
+{# Flexible content where order is movable #}
+	{% if flexible_content is defined and flexible_content is not empty %}
+		{% for content_block in flexible_content %}
+		{% set spacing = content_block.settings.spacing_options|default(null) %}
+			<section class="content-block-{{ content_block.type }} spacer-top{{ spacing ? '--' ~ spacing : " " }} "> <div class="container container-{{content_block.settings.spacing_options}}">
+				{% include 'content-blocks/flexible/' ~ content_block.type ~ '.html.twig' with { flexible_content: content_block } %}
+			</div>
+		</section>
+	{% endfor %}
 {% endif %}
 
-<section
-    class="content-block-{{ content_block.type }} spacer-top{{ default_spacing ? '--' ~ default_spacing : spacing ? '--' ~ spacing : " " }} ">
-    <div class="container {% if container_small %}container-small{% endif %}">
-        {% include 'content-blocks/' ~ content_block.type ~ '.html.twig' with { content_block: content_block } %}
-    </div>
-</section>
-{% endfor %}
+{# Ridgid content where order matters (homepage) #}
+{% if ridgid_content is defined and ridgid_content is not empty %}
+	{% if block_order is defined and block_order is not empty %}
+		{% for block_name in block_order %}
+			{% set block_content = content[block_name|replace({'-': '_'})]|default(null) %}
+			{% if block_content %}
+				{% set spacing = block_content.settings.spacing_options|default(null) %}
+				{% set container_small = block_content.settings.container_small|default(false) %}
+
+				<section class="{{ block_name }}-section bg-{{ block_content.background_color|default('white') }} ">
+					<div class="container container-{{ spacing|default('default') }} {% if container_small %}container-small{% endif %}">
+						{% include 'content-blocks/homepage/' ~ block_name ~ '.html.twig' with { content: content[block_name] } %}
+					</div>
+				</section>
+			{% endif %}
+		{% endfor %}
+	{% endif %}
 {% endif %}

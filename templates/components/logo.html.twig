@@ -1,0 +1,15 @@
+{% if s_default is defined and s_default is not empty %}
+	{% set desktop_logo = s_default.desktop_logo.url|default(null) %}
+	{% set mobile_logo = s_default.mobile_logo.url|default(null) %}
+	{% if clickable %}
+		<a href="{{ sulu_content_root_path() }}">
+		{% endif %}
+		<picture class="logos-regular">
+			<source srcset={{ mobile_logo }} alt="" media="(max-width: 768px)">
+			<source srcset={{ desktop_logo }} alt="" media="(min-width: 767px)">
+			<img src="{{ desktop_logo }}" alt="">
+		</picture>
+		{% if clickable %}
+		</a>
+	{% endif %}
+{% endif %}

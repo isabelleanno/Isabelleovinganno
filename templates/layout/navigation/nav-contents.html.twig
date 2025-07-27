@@ -1,0 +1,11 @@
+{% for item in sulu_navigation_root_tree('main', 2) %}
+	{% set is_active = (uuid is defined and uuid == item.uuid) %}
+	<li class="nav-item  {{ item.children ? 'has-children' }}">
+		<sulu-link class="nav-link d-flex align-items-center {% if is_active %} active{% endif %}" href="{{ item.uuid }}" title="{{ item.title }}">{{
+                item.title
+                }}</sulu-link>
+		{% if item.children %}
+			{% include 'layout/navigation/nav-children.html.twig' %}
+		{% endif %}
+	</li>
+{% endfor %}

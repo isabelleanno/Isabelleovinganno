@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<template
+  xmlns="http://schemas.sulu.io/template/template"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
+>
+    <properties>
+        <block name="column_content" default-type="text-content" maxOccurs="1">
+            <types>
+                <type name="text-content">
+                    <meta>
+                        <title lang="en">Text content</title>
+                    </meta>
+                    <properties>
+                        <xi:include
+                        href="./../content-blocks/flexible/text-content.xml"
+                        xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
+                        />
+                    </properties>
+                </type>
+                <type name="image-content">
+                    <meta>
+                        <title lang="en">Image content</title>
+                    </meta>
+                    <properties>
+                        <xi:include
+                        href="./../content-blocks/flexible/image-content.xml"
+                        xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
+                        />
+                    </properties>
+                </type>
+            </types>
+        </block>
+    </properties>
+</template>

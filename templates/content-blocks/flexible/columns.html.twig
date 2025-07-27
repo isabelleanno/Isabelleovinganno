@@ -1,0 +1,13 @@
+{% set columns = content_block.columns %}
+{% if columns %}
+	<div class="row d-flex w-100">
+		{% for column in content_block.columns %}
+			{% set column_width = column.column_width %}
+			{% set content_block = column.column_content[0] %}
+			{% set content_block_type = column.column_content[0].type %}
+			<div class="col col-lg-{{ column_width }}">
+				{% include 'content-blocks/' ~ content_block_type ~ '.html.twig' with { flexible_content: content_block } %}
+			</div>
+		{% endfor %}
+	</div>
+{% endif %}

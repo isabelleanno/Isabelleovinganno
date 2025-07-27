@@ -19,7 +19,29 @@
                             </meta>
                             <properties>
                                 <xi:include
-                                href="./../content-blocks/text-content.xml"
+                                href="./../content-blocks/flexible/text-content.xml"
+                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
+                                />
+                            </properties>
+                        </type>
+                        <type name="image-content">
+                            <meta>
+                                <title lang="en">Image content</title>
+                            </meta>
+                            <properties>
+                                <xi:include
+                                href="./../content-blocks/flexible/image-content.xml"
+                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
+                                />
+                            </properties>
+                        </type>
+                        <type name="columns">
+                            <meta>
+                                <title lang="en">Columns</title>
+                            </meta>
+                            <properties>
+                                <xi:include
+                                href="./../content-blocks/flexible/columns.xml"
                                 xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
                                 />
                             </properties>

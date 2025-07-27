@@ -1,39 +1,44 @@
-<properties xmlns="http://schemas.sulu.io/template/template"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:xi="http://www.w3.org/2001/XInclude"
-    xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
-    <block name="text" default-type="text" maxOccurs="2">
-        <meta>
-            <title lang="en">Text</title>
-        </meta>
-
-        <params>
-            <param name="add_button_text">
-                <meta>
-                    <title lang="en">Add Text</title>
-                </meta>
-            </param>
-        </params>
-
-        <types>
-            <type name="text">
-                <meta>
-                    <title lang="en">Text</title>
-                </meta>
-
-                <properties>
-                     <property name="content" type="text_editor">
+<?xml version="1.0" ?>
+<template
+  xmlns="http://schemas.sulu.io/template/template"
+xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
+>
+    <properties>
+        <property name="text_content" type="text_editor">
+            <meta>
+                <title lang="en">Text content</title>
+            </meta>
+        </property>
+        <property name="text_color" type="single_select" colspan="6">
+            <meta>
+                <title lang="en">Text Color</title>
+            </meta>
+            <xi:include
+                href="../properties/color.xml"
+                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:property/sulu:params)"
+            />
+        </property>
+        <property name="text_font" type="single_select" colspan="6">
+            <meta>
+                <title lang="en">Font</title>
+            </meta>
+            <params>
+                <param name="default_value" value='manrope'/>
+                <param name="values" type="collection">
+                    <param name="manrope">
                         <meta>
-                            <title lang="en">Text</title>
+                            <title lang="en">Manrope</title>
                         </meta>
-                    </property>
-                </properties>
-            </type>
-        </types>
-    </block>
-</properties>
-
-
-
-
-
+                    </param>
+                    <param name="fira-code">
+                        <meta>
+                            <title lang="en">Fira Code</title>
+                        </meta>
+                    </param>
+                </param>
+            </params>
+        </property>
+    </properties>
+</template>

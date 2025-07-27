@@ -2,23 +2,29 @@
 <formats xmlns="http://schemas.sulu.io/media/formats"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://schemas.sulu.io/media/formats http://schemas.sulu.io/media/formats-1.1.xsd">
-
     <!-- See: http://docs.sulu.io/en/latest/book/image-formats.html how to define image-formats -->
-
-    <!--
     <format key="300x">
         <meta>
-            <title lang="en">Example Image</title>
-            <title lang="de">Beispielbild</title>
+            <title lang="en">300x300</title>
         </meta>
-
         <scale x="300"/>
     </format>
-    -->
-
-    <!--
-    Render an image from the media_selection in a specific format the following way:
-
-    <img src="{{ image.thumbnails['300x'] }}" alt="{{ image.title }}" title="{{ image.description|default(image.title) }}">
-    -->
+    <format key="120x130-inset">
+        <meta>
+            <title lang="en">120x130 inset</title>
+        </meta>
+        <scale x="120" y="130" mode="inset"/>
+    </format>
+    <format key="425x525">
+        <meta>
+            <title lang="en">425x525</title>
+        </meta>
+        <scale x="425" y="525"/>
+    </format>
+    <format key="x375">
+        <meta>
+            <title lang="en">x375</title>
+        </meta>
+        <scale y="375"/>
+    </format>
 </formats>

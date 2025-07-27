@@ -1,97 +1,55 @@
-<properties
+<?xml version="1.0" ?>
+<template
   xmlns="http://schemas.sulu.io/template/template"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
 >
-        <property name="color" type="single_select" colspan="3">
+    <properties>
+        <property name="text_color" type="single_select" colspan="6">
             <meta>
-            <title lang="en">Button background color</title>
+                <title lang="en">Text Color</title>
+            </meta>
+            <xi:include
+                href="../../properties/color.xml"
+                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:property/sulu:params)"
+            />
+        </property>
+        <property name="background_color" type="single_select" colspan="6">
+            <meta>
+                <title lang="en">Background Color</title>
+            </meta>
+            <xi:include
+                href="../../properties/color.xml"
+                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:property/sulu:params)"
+            />
+        </property>
+        <property name="arrow" type="single_select" colspan="6">
+            <meta>
+                <title lang="en">Arrow</title>
             </meta>
             <params>
-            <param name="default_value" value="primary" />
-            <param name="values" type="collection">
-                 <param name="primary">
-                <meta>
-                    <title lang="en">Primary</title>
-                </meta>
+                <param name="default_value" value="null" />
+                <param name="values" type="collection">
+                    <param name="null">
+                        <meta>
+                            <title lang="en">No arrow</title>
+                        </meta>
+                    </param>
+                    <param name="">
+                        <meta>
+                            <title lang="en">After text</title>
+                        </meta>
+                    </param>
+                    <param name="flex-row-reverse">
+                        <meta>
+                            <title lang="en">Before text</title>
+                        </meta>
+                    </param>
                 </param>
-                <param name="secondary">
-                <meta>
-                    <title lang="en">Secondary</title>
-                </meta>
-                </param>
-                 <param name="tertiary">
-                <meta>
-                    <title lang="en">Tertiary</title>
-                </meta>
-                </param>
-                <param name="quaternary">
-                <meta>
-                    <title lang="en">Quaternary</title>
-                </meta>
-                </param>
-            </param>
             </params>
         </property>
-       
-<property name="arrow" type="single_select" colspan="3">
-            <meta>
-            <title lang="en">Arrow</title>
-            </meta>
-            <params>
-            <param name="default_value" value="null" />
-            <param name="values" type="collection">
-                <param name="null">
-                <meta>
-                    <title lang="en">No arrow</title>
-                </meta>
-                </param>
-                <param name="">
-                <meta>
-                    <title lang="en">After text</title>
-                </meta>
-                </param>
-                 <param name="flex-row-reverse">
-                <meta>
-                    <title lang="en">Before text</title>
-                </meta>
-                </param>
-            </param>
-            </params>
-        </property>
-
-         <property name="text_color" type="single_select" colspan="3">
-            <meta>
-            <title lang="en">Button text color</title>
-            </meta>
-            <params>
-            <param name="default_value" value="quaternary" />
-            <param name="values" type="collection">
-                <param name="primary">
-                <meta>
-                    <title lang="en">Primary</title>
-                </meta>
-                </param>
-                <param name="secondary">
-                <meta>
-                    <title lang="en">Secondary</title>
-                </meta>
-                </param>
-                 <param name="tertiary">
-                <meta>
-                    <title lang="en">Tertiary</title>
-                </meta>
-                </param>
-                <param name="quaternary">
-                <meta>
-                    <title lang="en">Quaternary</title>
-                </meta>
-                </param>
-            </param>
-            </params>
-        </property>
-
-        <property name="outlined" type="checkbox" colspan="3">
+        <property name="outlined" type="checkbox" colspan="6">
             <params>
                 <param name="type" value="toggler" />
                 <param name="label">
@@ -101,4 +59,5 @@
                 </param>
             </params>
         </property>
-</properties>
+    </properties>
+</template>
