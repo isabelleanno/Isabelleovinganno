@@ -45,5 +45,9 @@
             href="../content-blocks/homepage/projects.xml"
             xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:section)"
         />
+        <xi:include
+            href="../content-blocks/homepage/contact.xml"
+            xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:section)"
+        />
     </properties>
 </template>

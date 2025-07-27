@@ -4,16 +4,15 @@
 
 	<div class="{{ type }}-text-button {{ classes }}">
 		{% include 'components/header.html.twig' with { 
-            content_block: content,
+            content: content,
             headerCssClasses: headerCssClasses|default(''),
-            header_size: header_size|default('h1'),
         } %}
 		{% include 'components/text.html.twig' with { 
-            content_block: content,
-            text_css_classes: text_css_classes|default('')
+            content: content,
+            textCssClasses: textCssClasses|default('')
         } %}
 		{% include 'components/button.html.twig' with { 
-            content_block: content 
+            content: content 
         } %}
 	</div>
 {% endif %}

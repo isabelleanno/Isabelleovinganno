@@ -1,5 +1,5 @@
 {# Extract buttons data #}
-{% set buttons = content_block.buttons|default(buttons|default(null)) %}
+{% set buttons = content.buttons|default(buttons|default(null)) %}
 
 {% if buttons %}
 	<div class="d-inline-flex gap-4 button-component">

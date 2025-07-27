@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<template
+    xmlns="http://schemas.sulu.io/template/template"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
+    >
+    <section name="contact">
+        <meta>
+            <title lang="en">Contact Section</title>
+        </meta>
+        <properties>
+            <block name="contact" default-type="contact"  minOccurs="1" maxOccurs="1">
+                <types>
+                    <type name="contact">
+                        <meta>
+                            <title lang="en">Contact</title>
+                        </meta>
+                        <properties>
+                            <property name="background_color" type="single_select">
+                                <meta>
+                                    <title lang="en">Background Color</title>
+                                </meta>
+                                <xi:include
+                                    href="../../properties/color.xml"
+                                    xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:property/sulu:params)"
+                                />
+                            </property>
+                            <xi:include
+                                href="../text-button.xml"
+                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:section)"
+                            />
+                        </properties>
+                    </type>
+                </types>
+            </block>
+        </properties>
+    </section>
+</template>
