@@ -8,4 +8,9 @@ Contains the styles for all the sections in the home page.
 // Hero section
 .hero-section {
     min-height: 100vh;
+    @include media-breakpoint-down(lg) {
+        .container {
+            padding-top: 1.5rem;
+        }
+    }
 }

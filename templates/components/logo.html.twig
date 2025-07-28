@@ -5,8 +5,12 @@
 		<a href="{{ sulu_content_root_path() }}">
 		{% endif %}
 		<picture class="logos-regular">
-			<source srcset={{ mobile_logo }} alt="" media="(max-width: 768px)">
-			<source srcset={{ desktop_logo }} alt="" media="(min-width: 767px)">
+			{% if mobile_logo %}
+				<source srcset="{{ mobile_logo }}" alt="" media="(max-width: 768px)">
+				<source srcset="{{ desktop_logo }}" alt="" media="(min-width: 767px)">
+			{% else %}
+				<source srcset="{{ desktop_logo }}" alt="">
+			{% endif %}
 			<img src="{{ desktop_logo }}" alt="">
 		</picture>
 		{% if clickable %}

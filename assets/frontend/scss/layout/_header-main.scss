@@ -1,26 +1,29 @@
 $header-height: px-to-rem(60);
 
 .header-main {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background: transparent;
-  height: $header-height;
-  transition: background-color 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: transparent;
+    height: $header-height;
+    transition: background-color 0.3s ease;
 }
 
 .main-content > section:first-of-type {
-  padding-top: $header-height + px-to-rem(20);
-  @include media-breakpoint-up(lg) {
-    padding-top: $header-height;
-  }
+    padding-top: $header-height + px-to-rem(20);
+    @include media-breakpoint-up(lg) {
+        padding-top: $header-height;
+    }
 }
 
 .main-nav {
-  gap: px-to-rem(25);
-  .nav-link {
+    gap: px-to-rem(25);
+    .nav-link {
+        color: white;
+    }
+}
+.navbar-toggler > .icon {
     color: white;
-  }
 }

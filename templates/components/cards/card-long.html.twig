@@ -1,6 +1,6 @@
 {% for card in cards %}
 	{% if card.text_content or card.header or card.image %}
-		<div class="row mt-5">
+		<div class="mt-5">
 			<div class="col card card--long d-flex">
 				<div class="row d-flex align-items-center p-5 flex-column {{ loop.index % 2 == 0 ? 'flex-lg-row-reverse' : 'flex-lg-row' }}">
 					<div class="col">
@@ -13,9 +13,9 @@
 					</div>
 					<div class="col col-lg-4">
 						{% include 'components/image.html.twig' with {
-                    image: card.image|default(null),
-                    format: card.image_format|default(null),
-                } %}
+						image: card.image|default(null),
+						format: card.image_format|default(null),
+					} %}
 					</div>
 				</div>
 			</div>

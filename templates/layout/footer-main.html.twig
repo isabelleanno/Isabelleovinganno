@@ -1,7 +1,7 @@
 <footer>
 	{% block footer %}
 		<div class="container">
-			<div class="row">
+			<div class="row my-3">
 				<div class="col d-flex align-items-center">
 					{% set content = s_default_snippet.content.footer %}
 					{% set phrases = content.phrases.phrase_block|default("Made with love by Isabelle Anno") %}
@@ -11,13 +11,13 @@
 							{% set randomPhrase = random(phrases) %}
 						{% endif %}
 						{% if randomPhrase.text is defined %}
-							<p class="m-0 fira-code">{{ randomPhrase.text }}</p>
+							<p class="small m-0 fira-code">{{ randomPhrase.text }}</p>
 						{% else %}
-							<p class="m-0 fira-code">{{ phrases }}</p>
+							<p class="small m-0 fira-code">{{ phrases }}</p>
 						{% endif %}
 					{% endif %}
 				</div>
-				<div class="col-auto d-flex align-items-center">
+				<div class="col-auto d-none d-lg-flex align-items-center">
 					{% include 'components/button.html.twig' with { 
                     content: content 
                 } %}

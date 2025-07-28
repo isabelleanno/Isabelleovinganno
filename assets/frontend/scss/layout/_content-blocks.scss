@@ -4,49 +4,53 @@ Content blocks
  Contains the styles for content blocks. See templates/layout/content-blocks.html.twig
 
 */
+.container-default {
+    padding-top: px-to-rem(80);
+    padding-bottom: px-to-rem(80);
+}
 
 @include media-breakpoint-up(lg) {
-  .container-small {
-    max-width: 856px;
-  }
-  .container-default {
-    padding-top: px-to-rem(120);
-    padding-bottom: px-to-rem(120);
-  }
+    .container-small {
+        max-width: 856px;
+    }
+    .container-default {
+        padding-top: px-to-rem(120);
+        padding-bottom: px-to-rem(120);
+    }
 }
 
 .spacer-top {
-  // Mobile
-  $spacer-values: (
-    default: 60,
-    medium: 40,
-    small: 20,
-    none: 0,
-  );
-
-  @each $key, $value in $spacer-values {
-    &--#{$key} {
-      margin-top: px-to-rem($value);
-    }
-  }
-
-  margin-top: px-to-rem(map-get($spacer-values, default));
-
-  // Desktop
-  @include media-breakpoint-up(lg) {
-    $spacer-values-lg: (
-      default: 120,
-      medium: 80,
-      small: 40,
-      none: 0,
+    // Mobile
+    $spacer-values: (
+        default: 60,
+        medium: 40,
+        small: 20,
+        none: 0,
     );
 
-    @each $key, $value in $spacer-values-lg {
-      &--#{$key} {
-        margin-top: px-to-rem($value);
-      }
+    @each $key, $value in $spacer-values {
+        &--#{$key} {
+            margin-top: px-to-rem($value);
+        }
     }
 
-    margin-top: px-to-rem(map-get($spacer-values-lg, default));
-  }
+    margin-top: px-to-rem(map-get($spacer-values, default));
+
+    // Desktop
+    @include media-breakpoint-up(lg) {
+        $spacer-values-lg: (
+            default: 120,
+            medium: 80,
+            small: 40,
+            none: 0,
+        );
+
+        @each $key, $value in $spacer-values-lg {
+            &--#{$key} {
+                margin-top: px-to-rem($value);
+            }
+        }
+
+        margin-top: px-to-rem(map-get($spacer-values-lg, default));
+    }
 }
