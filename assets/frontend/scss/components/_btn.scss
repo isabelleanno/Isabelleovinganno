@@ -7,10 +7,40 @@ Contains the styles for all the buttns on the site.
 */
 .btn {
     @each $color-name, $color-value in $theme-colors {
+        // Solid buttons
+        &.btn-#{$color-name}:hover {
+            background-color: lighten($color-value, 7%);
+            border-color: lighten($color-value, 7%);
+        }
+
+        // Outlined buttons
         &.btn-outline-#{$color-name} {
             color: $btn-color;
+
+            &:hover {
+                @if lightness($color-value) > 50% {
+                    color: var(--bs-dark) !important;
+                } @else {
+                    color: var(--bs-white) !important;
+                }
+                .text-#{$color-name} {
+                    @if lightness($color-value) > 50% {
+                        color: var(--bs-dark) !important;
+                    } @else {
+                        color: var(--bs-white) !important;
+                    }
+                }
+            }
+        }
+
+        // Icon buttons with colors
+        &.btn-round.btn-#{$color-name}:hover {
+            transform: translateY(-3px);
+            background-color: lighten($color-value, 14%);
+            border-color: lighten($color-value, 14%);
         }
     }
+
     // Arrow buttons
     &:has(.icon) {
         display: inline-flex;
@@ -23,9 +53,16 @@ Contains the styles for all the buttns on the site.
         padding: 0;
         border: none;
         margin: px-to-rem(5);
+
+        &:hover {
+            transform: none;
+        }
     }
+
+    // Icon buttons base styles
     &-round {
         border-radius: 50%;
         padding: px-to-rem(10);
+        transition: all 0.2s ease-in-out;
     }
 }
