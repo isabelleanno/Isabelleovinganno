@@ -5,7 +5,7 @@
 	<div class="d-inline-flex gap-4 button-component">
 		{% for button in buttons %}
 			{# Determine URL and tag based on button type #}
-			{% if button.type == 'external-link' %}
+			{% if button.type == 'external-link' or button.type == 'socials' %}
 				{% set url = button.url %}
 				{% set tag = 'a' %}
 				{% set target = 'target="_blank" rel="noopener"' %}
@@ -15,20 +15,32 @@
 				{% set target = '' %}
 			{% endif %}
 
-			{# Build button classes #}
-			{% set btn_class = 'btn btn-' ~ (button.outlined ? 'outline-' : '') ~ button.background_color %}
-			{% set text_class = button.text_color ? 'text-' ~ button.text_color : '' %}
+			{# For internal and external buttons #}
+			{% if button.type == 'external-link' or button.type == 'internal-link' %}
+				{% set btn_class = 'btn btn-' ~ (button.outlined ? 'outline-' : '') ~ button.background_color %}
+				{% set text_class = button.text_color ? 'text-' ~ button.text_color : '' %}
 
-			<{{tag}} href="{{ url }}" class="{{ btn_class }}" {{ target|raw }}>
-				<span class="d-flex align-items-center gap-2 {{ button.arrow }}">
-					<span class="{{ text_class }}">
-						{{ button.text }}
+				<{{tag}} href="{{ url }}" class="{{ btn_class }}" {{ target|raw }}>
+					<span class="d-flex align-items-center gap-2 {{ button.arrow }}">
+						<span class="{{ text_class }}">
+							{{ button.text }}
+						</span>
+						{% if button.arrow and button.arrow != "null" %}
+							{% include 'utilities/icon.html.twig' with { icon: 'arrow' } %}
+						{% endif %}
 					</span>
-					{% if button.arrow and button.arrow != "null" %}
-						{% include 'utilities/icon.html.twig' with { icon: 'arrow' } %}
-					{% endif %}
-				</span>
-			</{{tag}}>
+				</{{tag}}>
+			{% else %}
+				{# For icon buttons #}
+				{% set btn_class = 'btn btn-round btn-' ~ button.background_color %}
+				{% set icon_color = 'text-' ~ button.icon_color|default('primary') %}
+				{% if button.icon and url %}
+					<{{tag}} href="{{ url }}" {{ target|raw }} class="{{ btn_class }}">
+						{% include 'utilities/icon.html.twig' with { icon: button.icon, class: icon_color } %}
+						<span class="visually-hidden">{{ button.icon }}</span>
+					</{{tag}}>
+				{% endif %}
+			{% endif %}
 		{% endfor %}
 	</div>
 {% endif %}

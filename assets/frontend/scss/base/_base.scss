@@ -17,3 +17,7 @@ Contains common syles for the entire page
 h1 {
     margin-bottom: $spacer;
 }
+
+.small {
+    font-size: px-to-rem(12);
+}

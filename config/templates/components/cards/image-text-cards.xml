@@ -10,7 +10,7 @@
                 <title lang="en">Cards</title>
             </meta>
             <params>
-                <param name="add_card_text">
+                <param name="add_button_text">
                     <meta>
                         <title lang="en">Add card</title>
                     </meta>

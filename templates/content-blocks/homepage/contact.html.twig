@@ -6,4 +6,10 @@
             headerCssClasses: 'mb-4',
         } %}
 	</div>
-</div>
+	<div class="col-lg-6">
+		{% set contactForm = sulu_form_get_by_id(1, 'page', 1) %}
+		{% if contactForm is defined and contactForm is not null %}
+			{% form_theme contactForm 'forms/contact-theme.html.twig' %}
+			{{ form(contactForm) }}{% endif %}
+		</div>
+	</div>

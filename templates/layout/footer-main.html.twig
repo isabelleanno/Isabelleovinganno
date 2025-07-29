@@ -1,5 +1,28 @@
 <footer>
-    {% block footer %}
-      
-    {% endblock %}
+	{% block footer %}
+		<div class="container">
+			<div class="row my-3">
+				<div class="col d-flex align-items-center">
+					{% set content = s_default_snippet.content.footer %}
+					{% set phrases = content.phrases.phrase_block|default("Made with love by Isabelle Anno") %}
+					{% if phrases %}
+						{% set randomPhrase = phrases|filter(p => p.text is defined)|first %}
+						{% if phrases|length > 1 %}
+							{% set randomPhrase = random(phrases) %}
+						{% endif %}
+						{% if randomPhrase.text is defined %}
+							<p class="small m-0 fira-code">{{ randomPhrase.text }}</p>
+						{% else %}
+							<p class="small m-0 fira-code">{{ phrases }}</p>
+						{% endif %}
+					{% endif %}
+				</div>
+				<div class="col-auto d-none d-lg-flex align-items-center">
+					{% include 'components/button.html.twig' with { 
+                    content: content 
+                } %}
+				</div>
+			</div>
+		</div>
+	{% endblock %}
 </footer>
