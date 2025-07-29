@@ -6,6 +6,9 @@
 /public/bundles/
 /var/
 /vendor/
+
+# DDEV
+/.ddev/
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
@@ -72,3 +75,4 @@ phpstan.neon
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
+
