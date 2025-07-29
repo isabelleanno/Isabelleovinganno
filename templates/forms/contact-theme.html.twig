@@ -1,0 +1,8 @@
+{% extends '@SuluForm/themes/dynamic.html.twig' %}
+
+{%- block form_row -%}
+<div class="mb-3">
+	{{- form_label(form, label|default, { 'label_attr': {'class': 'form-label'} }) }}
+	{{- form_errors(form) -}}
+	{{- form_widget(form, {'attr': {'class': 'form-control'}}) -}}
+</div>{%- endblock -%}{%- block submit_widget -%}<button type="submit" class="btn btn-primary">{{ label|default('Submit') }}</button>{%- endblock -%}

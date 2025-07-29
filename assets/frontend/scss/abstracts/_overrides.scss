@@ -91,6 +91,7 @@ $body-bg: $gray-200;
 $body-color: $primary;
 
 // Borders
+$border-radius-xs: 5px;
 $border-radius-sm: 10px;
 $border-radius: 15px;
 $border-width: 2px;
@@ -114,3 +115,6 @@ $card-border-color: $primary;
 //Links
 $link-decoration: none;
 $link-color: $tertiary;
+
+//Forms
+$input-border-radius: $border-radius-xs;
