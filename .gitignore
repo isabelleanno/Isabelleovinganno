@@ -8,7 +8,7 @@
 /vendor/
 
 # DDEV
-/.ddev/
+/.ddev
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
