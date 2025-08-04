@@ -6,8 +6,6 @@
 /public/bundles/
 /var/
 /vendor/
-
-# DDEV
 /.ddev
 ###< symfony/framework-bundle ###
 
