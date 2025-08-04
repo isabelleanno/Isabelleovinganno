@@ -28,6 +28,5 @@
             </meta>
             <tag name="sulu.rlp"/>
         </property>
-        <xi:include href="./../layout/content-blocks.xml" xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:section)"/>
     </properties>
 </template>
