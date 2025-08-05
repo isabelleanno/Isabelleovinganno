@@ -1,30 +1,31 @@
 <footer>
 	{% block footer %}
-		{% if s_default_snippet is defined and s_default_snippet is not null %}
-		<div class="container">
-			<div class="row my-3">
-				<div class="col d-flex align-items-center">
-					{% set content = s_default_snippet.content.footer %}
-					{% set phrases = content.phrases.phrase_block|default("Made with love by Isabelle Anno") %}
-					{% if phrases %}
-						{% set randomPhrase = phrases|filter(p => p.text is defined)|first %}
-						{% if phrases|length > 1 %}
-							{% set randomPhrase = random(phrases) %}
+		{% set s_footer_snippet = sulu_snippet_load_by_area('footer_content') %}
+		{% if s_footer_snippet is defined and s_footer_snippet is not null %}
+			<div class="container">
+				<div class="row my-3">
+					<div class="col d-flex align-items-center">
+						{% set content = s_footer_snippet.content.footer %}
+						{% set phrases = content.phrases.phrase_block|default("Made with love by Isabelle Anno") %}
+						{% if phrases %}
+							{% set randomPhrase = phrases|filter(p => p.text is defined)|first %}
+							{% if phrases|length > 1 %}
+								{% set randomPhrase = random(phrases) %}
+							{% endif %}
+							{% if randomPhrase.text is defined %}
+								<p class="small m-0 fira-code">{{ randomPhrase.text }}</p>
+							{% else %}
+								<p class="small m-0 fira-code">{{ phrases }}</p>
+							{% endif %}
 						{% endif %}
-						{% if randomPhrase.text is defined %}
-							<p class="small m-0 fira-code">{{ randomPhrase.text }}</p>
-						{% else %}
-							<p class="small m-0 fira-code">{{ phrases }}</p>
-						{% endif %}
-					{% endif %}
-				</div>
-				<div class="col-auto d-none d-lg-flex align-items-center">
-					{% include 'components/button.html.twig' with { 
+					</div>
+					<div class="col-auto d-none d-lg-flex align-items-center">
+						{% include 'components/button.html.twig' with { 
                     content: content 
                 } %}
+					</div>
 				</div>
 			</div>
-		</div>
 		{% endif %}
 	{% endblock %}
 </footer>

@@ -1,4 +1,4 @@
-{% set s_default_snippet = sulu_snippet_load('262671cb-0b27-4561-8169-7fead961985f') %}
+{% set s_default_snippet = sulu_snippet_load_by_area('site_settings') %}
 {% set s_default = s_default_snippet ? s_default_snippet.content : {} %}
 
 <!DOCTYPE html>
@@ -8,10 +8,15 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta
 		name="viewport" content="width=device-width, initial-scale=1">
-		{#  Google fonts #}
+
+		{# Google fonts #}
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+		<link
+		href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+		{# Favicon from snippet #}
+		<link rel="icon" type="image/x-icon" href="{{ s_default.favicon.url|default('/favicon.ico') }}">
 
 		{% block meta %}
 			{{ include('@SuluWebsite/Extension/seo.html.twig', {
@@ -28,13 +33,14 @@
 	</head>
 
 	<body>
-		{# Header #}
+		{# Header - now has access to logos via s_default #}
 		{% include 'layout/header-main.html.twig' %}
 
 		{# Content #}
 		<main class="main-content"> {% block content %}{% endblock %}
 			</main>
-			{# Footer #}
+
+			{# Footer - now has access to footer data via s_default #}
 			{% include 'layout/footer-main.html.twig' %}
 
 			{% block javascripts %}{% endblock %}

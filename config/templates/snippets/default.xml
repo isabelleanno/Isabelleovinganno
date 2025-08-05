@@ -8,6 +8,18 @@
         <title lang="en">Default</title>
         <title lang="de">Standard</title>
     </meta>
+    <areas>
+        <area key="site_settings">
+            <meta>
+                <title lang="en">Site Settings</title>
+            </meta>
+        </area>
+        <area key="footer_content">
+            <meta>
+                <title lang="en">Footer Content</title>
+            </meta>
+        </area>
+    </areas>
     <properties>
         <property name="title" type="text_line" mandatory="true">
             <meta>
@@ -20,14 +32,19 @@
                 <title lang="en">General Info</title>
             </meta>
             <properties>
-                <property name="desktop_logo" type="single_media_selection" colspan="6">
+                <property name="desktop_logo" type="single_media_selection" colspan="4">
                     <meta>
                         <title lang="en">Desktop Logo</title>
                     </meta>
                 </property>
-                <property name="mobile_logo" type="single_media_selection"  colspan="6">
+                <property name="mobile_logo" type="single_media_selection"  colspan="4">
                     <meta>
                         <title lang="en">Mobile Logo</title>
+                    </meta>
+                </property>
+                <property name="favicon" type="single_media_selection" colspan="4">
+                    <meta>
+                        <title lang="en">Favicon</title>
                     </meta>
                 </property>
             </properties>
