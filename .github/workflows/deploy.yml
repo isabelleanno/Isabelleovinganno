@@ -29,13 +29,15 @@ jobs:
                   DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
                   DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
                   DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+                  HTTP_USER: ${{ secrets.HTTP_USER }}
 
             - name: Install dependencies and deploy
               run: |
                   composer install --no-interaction --prefer-dist --optimize-autoloader --no-scripts
-                     ./vendor/bin/dep deploy:unlock prod || true
+                     ./vendor/bin/dep deploy:force-unlock prod || true
                      ./vendor/bin/dep deploy prod -v
               env:
                   DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
                   DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
                   DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+                  HTTP_USER: ${{ secrets.HTTP_USER }}

@@ -17,15 +17,21 @@ host('prod')
     ->set('remote_user', getenv('DEPLOY_USER'))
     ->set('deploy_path', getenv('DEPLOY_PATH'))
     ->set('branch', 'main')
-    ->set('http_user', 'www-data');
+    ->set('http_user', getenv('HTTP_USER'));
 
-// Simple backup task (optional but recommended)
-task('database:backup', function () {
-    $backup = '{{deploy_path}}/shared/backup_' . date('Y-m-d_H-i-s') . '.sql';
-    run("mysqldump -u root -pvoetbaltafel sulu_db > $backup 2>/dev/null || true");
-    // Keep only last 3 backups
-    run("ls -t {{deploy_path}}/shared/backup_*.sql 2>/dev/null | tail -n +4 | xargs rm -f || true");
+
+// Force unlock
+task('deploy:force-unlock', function () {
+    run('rm -f {{deploy_path}}/.dep/deploy.lock');
+    writeln('<info>Deploy lock removed</info>');
 });
 
-// Hook the backup before deployment
-before('deploy:prepare', 'database:backup');
+// Update Build and install dependencies
+task('update-build', function () {
+    run('cd {{current_path}} && npm i && npm run build && bin/console sulu:admin:update-build');
+});
+
+// Hooks
+before('deploy:prepare', 'deploy:force-unlock');
+after('deploy:symlink', 'update-build');
+after('deploy:failed', 'deploy:unlock');
