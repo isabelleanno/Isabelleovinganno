@@ -39,7 +39,7 @@ class CountryListener
         }
 
         $session->set('redirected', true);
-        $countryCode = strtolower($request->headers->get('CF-IPCountry', 'NL'));
+        $countryCode = strtolower($request->headers->get('CF-IPCountry'));
 
         // Redirect Dutch users to /nl if not already there
         if ($countryCode === 'nl' && $path !== '/nl') {
