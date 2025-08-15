@@ -10,16 +10,16 @@ class CountryListener
     public function __invoke(RequestEvent $event): void
     {
         session_start();
+        // Ensures redirection happens only once per session
         if (!isset($_SESSION['redirected'])) {
 
             $request = $event->getRequest();
-            $locale = $request->getLocale();
             $path = $request->getPathInfo();
 
-            $countryCode = $request->headers->get('CF-IPCountry');
+            $countryCode = $request->headers->get('CF-IPCountry', "NL");
             $countryCode = strtolower($countryCode);
 
-            if ($path !== '/nl' && $countryCode === "nl" && $locale !== "nl") {
+            if ($path !== '/nl' && $countryCode === "nl") {
                 $event->setResponse(new RedirectResponse('/nl'));
             }
             $_SESSION['redirected'] = true;
