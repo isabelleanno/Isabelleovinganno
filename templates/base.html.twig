@@ -35,7 +35,6 @@
 	<body>
 		{# Header - now has access to logos via s_default #}
 		{% include 'layout/header-main.html.twig' %}
-
 		{# Content #}
 		<main class="main-content"> {% block content %}{% endblock %}
 			</main>
@@ -44,6 +43,6 @@
 			{% include 'layout/footer-main.html.twig' %}
 
 			{% block javascripts %}{% endblock %}
-			{{ encore_entry_script_tags('app') }}
-		</body>
+			{{ encore_entry_script_tags('app') }}</body>
 	</html>
+</body></html>
