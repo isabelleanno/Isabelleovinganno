@@ -1,15 +1,48 @@
+{% set englishFlag = s_default.English|default(null) %}
+{% set dutchFlag = s_default.Dutch|default(null) %}
+
 <div class="col-auto">
 	<div class="dropdown">
-		<button class="btn btn-text text-white dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-			language
-		</button>
+		<a class="btn btn-text text-white dropdown-toggle d-flex align-items-center pb-0 ps-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+			{% if app.locale == 'en' %}
+				{% include 'components/image.html.twig' with {
+					image: englishFlag,
+					format: '32x32',
+					class: "me-2"
+				} %}
+				<p class="mb-0">EN</p>
+			{% else %}
+				{% include 'components/image.html.twig' with {
+					image: dutchFlag,
+					format: '32x32',
+					class: "me-2"
+				} %}
+				<p class="mb-0">NL</p>
+			{% endif %}
+		</a>
 		<ul class="dropdown-menu">
 			<li>
-				<a class="dropdown-item" href="/">English</a>
+
+				{% if app.locale == 'en' %}
+					<a class="dropdown-item d-flex align-items-center" href="/nl">
+						{% include 'components/image.html.twig' with {
+							image: dutchFlag,
+							format: '32x32',
+							class: "me-2"
+						} %}
+						<p class="mb-0">NL</p>
+					</a>
+				{% else %}
+					<a class="dropdown-item d-flex align-items-center" href="/">
+						{% include 'components/image.html.twig' with {
+							image: englishFlag,
+							format: '32x32',
+							class: "me-2"
+						} %}
+						<p class="mb-0">EN</p>
+					</a>
+				{% endif %}
 			</li>
-			<li>
-				<a class="dropdown-item" href="/nl">Nederlands</a>
-			</li>
-		</ul>
-	</div>
-</div>
+		</a>
+	</li>
+</ul></div></div>

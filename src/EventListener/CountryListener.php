@@ -45,6 +45,7 @@ class CountryListener
         if ($countryCode === 'nl' && $path !== '/nl') {
             $event->setResponse(new RedirectResponse('/nl'));
         }
+        echo ("Test from country listener");
     }
 
     private function shouldSkipRedirect(string $path, $request): bool
