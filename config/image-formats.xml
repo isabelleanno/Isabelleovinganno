@@ -27,4 +27,10 @@
         </meta>
         <scale y="375"/>
     </format>
+    <format key="32x32">
+        <meta>
+            <title lang="en">32x32</title>
+        </meta>
+        <scale x="32" y="32" mode="inset"/>
+    </format>
 </formats>

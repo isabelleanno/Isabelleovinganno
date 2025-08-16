@@ -1,0 +1,24 @@
+/*
+
+Dropdowns
+================================================== 
+Contains the styles for all the dropdowns on the site.
+
+*/
+
+//Dropdown button
+.btn.dropdown-toggle.show,
+.btn.dropdown-toggle:active {
+    border-color: transparent;
+}
+//Dropdown item menu
+.dropdown-menu.show:hover {
+    background-color: $gray-300;
+}
+//Dropdown button items
+.dropdown-item:focus,
+.dropdown-item:hover,
+.dropdown-item:active {
+    background-color: transparent;
+    color: $primary;
+}

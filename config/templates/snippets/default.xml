@@ -47,6 +47,16 @@
                         <title lang="en">Favicon</title>
                     </meta>
                 </property>
+                <property name="English" type="single_media_selection" colspan="6">
+                    <meta>
+                        <title lang="en">Flag (USA)</title>
+                    </meta>
+                </property>
+                <property name="Dutch" type="single_media_selection" colspan="6">
+                    <meta>
+                        <title lang="en">Flag (NL)</title>
+                    </meta>
+                </property>
             </properties>
         </section>
         <section name="footer">
