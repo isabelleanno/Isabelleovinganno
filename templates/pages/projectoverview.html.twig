@@ -1,8 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-	<div class="container">
-		<h1 class="display-4">{{ content.title|default(null) }}</h1>
+	<div class="container container-default pb-5">
+		{% include 'components/header.html.twig' with { 
+            content: content,
+            headerCssClasses: headerCssClasses|default(''),
+        } %}
 		{% if content.articles|default(null) %}
 			<div class="row cards-grid">
 				{% for article in content.articles %}

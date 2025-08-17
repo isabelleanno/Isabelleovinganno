@@ -19,21 +19,16 @@
             </params>
             <tag name="sulu.rlp.part"/>
         </property>
-        <property name="url" type="resource_locator" mandatory="true" colspan="6">
+        <property name="url" type="resource_locator" mandatory="true">
             <meta>
                 <title lang="en">URL</title>
             </meta>
             <tag name="sulu.rlp"/>
         </property>
-        <property name="background_color" type="single_select" colspan="6">
-            <meta>
-                <title lang="en">Background Color</title>
-            </meta>
-            <xi:include
-                href="../properties/color.xml"
-                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:property/sulu:params)"
-            />
-        </property>
+        <xi:include
+            href="../components/headers.xml"
+            xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
+        />
         <property name="articles" type="smart_content">
             <meta>
                 <title lang="en">Smart Content</title>
