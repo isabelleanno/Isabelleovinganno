@@ -10,8 +10,7 @@
 					{% include 'components/image.html.twig' 
                         with {
                         image: card.image|default(null),
-                        format: card.image_format|default('none'),
-                        class: 'card-img-top',
+                        format: '120x130-inset',
                     } %}
 				</div>
 				<div class="card-body p-0 mt-3 d-flex flex-column justify-content-between">
