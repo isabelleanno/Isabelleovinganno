@@ -21,7 +21,5 @@
 		{% set url = image.formats[format] %}
 	{% endif %}
 
-	<span class="d-inline-flex image-component {{ classes }}">
-		<img class="lazyload img-fluid{% if class is not empty %} {{ class }}{% endif %}" src="{{ url }}" {% if image.title is not empty %} alt="{{ image.title }}" {% endif %} data-sizes="auto">
-	</span>
+	<img class="lazyload img-fluid d-inline-flex image-component {% if class is not empty %} {{ class }}{% endif %}" src="{{ url }}" {% if image.title is not empty %} alt="{{ image.title }}" {% endif %} data-sizes="auto">
 {% endif %}
