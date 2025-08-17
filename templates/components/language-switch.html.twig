@@ -3,7 +3,7 @@
 
 <div class="col-auto">
 	<div class="dropdown">
-		<a class="btn btn-text text-white dropdown-toggle d-flex align-items-center pb-0 ps-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+		<a class="btn btn-text dropdown-toggle d-flex align-items-center ps-3 {% if content.title == 'Homepage'%}text-white{% endif %}" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
 			{% if app.locale == 'en' %}
 				{% include 'components/image.html.twig' with {
 					image: englishFlag,

@@ -1,0 +1,37 @@
+<nav aria-label="Page navigation" class="mt-4">
+	<ul class="pagination justify-content-center">
+		{% if params.page > 1 %}
+			<li class="page-item">
+				<a class="btn btn-outline-secondary me-3" href="?p={{ params.page - 1 }}" aria-label="Vorige">
+					{% include 'utilities/icon.html.twig' with { icon: 'arrow-left' } %}
+					Previous
+				</a>
+			</li>
+			<li class="page-item rounded-sm">
+				<a class="page-link d-flex justify-content-center align-items-center" href="?p={{ params.page - 1 }}">
+					{{ params.page - 1 }}
+				</a>
+			</li>
+		{% endif %}
+
+		<li class="page-item rounded-sm active">
+			<span class="page-link d-flex justify-content-center align-items-center">
+				{{ params.page }}
+			</span>
+		</li>
+
+		{% if params.hasNextPage %}
+			<li class="page-item rounded-sm">
+				<a class="page-link d-flex justify-content-center align-items-center" href="?p={{ params.page + 1 }}">
+					{{ params.page + 1 }}
+				</a>
+			</li>
+			<li class="page-item">
+				<a class="btn btn-outline-secondary ms-3" href="?p={{ params.page + 1 }}" aria-label="Volgende">
+					Next
+					{% include 'utilities/icon.html.twig' with { icon: 'arrow' } %}
+				</a>
+			</li>
+		{% endif %}
+	</ul>
+</nav>

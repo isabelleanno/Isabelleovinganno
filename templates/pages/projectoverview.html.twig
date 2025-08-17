@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+	<div class="container">
+		<h1 class="display-4">{{ content.title|default(null) }}</h1>
+		{% if content.articles|default(null) %}
+			<div class="row cards-grid">
+				{% for article in content.articles %}
+					<div class="col-md-4 cards-grid-column">
+						{% include 'components/cards/project-cards.html.twig' %}
+					</div>
+				{% endfor %}
+			</div>
+		{% endif %}
+	</div>
+	{% include 'components/pagination.html.twig' with {
+        params: view.articles
+    } %}
+{% endblock %}
