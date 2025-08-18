@@ -10,15 +10,27 @@
     &--project {
         img {
             width: 100%;
+            height: unset;
             max-height: 468px;
             object-fit: cover;
+            @include media-breakpoint-up(lg) {
+                height: 468px;
+            }
         }
         &-text {
             z-index: 10;
             margin-top: -25%;
+            @include media-breakpoint-up(lg) {
+                min-height: 238px;
+            }
         }
         .text-button > p {
             @include multiline-ellipsis(4);
+        }
+        @include media-breakpoint-down(lg) {
+            .card-body {
+                padding: px-to-rem(25) px-to-rem(30);
+            }
         }
     }
 }
