@@ -28,6 +28,11 @@
             </meta>
             <tag name="sulu_article.article_route"/>
         </property>
+        <property name="header" type="text_line">
+            <meta>
+                <title lang="en">Header text</title>
+            </meta>
+        </property>
         <property name="card_image" type="single_media_selection">
             <meta>
                 <title lang="en">Project Overview Card Image (Optional: Uses hero image as fallback)</title>

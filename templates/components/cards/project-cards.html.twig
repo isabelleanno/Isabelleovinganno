@@ -1,16 +1,16 @@
-{% set image = card.image ? card.image : card.card_image ? card.card_image : null %}
+{% set image = card.card_image ? card.card_image :  card.hero.image ? card.hero.image :  null %}
+{% set s_default_snippet = sulu_snippet_load_by_area('translations') %}
+{% set s_default = s_default_snippet ? s_default_snippet.content : {} %}
 
-{% if card.text_content and image %}
+{% if image %}
 	<div class="row">
 		<div class="col-12 col-lg-6 mb-5">
 			<div class="position-relative d-flex flex-column align-items-center">
 				<div class="card card--project w-100 overflow-hidden">
-					{% if image %}
-						{% include 'components/image.html.twig' with {
-								image: image,
-								classes: 'card--project-image',
-							} %}
-					{% endif %}
+					{% include 'components/image.html.twig' with {
+						image: image,
+						classes: 'card--project-image',
+					} %}
 				</div>
 				{% if card.text_content and card.header %}
 					<div class="card card-body card--project-text col-10 position-relative">
