@@ -1,34 +1,31 @@
 {% set image = card.card_image ? card.card_image :  card.hero.image ? card.hero.image :  null %}
-{% set s_default_snippet = sulu_snippet_load_by_area('translations') %}
+{% set s_default_snippet = sulu_snippet_load_by_area('site_settings') %}
 {% set s_default = s_default_snippet ? s_default_snippet.content : {} %}
-
 {% if image %}
-	<div class="row">
-		<div class="col-12 col-lg-6 mb-5">
-			<div class="position-relative d-flex flex-column align-items-center">
-				<div class="card card--project w-100 overflow-hidden">
-					{% include 'components/image.html.twig' with {
+	<div class="col-12 col-lg-6 mb-5">
+		<div class="card--project position-relative d-flex flex-column align-items-center">
+			<div class="card w-100 overflow-hidden">
+				{% include 'components/image.html.twig' with {
 						image: image,
 						classes: 'card--project-image',
 					} %}
-				</div>
-				{% if card.text_content and card.header %}
-					<div class="card card-body card--project-text col-10 position-relative">
-						{% include 'content-blocks/text-button.html.twig'  
+			</div>
+			{% if card.text_content and card.header %}
+				<div class="card card-body card--project-text col-10 position-relative">
+					{% include 'content-blocks/text-button.html.twig'  
 								with {
 								'content': card,
 								'headerCssClasses': 'mb-3',
 								'header_size': 'h6',
 								'textCssClasses': 'mb-3',
 							}  %}
-						<a href="{{card.routePath}}" class="btn btn-link text-start text-senary m-0">{{s_default.learn_more}}
-							{% include 'utilities/icon.html.twig' with {
+					<a href="{{card.routePath}}" class="btn btn-link text-start text-senary m-0">{{s_default.learn_more}}
+						{% include 'utilities/icon.html.twig' with {
 								icon: 'arrow'
 							} %}
-						</a>
-					</div>
-				{% endif %}
-			</div>
+					</a>
+				</div>
+			{% endif %}
 		</div>
 	</div>
 {% endif %}

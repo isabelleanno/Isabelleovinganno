@@ -1,0 +1,20 @@
+//  Example usage:  @include multiline-ellipsis(8, 8, 4);
+@mixin multiline-ellipsis($lines, $lines-md: null, $lines-lg: null) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $lines;
+
+    @if $lines-md != null {
+        @include media-breakpoint-up(md) {
+            -webkit-line-clamp: $lines-md;
+        }
+    }
+
+    @if $lines-lg != null {
+        @include media-breakpoint-up(lg) {
+            -webkit-line-clamp: $lines-lg;
+        }
+    }
+}

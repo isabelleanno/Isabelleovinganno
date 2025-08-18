@@ -35,7 +35,7 @@
             </meta>
             <params>
                 <param name="provider" value="articles"/>
-                <param name="max_per_page" value="1"/>
+                <param name="max_per_page" value="12"/>
                 <param name="page_parameter" value="p"/>
                 <param name="types" value="article"/>
             </params>

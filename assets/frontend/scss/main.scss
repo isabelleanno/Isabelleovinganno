@@ -8,6 +8,7 @@ Import all the necessary SCSS files to compile the final CSS.
 
 // Abstracts
 @import "abstracts/functions";
+@import "abstracts/mixins";
 @import "abstracts/overrides";
 @import "abstracts/utilities";
 
