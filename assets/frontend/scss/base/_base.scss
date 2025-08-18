@@ -26,3 +26,8 @@ h1 {
     min-height: calc(100vh - 50px); // Header and footer minus 100%
     position: relative;
 }
+@include media-breakpoint-down(lg) {
+    p {
+        font-size: px-to-rem(14);
+    }
+}

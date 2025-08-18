@@ -1,7 +1,7 @@
 {% set image = card.card_image ? card.card_image :  card.hero.image ? card.hero.image :  null %}
 {% set s_default_snippet = sulu_snippet_load_by_area('site_settings') %}
 {% set s_default = s_default_snippet ? s_default_snippet.content : {} %}
-{% if image %}
+{% if image and card.text_content and card.header %}
 	<div class="col-12 col-lg-6 mb-5">
 		<div class="card--project position-relative d-flex flex-column align-items-center">
 			<div class="card w-100 overflow-hidden">
@@ -11,7 +11,7 @@
 					} %}
 			</div>
 			{% if card.text_content and card.header %}
-				<div class="card card-body card--project-text col-10 position-relative">
+				<div class="card card-body card--project-text col-11 col-lg-10 position-relative justify-content-between">
 					{% include 'content-blocks/text-button.html.twig'  
 								with {
 								'content': card,
