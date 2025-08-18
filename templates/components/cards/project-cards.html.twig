@@ -10,14 +10,20 @@
 							} %}
 					{% endif %}
 				</div>
-				{% if card.text_content or card.header %}
+				{% if card.text_content and card.header %}
 					<div class="card card-body card--project-text col-10 position-relative">
 						{% include 'content-blocks/text-button.html.twig'  
 								with {
 								'content': card,
 								'headerCssClasses': 'mb-3',
 								'header_size': 'h6',
+								'textCssClasses': 'mb-3',
 							}  %}
+						<a href="{{card.routePath}}" class="btn btn-link text-start text-senary m-0">{{s_default.learn_more}}
+							{% include 'utilities/icon.html.twig' with {
+								icon: 'arrow'
+							} %}
+						</a>
 					</div>
 				{% endif %}
 			</div>
