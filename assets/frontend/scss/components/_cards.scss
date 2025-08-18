@@ -17,5 +17,8 @@
             z-index: 10;
             margin-top: -25%;
         }
+        .text-button > p {
+            @include multiline-ellipsis(4);
+        }
     }
 }
