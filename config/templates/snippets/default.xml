@@ -14,6 +14,11 @@
                 <title lang="en">Site Settings</title>
             </meta>
         </area>
+        <area key="translations">
+            <meta>
+                <title lang="en">Translations</title>
+            </meta>
+        </area>
         <area key="footer_content">
             <meta>
                 <title lang="en">Footer Content</title>

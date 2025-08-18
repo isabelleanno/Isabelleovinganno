@@ -22,11 +22,6 @@
                                     <title lang="en">Image</title>
                                 </meta>
                             </property>
-                            <property name="header" type="text_line">
-                                <meta>
-                                    <title lang="en">Header text</title>
-                                </meta>
-                            </property>
                             <property name="text_content" type="text_line">
                                 <meta>
                                     <title lang="en">Short Description</title>
