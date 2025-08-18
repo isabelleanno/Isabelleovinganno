@@ -1,17 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-	<div class="container container-default pb-5">
+	<div class="container container-small">
 		{% include 'components/header.html.twig' with { 
             content: content,
             headerCssClasses: headerCssClasses|default(''),
         } %}
 		{% if content.articles|default(null) %}
-			<div class="row cards-grid">
+			<div class="row cards-grid container-small">
 				{% for article in content.articles %}
-					<div class="col-md-4 cards-grid-column">
-						{% include 'components/cards/project-cards.html.twig' %}
-					</div>
+					{% include 'components/cards/project-cards.html.twig' with { card: article.content.content } %}
 				{% endfor %}
 			</div>
 		{% endif %}

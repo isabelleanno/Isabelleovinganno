@@ -8,14 +8,19 @@ Content blocks
     padding-top: px-to-rem(80);
     padding-bottom: px-to-rem(80);
 }
+.container-small {
+    padding-top: px-to-rem(40);
+    padding-bottom: px-to-rem(40);
+}
 
 @include media-breakpoint-up(lg) {
-    .container-small {
-        max-width: 856px;
-    }
     .container-default {
         padding-top: px-to-rem(120);
         padding-bottom: px-to-rem(120);
+    }
+    .container-small {
+        padding-top: px-to-rem(60);
+        padding-bottom: px-to-rem(60);
     }
 }
 

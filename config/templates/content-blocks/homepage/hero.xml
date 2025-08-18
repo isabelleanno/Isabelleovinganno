@@ -26,10 +26,11 @@
                                     xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:property/sulu:params)"
                                 />
                             </property>
-                            <xi:include
-                                href="../../components/image.xml"
-                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
-                            />
+                            <property name="image" type="single_media_selection">
+                                <meta>
+                                    <title lang="en">Image</title>
+                                </meta>
+                            </property>
                             <xi:include
                                 href="../text-button.xml"
                                 xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:section)"
