@@ -59,6 +59,18 @@
                 </property>
             </properties>
         </section>
+        <section name="translations">
+            <meta>
+                <title lang="en">Translations</title>
+            </meta>
+            <properties>
+                <property name="learn_more" type="text_line">
+                    <meta>
+                        <title lang="en">Learn More</title>
+                    </meta>
+                </property>
+            </properties>
+        </section>
         <section name="footer">
             <meta>
                 <title lang="en">Footer</title>

@@ -7,6 +7,10 @@ Contains the styles for all the dropdowns on the site.
 */
 
 //Dropdown button
+.dropdown-toggle {
+    color: $primary;
+}
+
 .btn.dropdown-toggle.show,
 .btn.dropdown-toggle:active {
     border-color: transparent;

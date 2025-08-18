@@ -10,7 +10,6 @@
 
 {% set image = image|default(null) %}
 {% set format = format|default('none') %}
-{% set classes = classes|default('') %}
 {% set class = class|default('') %}
 
 {% if image %}
@@ -20,6 +19,5 @@
 	{% if format != 'none' and image.formats[format] is defined %}
 		{% set url = image.formats[format] %}
 	{% endif %}
-
 	<img class="lazyload img-fluid d-inline-flex image-component {% if class is not empty %} {{ class }}{% endif %}" src="{{ url }}" {% if image.title is not empty %} alt="{{ image.title }}" {% endif %} data-sizes="auto">
 {% endif %}

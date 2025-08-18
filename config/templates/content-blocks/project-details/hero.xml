@@ -17,24 +17,31 @@
                             <title lang="en">Hero</title>
                         </meta>
                         <properties>
-                            <property name="background_color" type="single_select">
-                                <meta>
-                                    <title lang="en">Background Color</title>
-                                </meta>
-                                <xi:include
-                                    href="../../properties/color.xml"
-                                    xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:property/sulu:params)"
-                                />
-                            </property>
                             <property name="image" type="single_media_selection">
                                 <meta>
                                     <title lang="en">Image</title>
                                 </meta>
                             </property>
-                            <xi:include
-                                href="../text-button.xml"
-                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:section)"
-                            />
+                            <property name="header" type="text_line">
+                                <meta>
+                                    <title lang="en">Header text</title>
+                                </meta>
+                            </property>
+                            <property name="text_content" type="text_line">
+                                <meta>
+                                    <title lang="en">Short Description</title>
+                                </meta>
+                            </property>
+                            <property name="date" type="date">
+                                <meta>
+                                    <title lang="en">Date Started</title>
+                                </meta>
+                            </property>
+                            <property name="tags" type="tag_selection">
+                                <meta>
+                                    <title lang="en">Services</title>
+                                </meta>
+                            </property>
                         </properties>
                     </type>
                 </types>

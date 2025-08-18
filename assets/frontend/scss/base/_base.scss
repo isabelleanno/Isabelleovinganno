@@ -21,3 +21,8 @@ h1 {
 .small {
     font-size: px-to-rem(12);
 }
+
+.main-content {
+    min-height: calc(100vh - 50px); // Header and footer minus 100%
+    position: relative;
+}

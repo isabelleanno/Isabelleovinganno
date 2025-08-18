@@ -1,9 +1,9 @@
-<footer>
+<footer class="bg-white">
 	{% block footer %}
 		{% set s_footer_snippet = sulu_snippet_load_by_area('footer_content') %}
 		{% if s_footer_snippet is defined and s_footer_snippet is not null %}
 			<div class="container">
-				<div class="row my-3">
+				<div class="row py-3">
 					<div class="col d-flex align-items-center">
 						{% set content = s_footer_snippet.content.footer %}
 						{% set phrases = content.phrases.phrase_block|default("Made with love by Isabelle Anno") %}

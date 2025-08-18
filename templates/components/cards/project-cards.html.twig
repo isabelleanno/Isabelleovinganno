@@ -1,31 +1,34 @@
-{% set valid_cards = cards|filter(card => card.text_content or card.header or card.image) %}
-{% set length = valid_cards|length %}
-{% if length > 0 %}
+{% set image = card.image ? card.image : card.card_image ? card.card_image : null %}
+
+{% if card.text_content and image %}
 	<div class="row">
-		{% for card in valid_cards %}
-			<div class="col-12 col-md-6 col-xl-4 mb-5">
-				<div class="position-relative d-flex flex-column align-items-center">
-					<div class="card card--project w-100 overflow-hidden">
-						{% if card.image %}
-							{% include 'components/image.html.twig' with {
-								image: card.image|default(null),
-								format: 'x375',
+		<div class="col-12 col-lg-6 mb-5">
+			<div class="position-relative d-flex flex-column align-items-center">
+				<div class="card card--project w-100 overflow-hidden">
+					{% if image %}
+						{% include 'components/image.html.twig' with {
+								image: image,
 								classes: 'card--project-image',
 							} %}
-						{% endif %}
-					</div>
-					{% if card.text_content and card.header %}
-						<div class="card card-body card--project-text col-10 position-relative">
-							{% include 'content-blocks/text-button.html.twig'  
+					{% endif %}
+				</div>
+				{% if card.text_content and card.header %}
+					<div class="card card-body card--project-text col-10 position-relative">
+						{% include 'content-blocks/text-button.html.twig'  
 								with {
 								'content': card,
 								'headerCssClasses': 'mb-3',
 								'header_size': 'h6',
+								'textCssClasses': 'mb-3',
 							}  %}
-						</div>
-					{% endif %}
-				</div>
+						<a href="{{card.routePath}}" class="btn btn-link text-start text-senary m-0">{{s_default.learn_more}}
+							{% include 'utilities/icon.html.twig' with {
+								icon: 'arrow'
+							} %}
+						</a>
+					</div>
+				{% endif %}
 			</div>
-		{% endfor %}
+		</div>
 	</div>
 {% endif %}
