@@ -1,7 +1,9 @@
 {# This file defines a standardized section and container for each content block, based on its type. #}
-
 {% if content and block_order %}
 	{% for block_name in block_order %}
+		{# Normalize block name for content access #}
+		{% set block_name = block_name|replace({'-': '_'}) %}
+		{# Get the content for the current block #}
 		{% set block_content = content[block_name|replace({'-': '_'})]|default(null) %}
 		{# If the section exists, render it with the appropriate background color and spacing #}
 		{% if block_content.text_content is defined and block_content.text_content is not empty or block_content.header is defined and block_content.header is not empty or block_content.background_color is defined and block_content.background_color is not empty %}
@@ -9,7 +11,7 @@
 			{% set container_small = block_content.settings.container_small|default(false) %}
 			<section class="{{ block_name }}-section bg-{{ block_content.background_color|default('white') }} ">
 				<div class="container container-{{ spacing|default('default') }} {% if container_small %}container-small{% endif %}">
-					{% include 'content-blocks/homepage/' ~ block_name ~ '.html.twig' with { content: content[block_name] } %}
+					{% include 'content-blocks/' ~ page ~ '/' ~ block_name ~ '.html.twig' with { content: content[block_name] } %}
 				</div>
 			</section>
 		{% endif %}

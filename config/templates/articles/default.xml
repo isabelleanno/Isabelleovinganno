@@ -22,7 +22,7 @@
             </params>
             <tag name="sulu.rlp.part"/>
         </property>
-        <property name="routePath" type="route">
+        <property name="routePath" type="route" mandatory="true">
             <meta>
                 <title lang="en">Resourcelocator</title>
             </meta>
@@ -30,18 +30,17 @@
         </property>
         <property name="card_image" type="single_media_selection">
             <meta>
-                <title lang="en">Card Image</title>
-            </meta>
-        </property>
-        <property name="header" type="text_line">
-            <meta>
-                <title lang="en">Project Title</title>
+                <title lang="en">Project Overview Card Image (Optional: Uses hero image as fallback)</title>
             </meta>
         </property>
         <property name="text_content" type="text_editor">
             <meta>
-                <title lang="en">Short Description</title>
+                <title lang="en">Project Overview Card Description</title>
             </meta>
         </property>
+        <xi:include
+            href="../content-blocks/project-details/hero.xml"
+            xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:section)"
+        />
     </properties>
 </template>

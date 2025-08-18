@@ -2,5 +2,5 @@
 
 {% block content %}
 	{% set homepage_blocks = ['hero', 'areas_of_expertise', 'story', 'projects', 'contact'] %}
-	{% include 'layout/content-blocks.html.twig' with { content: content, block_order: homepage_blocks } %}
+	{% include 'layout/content-blocks.html.twig' with { content: content, page: 'homepage', block_order: homepage_blocks } %}
 {% endblock %}

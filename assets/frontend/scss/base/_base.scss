@@ -23,6 +23,6 @@ h1 {
 }
 
 .main-content {
-    min-height: calc(100vh - 110px); // Header and footer minus 100%
+    min-height: calc(100vh - 50px); // Header and footer minus 100%
     position: relative;
 }

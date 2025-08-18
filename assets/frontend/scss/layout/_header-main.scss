@@ -10,6 +10,27 @@ $header-height: px-to-rem(60);
     transition: background-color 0.3s ease;
 }
 
+// Make text white on everything besides project overview page
+body:not(.body--project-overview) {
+    .dropdown-toggle,
+    .nav-item {
+        color: white;
+    }
+    .logos-regular > img {
+        filter: brightness(0) saturate(100%) invert(100%); // Make white svg
+    }
+    .header-main {
+        position: absolute;
+    }
+}
+
+// Logos
+.logos-regular > img {
+    display: block;
+    width: 100%;
+    max-height: px-to-rem(60);
+}
+
 .main-content > section:first-of-type {
     padding-top: $header-height + px-to-rem(20);
     @include media-breakpoint-up(lg) {
@@ -19,10 +40,4 @@ $header-height: px-to-rem(60);
 
 .main-nav {
     gap: px-to-rem(25);
-    .nav-link {
-        color: white;
-    }
-}
-.navbar-toggler > .icon {
-    color: white;
 }

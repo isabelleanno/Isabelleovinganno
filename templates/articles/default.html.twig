@@ -1,9 +1,6 @@
-{% extends "base.html.twig" %}
+{% extends 'base.html.twig' %}
 
 {% block content %}
-    <h1>{{ content.title }}</h1>
-
-    <div>
-        {{ content.article|default()|raw }}
-    </div>
+	{% set project_blocks = ['hero'] %}
+	{% include 'layout/content-blocks.html.twig' with { content: content, page: 'project-details', block_order: project_blocks } %}
 {% endblock %}

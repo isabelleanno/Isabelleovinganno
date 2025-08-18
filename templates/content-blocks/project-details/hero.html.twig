@@ -1,0 +1,6 @@
+<div class="row">
+	{% include 'components/image.html.twig' 
+        with {
+        image: content.image|default(null),
+    } %}
+</div>
