@@ -38,10 +38,17 @@
                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:properties/sulu:*)"
                             />
                             <!-- Projects cards -->
-                            <xi:include
-                                href="../../components/cards/project-cards.xml"
-                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:block)"
-                            />
+                            <property name="articles" type="smart_content">
+                                <meta>
+                                    <title lang="en">Smart Content</title>
+                                </meta>
+                                <params>
+                                    <param name="provider" value="articles"/>
+                                    <param name="max_per_page" value="4"/>
+                                    <param name="page_parameter" value="p"/>
+                                    <param name="types" value="article"/>
+                                </params>
+                            </property>
                         </properties>
                     </type>
                 </types>

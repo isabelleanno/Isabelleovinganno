@@ -2,7 +2,7 @@
 
 // Import main css file
 import './scss/main.scss';
-// Import Bootstrap JavaScript (this includes offcanvas)
+// Import Bootstrap JavaScript 
 import 'bootstrap';
 
 
@@ -33,4 +33,12 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+});
+// Import GSAP for cool animations!
+import { gsap } from "gsap"; 
+ 
+document.addEventListener('DOMContentLoaded', function() {
+// Alert frame
+gsap.to(".alert-frame", { opacity: 1, display: "flex", duration: 0.5 });
+gsap.to(".alert-frame", { opacity: 0, display: "none", duration: 1, delay: 3 });
 });

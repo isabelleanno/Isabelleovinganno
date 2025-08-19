@@ -1,8 +1,87 @@
-{% extends '@SuluForm/themes/dynamic.html.twig' %}
+{% extends '@SuluForm/themes/basic.html.twig' %}
 
-{%- block form_row -%}
-<div class="mb-3">
-	{{- form_label(form, label|default, { 'label_attr': {'class': 'form-label'} }) }}
-	{{- form_errors(form) -}}
-	{{- form_widget(form, {'attr': {'class': 'form-control'}}) -}}
-</div>{%- endblock -%}{%- block submit_widget -%}<button type="submit" class="btn btn-primary">{{ label|default('Submit') }}</button>{%- endblock -%}
+{# 
+	basic.html.twig can be found under vendor/sulu/form-bundle/Resources/views/themes/basic.html.twig
+	There it extends form_div_layout.html.twig which is a symfony form theme twig file. 
+	Location: https://github.com/symfony/symfony/blob/7.4/src/Symfony/Bridge/Twig/Resources/views/Form/form_div_layout.html.twig
+
+	The goal of this file is to bootstrap-ify the contact form by adding classes to form elements.
+#}
+
+{# Add Bootstrap cols based on form item width. 
+I am only using full and half, but on a client-ready site, I'd add every dropdown option in the admin. #}
+
+	{% block sulu_form_row_class_name %}
+	{% set widths = {'full': 12, 'half': 6,} %}
+	{% set className = 'col-12 form-item mb-2 col-lg-' ~ widths[attr.width|default('12')] %}
+		{% if attr.lastWidth|default(false) %}
+	{% set className = className ~ ' form-width-last' %}
+	{% endif %}
+{{ className }}
+{% endblock %}
+
+{# Add row to the form container div #}
+	{% block form_widget_compound %}
+		{% if form is rootform %}
+	{% set attr = attr|merge({'class': (attr.class|default('') ~ ' row')|trim}) %}
+	{% endif %}
+		<div {{ block('widget_container_attributes') }}> {%- if form is rootform -%}
+			{{ form_errors(form) }}
+		{%- endif -%}
+		{{- block('form_rows') -}}
+		{{- form_rest(form) -}}
+	</div>
+{% endblock %}
+
+{# Text & email input #}
+{% block form_widget_simple %}
+	{% set type = type|default('text') %}
+	{% if type == 'range' or type == 'color' %}
+		{% set required = false %}
+	{% endif %}
+	{% if type in ['text', 'email', 'password', 'search', 'url', 'tel'] %}
+		{% set attr = attr|merge({'class': (attr.class|default('') ~ ' form-control')|trim}) %}
+	{% endif %}
+	<input type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %} value="{{ value }}" {% endif %}/>
+{% endblock %}
+
+{# Textarea input #}
+{% block textarea_widget %}
+	{% set attr = attr|merge({'class': (attr.class|default('') ~ ' form-control')|trim}) %}
+	<textarea {{ block('widget_attributes') }}>{{ value }}</textarea>
+{% endblock %}
+
+{# Choice widget (select dropdowns) #}
+{% block choice_widget_collapsed %}
+	{% set attr = attr|merge({'class': (attr.class|default('') ~ ' form-control')|trim}) %}
+	{{ parent() }}
+{% endblock %}
+
+{# Submit Button #}
+{% block button_widget %}
+	{% if not label %}
+		{% if label_format is not empty %}
+			{% set label = label_format|replace({
+                '%name%': name,
+                '%id%': id,
+            }) %}
+		{% elseif label is not same as(false) %}
+			{% set label = name|humanize %}
+		{% endif %}
+	{% endif %}
+	<button type="{{ type|default('button') }}" {{ block('button_attributes') }} class="btn btn-primary mt-2">
+		{% if translation_domain is same as(false) %}
+			{% if label_html is same as(false) %}
+				{{ label }}
+			{% else %}
+				{{ label|raw }}
+			{% endif %}
+		{% else %}
+			{% if label_html is same as(false) %}
+				{{ label|trans(label_translation_parameters, translation_domain) }}
+			{% else %}
+				{{ label|trans(label_translation_parameters, translation_domain)|raw }}
+			{% endif %}
+		{% endif %}
+	</button>
+{% endblock %}

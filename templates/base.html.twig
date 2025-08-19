@@ -20,22 +20,22 @@
 
 		{% block meta %}
 			{{ include('@SuluWebsite/Extension/seo.html.twig', {
-                seo: extension.seo|default([]),
-                content: content|default([]),
-                localizations: localizations|default([]),
-                shadowBaseLocale: shadowBaseLocale|default(),
-            }) }}
+			seo: extension.seo|default([]),
+			content: content|default([]),
+			localizations: localizations|default([]),
+			shadowBaseLocale: shadowBaseLocale|default(),
+		}) }}
 		{% endblock %}
 
 		{% block style %}
 			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
 	</head>
-
 	<body
 		class="body--{{ content.title|default(null)|lower|replace({' ': '-'}) }}">
 		{# Header - now has access to logos via s_default #}
 		{% include 'layout/header-main.html.twig' %}
+
 		{# Content #}
 		<main class="main-content"> {% block content %}{% endblock %}
 			</main>
@@ -44,6 +44,6 @@
 			{% include 'layout/footer-main.html.twig' %}
 
 			{% block javascripts %}{% endblock %}
-			{{ encore_entry_script_tags('app') }}</body>
+			{{ encore_entry_script_tags('app') }}
+		</body>
 	</html>
-</body></html>
