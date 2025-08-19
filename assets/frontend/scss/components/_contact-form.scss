@@ -1,3 +1,17 @@
 textarea.form-control {
     min-height: 6rem;
 }
+
+.alert-frame {
+    display: none;
+    top: 70px;
+    left: 0;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    .alert-success {
+        background: #cbf3cb;
+        width: 50%;
+        border: 2px solid green;
+    }
+}

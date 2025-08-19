@@ -1,14 +1,22 @@
 <div class="row">
 	<div class="col-lg-6">
 		{% include 'content-blocks/text-button.html.twig' with {
-            content: content,
+			content: content,
 			classes: 'd-flex flex-column',
-            headerCssClasses: 'mb-4',
-        } %}
+			headerCssClasses: 'mb-4'
+		} %}
 	</div>
 	<div class="col-lg-6">
 		{% set contactForm = sulu_form_get_by_id(1, 'page', 1) %}
 		{% if contactForm is defined and contactForm is not null %}
+			{% if app.request.get('send') %}
+				<div class="alert-frame align-items-center justify-content-center w-100 position-fixed">
+					<div class="alert alert-success" role="alert">
+						<h4 class="alert-heading">✅ Thank you!</h4>
+						<p>{{ contactForm.successText|default('Your message has been sent successfully. We will get back to you soon!') }}</p>
+					</div>
+				</div>
+			{% endif %}
 			{% form_theme contactForm 'forms/contact-theme.html.twig' %}
 			{{ form(contactForm) }}{% endif %}
 		</div>

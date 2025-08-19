@@ -8,15 +8,18 @@
 	The goal of this file is to bootstrap-ify the contact form by adding classes to form elements.
 #}
 
-{# Add Bootstrap cols based on form item width #}
+{# Add Bootstrap cols based on form item width. 
+I am only using full and half, but on a client-ready site, I'd add every dropdown option in the admin. #}
+
 	{% block sulu_form_row_class_name %}
 	{% set widths = {'full': 12, 'half': 6,} %}
-	{% set className = 'col-12 form-item col-lg-' ~ widths[attr.width|default('12')] %}
+	{% set className = 'col-12 form-item mb-2 col-lg-' ~ widths[attr.width|default('12')] %}
 		{% if attr.lastWidth|default(false) %}
 	{% set className = className ~ ' form-width-last' %}
 	{% endif %}
 {{ className }}
 {% endblock %}
+
 {# Add row to the form container div #}
 	{% block form_widget_compound %}
 		{% if form is rootform %}
