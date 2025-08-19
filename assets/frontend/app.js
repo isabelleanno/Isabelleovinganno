@@ -34,8 +34,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById("dynamic_form1").classList.add("row");
-});
