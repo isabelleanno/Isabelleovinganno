@@ -8,6 +8,10 @@
         } %}
 	</div>
 </div>
-{% if content.project_card %}
-	{% include 'components/cards/project-cards.html.twig'  with {'cards': content.project_card}  %}
+{% if content.articles %}
+	<div class="row cards-grid">
+		{% for article in content.articles %}
+			{% include 'components/cards/project-cards.html.twig' with { card: article.content.content} %}
+		{% endfor %}
+	</div>
 {% endif %}
