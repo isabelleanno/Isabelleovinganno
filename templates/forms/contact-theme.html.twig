@@ -1,8 +1,23 @@
 {% extends '@SuluForm/themes/dynamic.html.twig' %}
 
-{%- block form_row -%}
-<div class="mb-3">
-	{{- form_label(form, label|default, { 'label_attr': {'class': 'form-label'} }) }}
-	{{- form_errors(form) -}}
-	{{- form_widget(form, {'attr': {'class': 'form-control'}}) -}}
-</div>{%- endblock -%}{%- block submit_widget -%}<button type="submit" class="btn btn-primary">{{ label|default('Submit') }}</button>{%- endblock -%}
+{% block sulu_form_row_start %}
+	<div id="{{ form.vars.id }}" class="row">
+	{% endblock %}
+
+	{% block form_row %}
+		{% if form.vars.name in ['firstName', 'lastName'] %}
+			<div class="col-12 col-lg-6 mb-3">
+			{% else %}
+				<div class="col-12 mb-3">
+				{% endif %}
+				{{ form_label(form, label|default, { 'label_attr': {'class': 'form-label'} }) }}
+				{{ form_errors(form) }}
+				{{ form_widget(form, {'attr': {'class': 'form-control'}}) }}
+			</div>
+		{% endblock %}
+
+		{% block submit_widget %}
+			<div class="col-auto">
+				<button type="submit" class="btn btn-primary">{{ label|default('Submit') }}</button>
+			</div>
+		{% endblock %}
