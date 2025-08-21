@@ -12,8 +12,8 @@
 			{% if app.request.get('send') %}
 				<div class="alert-frame align-items-center justify-content-center w-100 position-fixed">
 					<div class="alert alert-success" role="alert">
-						<h4 class="alert-heading">✅ Thank you!</h4>
-						<p>{{ contactForm.successText|default('Your message has been sent successfully. We will get back to you soon!') }}</p>
+						<h4 class="alert-heading">{{s_default.contact_success_msg_header|default("✅")}}</h4>
+						<p>{{s_default.contact_success_msg_text|default(null)}}</p>
 					</div>
 				</div>
 			{% endif %}
