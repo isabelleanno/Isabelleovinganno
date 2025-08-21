@@ -1,16 +1,25 @@
 {# This file defines a standardized section and container for each content block, based on its type. #}
 {% if content and block_order %}
 	{% for block_name in block_order %}
-		{# Normalize block name for content access #}
+
 		{% set block_name = block_name|replace({'-': '_'}) %}
-		{# Get the content for the current block #}
-		{% set block_content = content[block_name|replace({'-': '_'})]|default(null) %}
-		{# If the section exists, render it with the appropriate background color and spacing #}
-		{% if block_content.text_content is defined and block_content.text_content is not empty or block_content.header is defined and block_content.header is not empty or block_content.background_color is defined and block_content.background_color is not empty %}
+		{% set block_content = content[block_name]|default(null) %}
+		{# Only loads a section if there is a header, text content, or background color #}
+		{% if
+			(block_content.text_content is defined and block_content.text_content is not empty)
+			or (block_content.header is defined and block_content.header is not empty)
+			or (block_content.background_color is defined and block_content.background_color is not empty)
+		%}
+			{# Set variables used in rendering #}
 			{% set spacing = block_content.settings.spacing_options|default(null) %}
 			{% set container_small = block_content.settings.container_small|default(false) %}
-			<section class="{{ block_name }}-section bg-{{ block_content.background_color|default('white') }} ">
-				<div class="container container-{{ spacing|default('default') }} {% if container_small %}container-small{% endif %}">
+			{% set section_classes = block_name ~ '-section bg-' ~ (block_content.background_color|default('white')) ~ (block_content.background_image ? ' hero-background-image' : '') %}
+			{% set section_img_gradient = (block_content.gradient ? block_content.gradient|trim('background:.;') ~ ',' : 'linear-gradient(292deg,rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%),') %}
+			{% set section_bg_img = block_content.background_image ? 'background-image:' ~ section_img_gradient ~ ' url(' ~ block_content.background_image.url ~ ');' : null %}
+
+			{# Render #}
+			<section class="{{ section_classes }}" {% if section_bg_img is not null %} style="{{ section_bg_img }}" {% endif %}>
+				<div class="container container-{{ spacing|default('default') }}{% if container_small %} container-small{% endif %}">
 					{% include 'content-blocks/' ~ page ~ '/' ~ block_name ~ '.html.twig' with { content: content[block_name] } %}
 				</div>
 			</section>
