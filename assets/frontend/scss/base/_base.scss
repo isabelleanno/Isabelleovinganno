@@ -31,3 +31,10 @@ h1 {
         font-size: px-to-rem(14);
     }
 }
+
+p > a {
+    color: $senary !important;
+    &:hover {
+        text-decoration: underline;
+    }
+}

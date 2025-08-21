@@ -22,7 +22,7 @@ class HtmlExtension extends AbstractExtension
 
         // Add classes to common HTML elements
         $patterns = [
-            '/<(p|h[1-6]|span|div|a|strong|em|ul|ol|li)(\s[^>]*)?>/i',
+            '/<(p|h[1-6]|span|div|strong|em|ul|ol|li)(\s[^>]*)?>/i',
         ];
 
         foreach ($patterns as $pattern) {
