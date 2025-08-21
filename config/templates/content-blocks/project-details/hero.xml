@@ -17,7 +17,7 @@
                             <title lang="en">Hero</title>
                         </meta>
                         <properties>
-                            <property name="background_image" type="single_media_selection" colspan="4">
+                            <property name="pdp_hero_background_image" type="single_media_selection" colspan="4">
                                 <meta>
                                     <title lang="en">Image</title>
                                 </meta>

@@ -8,3 +8,11 @@
     background-position: center;
     height: 100vh;
 }
+
+.hero-services {
+    border-left: 1px solid white;
+    max-height: min-content;
+    p {
+        font-size: px-to-rem(18);
+    }
+}

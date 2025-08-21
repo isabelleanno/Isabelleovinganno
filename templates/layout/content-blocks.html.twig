@@ -13,9 +13,9 @@
 			{# Set variables used in rendering #}
 			{% set spacing = block_content.settings.spacing_options|default(null) %}
 			{% set container_small = block_content.settings.container_small|default(false) %}
-			{% set section_classes = block_name ~ '-section bg-' ~ (block_content.background_color|default('white')) ~ (block_content.background_image ? ' hero-background-image' : '') %}
-			{% set section_img_gradient = (block_content.gradient ? block_content.gradient|trim('background:.;') ~ ',' : 'linear-gradient(292deg,rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%),') %}
-			{% set section_bg_img = block_content.background_image ? 'background-image:' ~ section_img_gradient ~ ' url(' ~ block_content.background_image.url ~ ');' : null %}
+			{% set section_classes = block_name ~ '-section bg-' ~ (block_content.background_color|default('white')) ~ (block_content.pdp_hero_background_image is defined ? ' hero-background-image' : '') %}
+			{% set section_img_gradient = (block_content.gradient is defined ? block_content.gradient|trim('background:.;') ~ ',' : 'linear-gradient(292deg,rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%),') %}
+			{% set section_bg_img = block_content.pdp_hero_background_image is defined ? 'background-image:' ~ section_img_gradient ~ ' url(' ~ block_content.pdp_hero_background_image.url ~ ');' : null %}
 
 			{# Render #}
 			<section class="{{ section_classes }}" {% if section_bg_img is not null %} style="{{ section_bg_img }}" {% endif %}>
