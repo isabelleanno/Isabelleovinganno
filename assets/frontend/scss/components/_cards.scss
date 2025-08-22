@@ -24,6 +24,9 @@
             @include media-breakpoint-up(lg) {
                 min-height: 238px;
             }
+            p {
+                margin-bottom: 1rem;
+            }
         }
         .text-button > p {
             @include multiline-ellipsis(4);
@@ -43,5 +46,9 @@
         bottom: 0;
         right: 0;
         min-height: unset;
+
+        p {
+            margin-bottom: 0;
+        }
     }
 }

@@ -3,10 +3,11 @@
     "app": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_gsap_index_js-node_modul-12636d.js",
+        "/build/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_gsap_index_js-node_modul-b172be.js",
         "/build/app.js"
       ],
       "css": [
+        "/build/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_gsap_index_js-node_modul-b172be.css",
         "/build/app.css"
       ]
     }

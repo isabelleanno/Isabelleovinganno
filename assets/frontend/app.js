@@ -42,3 +42,18 @@ document.addEventListener('DOMContentLoaded', function() {
 gsap.to(".alert-frame", { opacity: 1, display: "flex", duration: 0.5 });
 gsap.to(".alert-frame", { opacity: 0, display: "none", duration: 1, delay: 3 });
 });
+
+// Import Swiper 
+import Swiper from 'swiper/bundle';
+
+// import styles bundle
+import 'swiper/css/bundle';
+
+var swiper = new Swiper(".process-swiper", {
+    slidesPerView: 2,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
