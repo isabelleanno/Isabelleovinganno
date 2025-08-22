@@ -17,7 +17,7 @@
                             <title lang="en">Process</title>
                         </meta>
                         <properties>
-                            <property name="row_color" type="single_select">
+                            <property name="background_color" type="single_select">
                                 <meta>
                                     <title lang="en">Background Color</title>
                                 </meta>
