@@ -1,0 +1,79 @@
+<?xml version="1.0" ?>
+<template
+    xmlns="http://schemas.sulu.io/template/template"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
+    >
+    <section name="skills">
+        <meta>
+            <title lang="en">Skills Section</title>
+        </meta>
+        <properties>
+            <block name="skills" default-type="skills"  minOccurs="1" maxOccurs="1">
+                <types>
+                    <type name="skills">
+                        <meta>
+                            <title lang="en">Skills</title>
+                        </meta>
+                        <properties>
+                            <property name="color" type="single_select">
+                                <meta>
+                                    <title lang="en">Background Color</title>
+                                </meta>
+                                <xi:include
+                                    href="../../properties/color.xml"
+                                    xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:property/sulu:params)"
+                                />
+                            </property>
+                            <property name="image" type="single_media_selection">
+                                <meta>
+                                    <title lang="en">Image</title>
+                                </meta>
+                            </property>
+                            <xi:include
+                                href="../../components/headers.xml"
+                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
+                            />
+                            <xi:include
+                                href="../../components/text.xml"
+                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
+                            />
+                            <block name="tech_stack" default-type="icon" minOccurs="0" maxOccurs="5">
+                                <meta>
+                                    <title lang="en">Tech Stack</title>
+                                </meta>
+                                <params>
+                                    <param name="add_button_text">
+                                        <meta>
+                                            <title lang="en">Add stack item</title>
+                                        </meta>
+                                    </param>
+                                </params>
+                                <types>
+                                    <type name="icon">
+                                        <meta>
+                                            <title lang="en">Item</title>
+                                        </meta>
+                                        <properties>
+                                            <property name="icon" type="single_media_selection" mandatory="true" colspan="6">
+                                                <meta>
+                                                    <title lang="en">Icon</title>
+                                                </meta>
+                                            </property>
+                                            <property name="text" type="text_line" mandatory="true" colspan="6">
+                                                <meta>
+                                                    <title lang="en">Name</title>
+                                                </meta>
+                                            </property>
+                                        </properties>
+                                    </type>
+                                </types>
+                            </block>
+                        </properties>
+                    </type>
+                </types>
+            </block>
+        </properties>
+    </section>
+</template>
