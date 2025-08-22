@@ -25,6 +25,6 @@
         <meta>
             <title lang="en">32x32</title>
         </meta>
-        <scale x="32" y="32" mode="inset"/>
+        <scale x="32" y="32"/>
     </format>
 </formats>

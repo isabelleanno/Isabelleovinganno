@@ -1,0 +1,20 @@
+.overview-section {
+    .container {
+        margin: 0;
+    }
+}
+
+.pdp-section {
+    border: 1px solid $white;
+    padding: px-to-rem(50);
+
+    &--left {
+        border-left: 0;
+        border-bottom-right-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding: px-to-rem(72);
+    }
+}

@@ -25,3 +25,11 @@ h5,
 .text-senary {
     color: $senary;
 }
+
+.white-icon {
+    filter: brightness(0) saturate(100%) invert(100%);
+}
+
+.border-right-white {
+    border-right: 1px solid $white;
+}
