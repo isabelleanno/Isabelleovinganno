@@ -17,7 +17,7 @@
                             <title lang="en">Process</title>
                         </meta>
                         <properties>
-                            <property name="color" type="single_select">
+                            <property name="row_color" type="single_select">
                                 <meta>
                                     <title lang="en">Background Color</title>
                                 </meta>
@@ -26,44 +26,40 @@
                                     xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:property/sulu:params)"
                                 />
                             </property>
-                            <property name="image" type="single_media_selection">
-                                <meta>
-                                    <title lang="en">Image</title>
-                                </meta>
-                            </property>
                             <xi:include
                                 href="../../components/headers.xml"
                                 xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
                             />
-                            <xi:include
-                                href="../../components/text.xml"
-                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
-                            />
-                            <block name="tech_stack" default-type="icon" minOccurs="0" maxOccurs="5">
+                            <block name="process_cards" default-type="icon" minOccurs="0" maxOccurs="5">
                                 <meta>
-                                    <title lang="en">Tech Stack</title>
+                                    <title lang="en">Process Cards</title>
                                 </meta>
                                 <params>
                                     <param name="add_button_text">
                                         <meta>
-                                            <title lang="en">Add stack item</title>
+                                            <title lang="en">Add Card</title>
                                         </meta>
                                     </param>
                                 </params>
                                 <types>
                                     <type name="icon">
                                         <meta>
-                                            <title lang="en">Item</title>
+                                            <title lang="en">card</title>
                                         </meta>
                                         <properties>
-                                            <property name="icon" type="single_media_selection" mandatory="true" colspan="6">
+                                            <property name="header" type="text_line">
                                                 <meta>
-                                                    <title lang="en">Icon</title>
+                                                    <title lang="en">Header</title>
                                                 </meta>
                                             </property>
-                                            <property name="text" type="text_line" mandatory="true" colspan="6">
+                                            <property name="card_image" type="single_media_selection">
                                                 <meta>
-                                                    <title lang="en">Name</title>
+                                                    <title lang="en">Image</title>
+                                                </meta>
+                                            </property>
+                                            <property name="text_content" type="text_editor">
+                                                <meta>
+                                                    <title lang="en">Description</title>
                                                 </meta>
                                             </property>
                                         </properties>

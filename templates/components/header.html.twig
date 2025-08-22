@@ -1,3 +1,13 @@
+
+{# Usage:
+	
+	{% include 'components/header.html.twig' with { 
+		content: content,
+		headerCssClasses: headerCssClasses|default(''),
+	} %}
+	
+#}
+
 {# Extract data from content_block or use passed variables #}
 {% set headerSize = header_size|default(content.header_size|default('h1')) %}
 {% set headerContent = content.header|default(null) %}

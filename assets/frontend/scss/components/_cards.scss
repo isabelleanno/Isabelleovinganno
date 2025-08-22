@@ -18,6 +18,7 @@
             }
         }
         &-text {
+            position: relative;
             z-index: 10;
             margin-top: -25%;
             @include media-breakpoint-up(lg) {
@@ -32,5 +33,15 @@
                 padding: px-to-rem(25) px-to-rem(30);
             }
         }
+    }
+}
+
+// Found only on process section of pdp
+.process-card {
+    .card--project-text {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        min-height: unset;
     }
 }

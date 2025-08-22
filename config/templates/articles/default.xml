@@ -56,7 +56,7 @@
             xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:section)"
         />
         <xi:include
-            href="../content-blocks/project-details/skills.xml"
+            href="../content-blocks/project-details/lessons.xml"
             xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:section)"
         />
         <xi:include

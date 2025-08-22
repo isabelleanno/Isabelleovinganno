@@ -1,0 +1,15 @@
+<div class="row pdp-section pdp-section--left {{ content.row_color ? 'bg-' ~ content.row_color : '' }}">
+	<div class="col">
+		{% include 'components/header.html.twig' with { 
+			content: content,
+			headerCssClasses: headerCssClasses|default(''),
+		} %}
+	</div>
+	{% if content.lessons_cards %}
+		<div class="col">
+			{% for card in content.lessons_cards %}
+				{{ dump(card) }}
+			{% endfor %}
+		</div>
+	{% endif %}
+</div>

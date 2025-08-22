@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-	{% set project_blocks = ['hero','overview','process','skills','contact'] %}
+	{% set project_blocks = ['hero','overview','process','lessons','contact'] %}
 	{% include 'layout/content-blocks.html.twig' with { content: content, page: 'project-details', block_order: project_blocks } %}
 {% endblock %}

@@ -1,3 +1,15 @@
-<div class="row pdp-section pdp-section--right">
-	{{dump(content)}}
+<div class="row pdp-section pdp-section--right {{ content.row_color ? 'bg-' ~ content.row_color : '' }}">
+	<div class="row">
+		{% include 'components/header.html.twig' with { 
+			content: content,
+			headerCssClasses: "mb-5",
+		} %}
+	</div>
+	{% if content.process_cards %}
+		<div class="row">
+			{% for card in content.process_cards %}
+				{% include 'components/cards/project-cards.html.twig' with { card: card, colClass: "process-card col-6" } %}
+			{% endfor %}
+		</div>
+	{% endif %}
 </div>

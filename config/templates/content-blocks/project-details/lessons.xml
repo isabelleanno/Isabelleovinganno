@@ -5,19 +5,19 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
     >
-    <section name="skills">
+    <section name="lessons">
         <meta>
-            <title lang="en">Skills Section</title>
+            <title lang="en">lessons Section</title>
         </meta>
         <properties>
-            <block name="skills" default-type="skills"  minOccurs="1" maxOccurs="1">
+            <block name="lessons" default-type="lessons"  minOccurs="1" maxOccurs="1">
                 <types>
-                    <type name="skills">
+                    <type name="lessons">
                         <meta>
-                            <title lang="en">Skills</title>
+                            <title lang="en">Lessons</title>
                         </meta>
                         <properties>
-                            <property name="color" type="single_select">
+                            <property name="row_color" type="single_select">
                                 <meta>
                                     <title lang="en">Background Color</title>
                                 </meta>
@@ -26,34 +26,29 @@
                                     xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:property/sulu:params)"
                                 />
                             </property>
-                            <property name="image" type="single_media_selection">
-                                <meta>
-                                    <title lang="en">Image</title>
-                                </meta>
-                            </property>
                             <xi:include
                                 href="../../components/headers.xml"
                                 xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
                             />
                             <xi:include
-                                href="../../components/text.xml"
-                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
+                                href="../../components/buttons/buttons.xml"
+                               xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:properties/sulu:*)"
                             />
-                            <block name="tech_stack" default-type="icon" minOccurs="0" maxOccurs="5">
+                            <block name="lessons_cards" default-type="card" minOccurs="0" maxOccurs="5">
                                 <meta>
-                                    <title lang="en">Tech Stack</title>
+                                    <title lang="en">Lessons Cards</title>
                                 </meta>
                                 <params>
                                     <param name="add_button_text">
                                         <meta>
-                                            <title lang="en">Add stack item</title>
+                                            <title lang="en">Add card</title>
                                         </meta>
                                     </param>
                                 </params>
                                 <types>
-                                    <type name="icon">
+                                    <type name="card">
                                         <meta>
-                                            <title lang="en">Item</title>
+                                            <title lang="en">Card</title>
                                         </meta>
                                         <properties>
                                             <property name="icon" type="single_media_selection" mandatory="true" colspan="6">
