@@ -38,9 +38,38 @@ document.addEventListener('DOMContentLoaded', function() {
 import { gsap } from "gsap"; 
  
 document.addEventListener('DOMContentLoaded', function() {
-// Alert frame
-gsap.to(".alert-frame", { opacity: 1, display: "flex", duration: 0.5 });
-gsap.to(".alert-frame", { opacity: 0, display: "none", duration: 1, delay: 3 });
+  // Alert frame
+  gsap.to(".alert-frame", { opacity: 1, display: "flex", duration: 0.5 });
+  gsap.to(".alert-frame", { opacity: 0, display: "none", duration: 1, delay: 3 });
+
+  // 3D Card Flip animation
+  const flippableCards = document.querySelectorAll('.card--flippable');
+    
+  function flipCardToBack(card) {
+    
+    const cardFront = card.querySelector('.card-front');
+    const cardBack = card.querySelector('.card-back');
+    gsap.to(card, { 
+    rotationY: 180, 
+    duration: 1,
+    onUpdate: function() {
+      if (this.progress() >= 0.25) {
+        if (!cardFront.classList.contains('d-none')) {
+          card.classList.add('flipped-back');
+          cardFront.classList.add('d-none');
+          cardBack.classList.remove('d-none');
+        }
+      }
+    }
+  });
+  }
+
+  flippableCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      flipCardToBack(card);
+    });
+  });
+
 });
 
 // Import Swiper 

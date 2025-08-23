@@ -34,37 +34,10 @@
                                 href="../../components/buttons/buttons.xml"
                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:properties/sulu:*)"
                             />
-                            <block name="lessons_cards" default-type="card" minOccurs="0" maxOccurs="5">
-                                <meta>
-                                    <title lang="en">Lessons Cards</title>
-                                </meta>
-                                <params>
-                                    <param name="add_button_text">
-                                        <meta>
-                                            <title lang="en">Add card</title>
-                                        </meta>
-                                    </param>
-                                </params>
-                                <types>
-                                    <type name="card">
-                                        <meta>
-                                            <title lang="en">Card</title>
-                                        </meta>
-                                        <properties>
-                                            <property name="icon" type="single_media_selection" mandatory="true" colspan="6">
-                                                <meta>
-                                                    <title lang="en">Icon</title>
-                                                </meta>
-                                            </property>
-                                            <property name="text" type="text_line" mandatory="true" colspan="6">
-                                                <meta>
-                                                    <title lang="en">Name</title>
-                                                </meta>
-                                            </property>
-                                        </properties>
-                                    </type>
-                                </types>
-                            </block>
+                            <xi:include
+                                    href="../../components/cards/image-text-cards.xml"
+                                    xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:block)"
+                                />
                         </properties>
                     </type>
                 </types>
