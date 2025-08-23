@@ -5,8 +5,8 @@
 	{% set column_class = 'col-lg-' ~ columns ~ (length > 1 and length % 2 == 0 ? ' col-md-6' : ' col-md') %}
 	{% for card in valid_cards %}
 		<div class="{{ column_class }}">
-			<div class="card card--image-text{{ card.back is not empty ? ' card--flippable' : '' }} d-flex flex-column justify-content-between">
-				<div class="card-front">
+			<div class="card card--image-text{{ card.back is not empty ? ' card--flippable' : '' }}">
+				<div class="card-front d-flex flex-column justify-content-between">
 					<div class="d-flex align-items-center justify-content-center">
 						{% include 'components/image.html.twig' 
 							with {
@@ -14,9 +14,9 @@
 							format: '120x130-inset',
 						} %}
 					</div>
-					<div class="card-body p-0 mt-3 d-flex flex-column justify-content-between">
-						<h3 class="h6 fira-code text-center card-title">{{card.header|default(null)}}</h3>
-						<p class="card-text text-center">{{card.text_content|default(null)}}</p>
+					<div class="card-body p-0 mt-4 d-flex flex-column justify-content-between">
+						<h3 class="h6 fira-code text-center card-title mb-3">{{card.header|default(null)}}</h3>
+						<p class="card-text text-center mb-4">{{card.text_content|default(null)}}</p>
 					</div>
 				</div>
 				{% if card.back is not empty %}

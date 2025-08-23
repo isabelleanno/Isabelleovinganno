@@ -4,5 +4,7 @@
   "build/runtime.js": "/build/runtime.js",
   "build/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_gsap_index_js-node_modul-b172be.css": "/build/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_gsap_index_js-node_modul-b172be.css",
   "build/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_gsap_index_js-node_modul-b172be.js": "/build/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_gsap_index_js-node_modul-b172be.js",
-  "build/fonts/BwGradual.woff": "/build/fonts/BwGradual.0cf2ff84.woff"
+  "build/fonts/BwGradual.woff": "/build/fonts/BwGradual.0cf2ff84.woff",
+  "build/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_gsap_index_js-node_modul-40bdee.css": "/build/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_gsap_index_js-node_modul-40bdee.css",
+  "build/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_gsap_index_js-node_modul-40bdee.js": "/build/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_gsap_index_js-node_modul-40bdee.js"
 }

@@ -45,31 +45,74 @@ document.addEventListener('DOMContentLoaded', function() {
   // 3D Card Flip animation
   const flippableCards = document.querySelectorAll('.card--flippable');
     
-  function flipCardToBack(card) {
-    
-    const cardFront = card.querySelector('.card-front');
-    const cardBack = card.querySelector('.card-back');
-    gsap.to(card, { 
-    rotationY: 180, 
-    duration: 1,
-    onUpdate: function() {
-      if (this.progress() >= 0.25) {
-        if (!cardFront.classList.contains('d-none')) {
-          card.classList.add('flipped-back');
-          cardFront.classList.add('d-none');
-          cardBack.classList.remove('d-none');
-        }
-      }
+    function flipCardToBack(card) {
+        const cardFront = card.querySelector('.card-front');
+        const cardBack = card.querySelector('.card-back');
+        gsap.to(card, { 
+            rotationY: 180, 
+            duration: 1,
+            onUpdate: function() {
+                if (this.progress() >= 0.25) {
+                    if (!cardFront.classList.contains('d-none')) {
+                        card.classList.add('flipped-back');
+                        cardFront.classList.add('d-none');
+                        cardBack.classList.remove('d-none');
+                    }
+                }
+            },
+        });
     }
-  });
-  }
+    function flipCardToFront(card) {
+        const cardFront = card.querySelector('.card-front');
+        const cardBack = card.querySelector('.card-back');
+        gsap.to(card, { 
+        rotationY: 0, 
+        duration: 1,
+        onUpdate: function() {
+            if (this.progress() >= 0.25) {
+                    if (cardFront.classList.contains('d-none')) {
+                    card.classList.remove('flipped-back');
+                    cardFront.classList.remove('d-none');
+                    cardBack.classList.add('d-none');
+                    }
+                }
+            }
+        });
+    }
 
   flippableCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      flipCardToBack(card);
-    });
-  });
+    let flipBackTimeout;
+    let isAnimating = false;
 
+    card.addEventListener('mouseenter', () => {
+        if (flipBackTimeout) {
+            clearTimeout(flipBackTimeout);
+            flipBackTimeout = null;
+        }
+        
+        if (!isAnimating && !card.classList.contains('flipped-back')) {
+            isAnimating = true;
+            flipCardToBack(card);
+
+            setTimeout(() => {
+                isAnimating = false;
+            }, 1000);
+        }
+    });
+
+    card.addEventListener('mouseleave', () => {
+        flipBackTimeout = setTimeout(() => {
+            if (!isAnimating && card.classList.contains('flipped-back')) {
+                isAnimating = true;
+                flipCardToFront(card);
+                
+                setTimeout(() => {
+                    isAnimating = false;
+                }, 1000);
+            }
+        });
+    });
+});
 });
 
 // Import Swiper 
