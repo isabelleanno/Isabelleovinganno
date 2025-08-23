@@ -12,3 +12,38 @@
         font-size: px-to-rem(18);
     }
 }
+// Process section
+.process-section {
+    overflow: hidden;
+}
+
+// Swiper for process section
+.swiper-button-next,
+.swiper-button-prev {
+    position: unset;
+    left: unset;
+    right: unset;
+    background: $white;
+    width: px-to-rem(48);
+    height: px-to-rem(48);
+    border-radius: 50%;
+
+    &:after {
+        font-size: px-to-rem(18);
+        color: $primary;
+    }
+}
+
+.swiper-pagination-progressbar.swiper-pagination-horizontal {
+    position: unset;
+    width: px-to-rem(250);
+    margin-bottom: px-to-rem(20);
+    border-radius: 3px;
+    overflow: hidden;
+}
+.swiper-pagination-progressbar {
+    background: $gray-200;
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background: $senary;
+}

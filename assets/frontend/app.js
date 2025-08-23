@@ -54,6 +54,10 @@ var swiper = new Swiper(".process-swiper", {
       spaceBetween: 30,
       pagination: {
         el: ".swiper-pagination",
-        clickable: true,
+        type: "progressbar",
+      },
+        navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
       },
     });
