@@ -39,7 +39,10 @@
         &-text {
             position: relative;
             z-index: 10;
-            margin-top: -25%;
+            margin-top: -60%;
+            @include media-breakpoint-up(md) {
+                margin-top: -25%;
+            }
             @include media-breakpoint-up(lg) {
                 min-height: 238px;
             }

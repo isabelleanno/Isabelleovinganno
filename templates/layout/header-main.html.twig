@@ -11,7 +11,9 @@
 					{% include 'layout/navigation/main-nav.html.twig' %}
 				</div>
 				{# language switcher #}
-				{% include 'components/language-switch.html.twig' %}
+				<div class="col-auto d-none d-lg-flex flex-column justify-content-center">
+					{% include 'components/language-switch.html.twig' %}
+				</div>
 			{% endblock %}
 		</div>
 	</div>

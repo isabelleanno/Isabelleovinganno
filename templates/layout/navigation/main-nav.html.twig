@@ -1,11 +1,11 @@
 <ul class="main-nav navbar-nav d-flex flex-row align-items-center justify-content-between">
 	{% block main_nav_items %}
 		{# Desktop #}
-		<div class="d-none d-xl-flex">
+		<div class="d-none d-lg-flex">
 			{% include 'layout/navigation/nav-contents.html.twig' %}
 		</div>
 		{# Mobile #}
-		<button class="navbar-toggler d-flex align-items-center text-primary d-xl-none" data-bs-toggle="offcanvas" href="#offcanvasNav" role="button" aria-controls="offcanvasNav">
+		<button class="navbar-toggler d-flex align-items-center text-primary d-lg-none" data-bs-toggle="offcanvas" href="#offcanvasNav" role="button" aria-controls="offcanvasNav">
 			{% include 'utilities/icon.html.twig' with {
 				icon: 'hamburger-icon'
 			} %}
