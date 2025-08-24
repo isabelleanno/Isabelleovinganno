@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<template
+    xmlns="http://schemas.sulu.io/template/template"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
+    >
+    <section name="process">
+        <meta>
+            <title lang="en">Process Section</title>
+        </meta>
+        <properties>
+            <block name="process" default-type="process"  minOccurs="1" maxOccurs="1">
+                <types>
+                    <type name="process">
+                        <meta>
+                            <title lang="en">Process</title>
+                        </meta>
+                        <properties>
+                            <property name="background_color" type="single_select" colspan="8">
+                                <meta>
+                                    <title lang="en">Background Color</title>
+                                    <info_text>Set to "None" to use the custom background color.</info_text>
+                                </meta>
+                                <xi:include
+                                    href="../../properties/color.xml"
+                                    xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:property/sulu:params)"
+                                />
+                            </property>
+                            <property name="custom_background_color" type="color" colspan="4">
+                                <meta>
+                                    <title lang="en">Optional custom color</title>
+                                </meta>
+                            </property>
+                            <xi:include
+                                href="../../components/headers.xml"
+                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
+                            />
+                            <block name="process_cards" default-type="icon" minOccurs="0" maxOccurs="5">
+                                <meta>
+                                    <title lang="en">Process Cards</title>
+                                </meta>
+                                <params>
+                                    <param name="add_button_text">
+                                        <meta>
+                                            <title lang="en">Add Card</title>
+                                        </meta>
+                                    </param>
+                                </params>
+                                <types>
+                                    <type name="icon">
+                                        <meta>
+                                            <title lang="en">card</title>
+                                        </meta>
+                                        <properties>
+                                            <property name="header" type="text_line">
+                                                <meta>
+                                                    <title lang="en">Header</title>
+                                                </meta>
+                                            </property>
+                                            <property name="card_image" type="single_media_selection">
+                                                <meta>
+                                                    <title lang="en">Image</title>
+                                                </meta>
+                                            </property>
+                                            <property name="text_content" type="text_editor">
+                                                <meta>
+                                                    <title lang="en">Description</title>
+                                                </meta>
+                                            </property>
+                                        </properties>
+                                    </type>
+                                </types>
+                            </block>
+                        </properties>
+                    </type>
+                </types>
+            </block>
+        </properties>
+    </section>
+</template>

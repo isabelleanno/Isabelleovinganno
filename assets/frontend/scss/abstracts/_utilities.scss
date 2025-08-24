@@ -25,3 +25,19 @@ h5,
 .text-senary {
     color: $senary;
 }
+
+.white-icon {
+    filter: brightness(0) saturate(100%) invert(100%);
+}
+
+.border-right-white {
+    border-right: 1px solid $white;
+}
+
+.bg-lighter {
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
+.bordered {
+    border: 2px solid $primary;
+}

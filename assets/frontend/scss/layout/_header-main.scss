@@ -12,9 +12,14 @@ $header-height: px-to-rem(60);
 
 // Make text white on everything besides project overview page
 body:not(.body--project-overview) {
-    .dropdown-toggle,
-    .nav-item {
-        color: white;
+    @include media-breakpoint-up(lg) {
+        .dropdown-toggle,
+        .nav-item {
+            color: $white;
+        }
+    }
+    .icon-hamburger-icon {
+        color: $white;
     }
     .logos-regular > img {
         filter: brightness(0) saturate(100%) invert(100%); // Make white svg

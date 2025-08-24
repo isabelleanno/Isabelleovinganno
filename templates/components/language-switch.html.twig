@@ -8,14 +8,14 @@
 				{% include 'components/image.html.twig' with {
 					image: englishFlag,
 					format: '32x32',
-					class: "me-2"
+					imageCssClasses: "me-2"
 				} %}
 				<p class="mb-0">EN</p>
 			{% else %}
 				{% include 'components/image.html.twig' with {
 					image: dutchFlag,
 					format: '32x32',
-					class: "me-2"
+					imageCssClasses: "me-2"
 				} %}
 				<p class="mb-0">NL</p>
 			{% endif %}
@@ -27,7 +27,7 @@
 						{% include 'components/image.html.twig' with {
 							image: dutchFlag,
 							format: '32x32',
-							class: "me-2"
+							imageCssClasses: "me-2"
 						} %}
 						<p class="mb-0">NL</p>
 					</a>
@@ -36,7 +36,7 @@
 						{% include 'components/image.html.twig' with {
 							image: englishFlag,
 							format: '32x32',
-							class: "me-2"
+							imageCssClasses: "me-2"
 						} %}
 						<p class="mb-0">EN</p>
 					</a>

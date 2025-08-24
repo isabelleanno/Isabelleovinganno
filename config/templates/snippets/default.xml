@@ -69,9 +69,24 @@
                 <title lang="en">Translations</title>
             </meta>
             <properties>
-                <property name="learn_more" type="text_line">
+                <property name="learn_more" type="text_line" colspan="4">
                     <meta>
                         <title lang="en">Learn More</title>
+                    </meta>
+                </property>
+                <property name="services" type="text_line" colspan="4">
+                    <meta>
+                        <title lang="en">Services</title>
+                    </meta>
+                </property>
+                <property name="contact_success_msg_header" type="text_line" colspan="6">
+                    <meta>
+                        <title lang="en">Form Send Success Header</title>
+                    </meta>
+                </property>
+                <property name="contact_success_msg_text" type="text_line" colspan="6">
+                    <meta>
+                        <title lang="en">Form Send Success Text</title>
                     </meta>
                 </property>
             </properties>

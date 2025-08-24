@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<template
+    xmlns="http://schemas.sulu.io/template/template"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd"
+    >
+    <section name="lessons">
+        <meta>
+            <title lang="en">lessons Section</title>
+        </meta>
+        <properties>
+            <block name="lessons" default-type="lessons"  minOccurs="1" maxOccurs="1">
+                <types>
+                    <type name="lessons">
+                        <meta>
+                            <title lang="en">Lessons</title>
+                        </meta>
+                        <properties>
+                            <property name="background_color" type="single_select" colspan="8">
+                                <meta>
+                                    <title lang="en">Background Color</title>
+                                    <info_text>Set to "None" to use the custom background color.</info_text>
+                                </meta>
+                                <xi:include
+                                    href="../../properties/color.xml"
+                                    xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:property/sulu:params)"
+                                />
+                            </property>
+                            <property name="custom_background_color" type="color" colspan="4">
+                                <meta>
+                                    <title lang="en">Optional custom color</title>
+                                </meta>
+                            </property>
+                            <xi:include
+                                href="../../components/headers.xml"
+                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
+                            />
+                            <xi:include
+                                href="../../components/buttons/buttons.xml"
+                               xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:properties/sulu:*)"
+                            />
+                            <xi:include
+                                    href="../../components/cards/image-text-cards.xml"
+                                    xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:block)"
+                                />
+                        </properties>
+                    </type>
+                </types>
+            </block>
+        </properties>
+    </section>
+</template>
