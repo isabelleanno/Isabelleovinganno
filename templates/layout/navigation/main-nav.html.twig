@@ -12,7 +12,11 @@
 		</button>
 		<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel">
 			<div class="offcanvas-header">
-				<h5 class="offcanvas-title" id="offcanvasNavLabel">Offcanvas</h5>
+				<div class="col-8">
+					{% include 'components/image.html.twig' with {
+					image: s_default.desktop_logo
+				} %}
+				</div>
 				<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 			</div>
 			<div class="offcanvas-body">

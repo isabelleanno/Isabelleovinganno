@@ -2,7 +2,9 @@
 .hero-background-image {
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    @include media-breakpoint-up(lg) {
+        height: 100vh;
+    }
 }
 
 .hero-services {
