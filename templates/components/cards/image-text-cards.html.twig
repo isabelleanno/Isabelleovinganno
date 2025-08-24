@@ -20,8 +20,8 @@
 					</div>
 				</div>
 				{% if card.back is not empty %}
-					<div class="card-back d-none">
-						{{card.back[0].back_text_content|raw}}
+					<div class="card-back d-none {{ card.back[0].custom_bg is empty ? ' bg-primary' : '' }}" {% if card.back[0].custom_bg %} style="background: {{ card.back[0].custom_bg }};" {% endif %}>
+						{{ card.back[0].back_text_content|raw }}
 					</div>
 				{% endif %}
 			</div>
