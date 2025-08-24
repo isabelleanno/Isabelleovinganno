@@ -1,20 +1,21 @@
 <div class="row">
-	{% if content.image.url is not empty %}
-		<div class="mb-4 mb-xl-0 col-12 col-lg col-xl-4">
+	{% if content.image.url is defined and content.image.url is not empty %}
+		<div class="mb-4 mb-xl-0 col-12 col-lg col-xl-4 me-lg-5">
 			{% include 'components/image.html.twig' with {
         	image: content.image,
+			imageCssClasses: 'rounded',
    		 } %}
 		</div>
 	{% endif %}
-	<div class="col d-flex flex-column justify-content-around">
+	<div class="col d-flex flex-column justify-content-center">
 		{% include 'components/header.html.twig' with { 
-            content: content,
-            headerCssClasses: headerCssClasses|default(''),
-        } %}
+				content: content,
+				headerCssClasses:'mb-3',
+        	} %}
 		{% include 'components/text.html.twig' with { 
-            content: content,
-            textCssClasses: textCssClasses|default('')
-        } %}
+				content: content,
+				textCssClasses: 'mb-5'
+			} %}
 		{% if content.tech_stack is not empty %}
 			<div class="row">
 				{% for item in content.tech_stack %}

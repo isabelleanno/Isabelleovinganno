@@ -37,3 +37,7 @@ h5,
 .bg-lighter {
     background-color: rgba(255, 255, 255, 0.07);
 }
+
+.bordered {
+    border: 2px solid $primary;
+}

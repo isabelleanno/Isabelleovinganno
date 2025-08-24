@@ -1,0 +1,17 @@
+<div class="row">
+	{% if content.image.url is defined and content.image.url is not empty %}
+		<div class="mb-4 mb-xl-0 col-12 col-lg col-xl-4 me-lg-5">
+			{% include 'components/image.html.twig' with {
+        	image: content.image,
+			imageCssClasses: 'rounded',
+   		 } %}
+		</div>
+	{% endif %}
+	<div class="col d-flex flex-column justify-content-center">
+		{% include 'content-blocks/text-button.html.twig'  
+            with {
+            'content': content,
+            'headerCssClasses': 'mb-3'
+        }  %}
+	</div>
+</div>

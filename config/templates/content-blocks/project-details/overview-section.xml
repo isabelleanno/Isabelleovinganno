@@ -17,14 +17,20 @@
                             <title lang="en">Overview</title>
                         </meta>
                         <properties>
-                            <property name="background_color" type="single_select">
+                            <property name="background_color" type="single_select" colspan="8">
                                 <meta>
                                     <title lang="en">Background Color</title>
+                                    <info_text>Set to "None" to use the custom background color.</info_text>
                                 </meta>
                                 <xi:include
                                     href="../../properties/color.xml"
                                     xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:property/sulu:params)"
                                 />
+                            </property>
+                            <property name="custom_background_color" type="color" colspan="4">
+                                <meta>
+                                    <title lang="en">Optional custom color</title>
+                                </meta>
                             </property>
                             <property name="image" type="single_media_selection">
                                 <meta>
