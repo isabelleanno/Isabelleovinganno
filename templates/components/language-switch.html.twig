@@ -4,40 +4,32 @@
 <div class="dropdown">
 	<a class="dropdown-toggle d-flex align-items-center" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
 		{% if app.locale == 'en' %}
-			{% include 'components/image.html.twig' with {
-					image: englishFlag,
-					format: '32x32',
-					imageCssClasses: "me-2"
-				} %}
-			<p class="mb-0">EN</p>
+			{% include 'utilities/icon.html.twig' with {
+				icon: 'USA'
+			} %}
+			<p class="ms-2 mb-0">EN</p>
 		{% else %}
-			{% include 'components/image.html.twig' with {
-					image: dutchFlag,
-					format: '32x32',
-					imageCssClasses: "me-2"
-				} %}
-			<p class="mb-0">NL</p>
+			{% include 'utilities/icon.html.twig' with {
+				icon: 'NL'
+			} %}
+			<p class="ms-2 mb-0">NL</p>
 		{% endif %}
 	</a>
 	<ul class="dropdown-menu">
 		<li>
 			{% if app.locale == 'en' %}
 				<a class="dropdown-item d-flex align-items-center" href="/nl">
-					{% include 'components/image.html.twig' with {
-							image: dutchFlag,
-							format: '32x32',
-							imageCssClasses: "me-2"
-						} %}
-					<p class="mb-0">NL</p>
+					{% include 'utilities/icon.html.twig' with {
+						icon: 'NL'
+					} %}
+					<p class="ms-2 mb-0">NL</p>
 				</a>
 			{% else %}
 				<a class="dropdown-item d-flex align-items-center" href="/">
-					{% include 'components/image.html.twig' with {
-							image: englishFlag,
-							format: '32x32',
-							imageCssClasses: "me-2"
-						} %}
-					<p class="mb-0">EN</p>
+					{% include 'utilities/icon.html.twig' with {
+						icon: 'USA'
+					} %}
+					<p class="ms-2 mb-0">EN</p>
 				</a>
 			{% endif %}
 		</li>

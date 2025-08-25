@@ -1,4 +1,4 @@
-{% set image = card.card_image ? card.card_image :  card.hero.image ? card.hero.image :  null %}
+{% set image = card.card_image ? card.card_image : card.hero.pdp_hero_background_image ? card.hero.pdp_hero_background_image : null %}
 {% set s_default_snippet = sulu_snippet_load_by_area('site_settings') %}
 {% set s_default = s_default_snippet ? s_default_snippet.content : {} %}
 {% set colClass = colClass|default("col-12 col-lg-6 mb-5") %}

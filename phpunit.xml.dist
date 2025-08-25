@@ -22,6 +22,11 @@
         <env name="ELASTICSEARCH_HOST" value="127.0.0.1:9200"/>
         <env name="ELASTICSEARCH_INDEX" value="su_articles"/>
         <!-- ###- sulu/article-bundle ### -->
+
+        <!-- ###+ symfony/brevo-mailer ### -->
+        <!-- MAILER_DSN=brevo+api://KEY@default -->
+        <!-- MAILER_DSN=brevo+smtp://USERNAME:PASSWORD@default -->
+        <!-- ###- symfony/brevo-mailer ### -->
     </php>
 
     <testsuites>
