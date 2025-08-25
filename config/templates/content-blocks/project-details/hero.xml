@@ -17,9 +17,14 @@
                             <title lang="en">Hero</title>
                         </meta>
                         <properties>
-                            <property name="image" type="single_media_selection">
+                            <property name="pdp_hero_background_image" type="single_media_selection" colspan="4">
                                 <meta>
                                     <title lang="en">Image</title>
+                                </meta>
+                            </property>
+                            <property name="gradient" type="text_line" colspan="8">
+                                <meta>
+                                    <title lang="en">(optional) Image Gradient Overlay CSS</title>
                                 </meta>
                             </property>
                             <property name="text_content" type="text_line">

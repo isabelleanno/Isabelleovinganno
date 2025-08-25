@@ -37,6 +37,38 @@
                                 <title lang="en">Description</title>
                             </meta>
                         </property>
+                        <block name="back" minOccurs="0" maxOccurs="1">
+                            <meta>
+                                <title lang="en">Card Back</title>
+                            </meta>
+                            <params>
+                                <param name="add_button_text">
+                                    <meta>
+                                        <title lang="en">Add back</title>
+                                    </meta>
+                                </param>
+                            </params>
+                            <types>
+                                <type name="back_content">
+                                    <meta>
+                                        <title lang="en">Back Content</title>
+                                    </meta>
+                                    <properties>
+                                        <property name="custom_bg" type="text_line">
+                                            <meta>
+                                                <title lang="en">Custom background color</title>
+                                                <info_text>Add a hex code or linear gradient. Dark purple default.</info_text>
+                                            </meta>
+                                        </property>
+                                        <property name="back_text_content" type="text_editor">
+                                            <meta>
+                                                <title lang="en">Back Description</title>
+                                            </meta>
+                                        </property>
+                                    </properties>
+                                </type>
+                            </types>
+                        </block>
                     </properties>
                 </type>
             </types>

@@ -1,6 +1,19 @@
 <div class="row">
-	{% include 'components/image.html.twig' 
-        with {
-        image: content.image|default(null),
-    } %}
+	<div class="col">
+		<div class="col-lg-10">
+			<h1 class="display-1 text-white mb-5">{{_parent.content.header|default('')}}</h1>
+			<p class="text-white mt-lg-5">{{content.text_content|default('')}}</p>
+		</div>
+	</div>
+	<div class="col col-lg-3 ps-5 hero-services">
+		<p class="text-white opacity-50 mb-0">{{s_default.services|default('')}}</p>
+		{% if content.tags %}
+			<div class="my-3">
+				{% for tag in content.tags|slice(0, 3) %}
+					<h5 class="text-white manrope fw-light">{{tag}}</h5>
+				{% endfor %}
+			</div>
+		{% endif %}
+		<p class="text-white opacity-50">{{ content.date|date('F Y')|default('') }}</p>
+	</div>
 </div>

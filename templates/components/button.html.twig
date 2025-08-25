@@ -21,11 +21,11 @@
 				{% set text_class = button.text_color ? 'text-' ~ button.text_color : '' %}
 
 				<{{tag}} href="{{ url }}" class="{{ btn_class }}" {{ target|raw }}>
-					<span class="d-flex align-items-center gap-2 {{ button.arrow }}">
+					<span class="d-flex align-items-center gap-2">
 						<span class="{{ text_class }}">
 							{{ button.text }}
 						</span>
-						{% if button.arrow and button.arrow != "null" %}
+						{% if button.arrow %}
 							{% include 'utilities/icon.html.twig' with { icon: 'arrow' } %}
 						{% endif %}
 					</span>

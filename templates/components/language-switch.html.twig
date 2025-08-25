@@ -1,47 +1,45 @@
 {% set englishFlag = s_default.English|default(null) %}
 {% set dutchFlag = s_default.Dutch|default(null) %}
 
-<div class="col-auto d-flex flex-column justify-content-center">
-	<div class="dropdown">
-		<a class="dropdown-toggle d-flex align-items-center ps-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-			{% if app.locale == 'en' %}
-				{% include 'components/image.html.twig' with {
+<div class="dropdown">
+	<a class="dropdown-toggle d-flex align-items-center" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+		{% if app.locale == 'en' %}
+			{% include 'components/image.html.twig' with {
 					image: englishFlag,
 					format: '32x32',
-					class: "me-2"
+					imageCssClasses: "me-2"
 				} %}
-				<p class="mb-0">EN</p>
-			{% else %}
-				{% include 'components/image.html.twig' with {
+			<p class="mb-0">EN</p>
+		{% else %}
+			{% include 'components/image.html.twig' with {
 					image: dutchFlag,
 					format: '32x32',
-					class: "me-2"
+					imageCssClasses: "me-2"
 				} %}
-				<p class="mb-0">NL</p>
-			{% endif %}
-		</a>
-		<ul class="dropdown-menu">
-			<li>
-				{% if app.locale == 'en' %}
-					<a class="dropdown-item d-flex align-items-center" href="/nl">
-						{% include 'components/image.html.twig' with {
+			<p class="mb-0">NL</p>
+		{% endif %}
+	</a>
+	<ul class="dropdown-menu">
+		<li>
+			{% if app.locale == 'en' %}
+				<a class="dropdown-item d-flex align-items-center" href="/nl">
+					{% include 'components/image.html.twig' with {
 							image: dutchFlag,
 							format: '32x32',
-							class: "me-2"
+							imageCssClasses: "me-2"
 						} %}
-						<p class="mb-0">NL</p>
-					</a>
-				{% else %}
-					<a class="dropdown-item d-flex align-items-center" href="/">
-						{% include 'components/image.html.twig' with {
+					<p class="mb-0">NL</p>
+				</a>
+			{% else %}
+				<a class="dropdown-item d-flex align-items-center" href="/">
+					{% include 'components/image.html.twig' with {
 							image: englishFlag,
 							format: '32x32',
-							class: "me-2"
+							imageCssClasses: "me-2"
 						} %}
-						<p class="mb-0">EN</p>
-					</a>
-				{% endif %}
-			</li>
-		</ul>
-	</div>
+					<p class="mb-0">EN</p>
+				</a>
+			{% endif %}
+		</li>
+	</ul>
 </div>

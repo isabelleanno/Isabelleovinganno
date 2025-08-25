@@ -1,18 +1,22 @@
 <ul class="main-nav navbar-nav d-flex flex-row align-items-center justify-content-between">
 	{% block main_nav_items %}
 		{# Desktop #}
-		<div class="d-none d-xl-flex">
+		<div class="main-nav--inner d-none d-lg-flex align-items-center">
 			{% include 'layout/navigation/nav-contents.html.twig' %}
 		</div>
 		{# Mobile #}
-		<button class="navbar-toggler d-flex align-items-center text-primary d-xl-none" data-bs-toggle="offcanvas" href="#offcanvasNav" role="button" aria-controls="offcanvasNav">
+		<button class="navbar-toggler d-flex align-items-center text-primary d-lg-none" data-bs-toggle="offcanvas" href="#offcanvasNav" role="button" aria-controls="offcanvasNav">
 			{% include 'utilities/icon.html.twig' with {
 				icon: 'hamburger-icon'
 			} %}
 		</button>
 		<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel">
 			<div class="offcanvas-header">
-				<h5 class="offcanvas-title" id="offcanvasNavLabel">Offcanvas</h5>
+				<div class="col-8">
+					{% include 'components/image.html.twig' with {
+					image: s_default.desktop_logo
+				} %}
+				</div>
 				<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 			</div>
 			<div class="offcanvas-body">

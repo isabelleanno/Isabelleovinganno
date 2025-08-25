@@ -47,5 +47,25 @@
             href="../content-blocks/project-details/hero.xml"
             xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:section)"
         />
+        <xi:include
+            href="../content-blocks/project-details/overview-section.xml"
+            xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:section)"
+        />
+        <xi:include
+            href="../content-blocks/project-details/process.xml"
+            xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:section)"
+        />
+        <xi:include
+            href="../content-blocks/project-details/lessons.xml"
+            xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:section)"
+        />
+        <xi:include
+            href="../content-blocks/project-details/conclusion.xml"
+            xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:section)"
+        />
+        <xi:include
+            href="../content-blocks/homepage/contact.xml"
+            xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:section)"
+        />
     </properties>
 </template>
