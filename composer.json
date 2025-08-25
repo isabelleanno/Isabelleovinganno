@@ -44,6 +44,7 @@
         "sulu/form-bundle": "^2.5",
         "sulu/search-bundle": "*",
         "sulu/sulu": "~2.6.9",
+        "symfony/brevo-mailer": "7.2.*",
         "symfony/config": "^7.2",
         "symfony/dotenv": "^7.2",
         "symfony/flex": "^1.17 || ^2.0",
