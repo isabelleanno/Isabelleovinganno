@@ -27,19 +27,21 @@
         }
     }
     &--project {
+        height: 100%;
         img {
             width: 100%;
             height: unset;
-            max-height: 468px;
+            max-height: 375px;
             object-fit: cover;
             @include media-breakpoint-up(lg) {
-                height: 468px;
+                max-height: 475px;
+                height: 475px;
             }
         }
         &-text {
             position: relative;
             z-index: 10;
-            margin-top: -60%;
+            margin-top: -30%;
             @include media-breakpoint-up(md) {
                 margin-top: -25%;
             }
@@ -63,14 +65,28 @@
 
 // Found only on process section of pdp
 .process-card {
+    .card--project {
+        height: unset;
+        @include media-breakpoint-down(lg) {
+            height: px-to-rem(350);
+        }
+    }
     .card--project-text {
         position: absolute;
         bottom: 0;
         right: 0;
         min-height: unset;
-
+        overflow-y: auto;
+        max-height: px-to-rem(450);
+        @include media-breakpoint-down(lg) {
+            max-height: px-to-rem(325);
+        }
         p {
             margin-bottom: 0;
+        }
+
+        @include media-breakpoint-down(lg) {
+            padding: 10px;
         }
     }
 }

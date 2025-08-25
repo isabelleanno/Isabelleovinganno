@@ -34,6 +34,32 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Import Swiper 
+import Swiper from 'swiper/bundle';
+
+// import styles bundle
+import 'swiper/css/bundle';
+
+var swiper = new Swiper(".process-swiper", {
+    slidesPerView: 1,
+      spaceBetween: 15,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
+      },
+        navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        992: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+      },
+    });
+
 // Import GSAP for cool animations!
 import { gsap } from "gsap"; 
  
@@ -114,22 +140,3 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 });
-
-// Import Swiper 
-import Swiper from 'swiper/bundle';
-
-// import styles bundle
-import 'swiper/css/bundle';
-
-var swiper = new Swiper(".process-swiper", {
-    slidesPerView: 2,
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-        type: "progressbar",
-      },
-        navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });

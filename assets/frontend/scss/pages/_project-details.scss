@@ -26,13 +26,25 @@
     left: unset;
     right: unset;
     background: $white;
-    width: px-to-rem(48);
-    height: px-to-rem(48);
+    width: px-to-rem(32);
+    height: px-to-rem(32);
+    min-width: px-to-rem(32);
+    min-height: px-to-rem(32);
     border-radius: 50%;
 
     &:after {
-        font-size: px-to-rem(18);
+        font-size: px-to-rem(14);
         color: $primary;
+    }
+
+    @include media-breakpoint-up(lg) {
+        width: px-to-rem(48);
+        height: px-to-rem(48);
+        min-width: px-to-rem(48);
+        min-height: px-to-rem(48);
+        &:after {
+            font-size: px-to-rem(18);
+        }
     }
 }
 

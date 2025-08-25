@@ -6,7 +6,7 @@
 {% if image and card.text_content and card.header %}
 	<div class="{{ colClass }}">
 		<div class="card--project position-relative d-flex flex-column align-items-center">
-			<div class="card w-100 overflow-hidden">
+			<div class="card w-100 h-100 overflow-hidden">
 				{% include 'components/image.html.twig' with {
 						image: image,
 						imageCssClasses: 'card--project-image',
