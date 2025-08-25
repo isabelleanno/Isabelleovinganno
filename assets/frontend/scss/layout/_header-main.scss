@@ -43,6 +43,21 @@ body:not(.body--project-overview) {
     }
 }
 
+// Main nav
 .main-nav {
     gap: px-to-rem(25);
+    &--inner {
+        gap: 4rem;
+        margin-right: 2rem;
+    }
+    .nav-item.btn {
+        @include media-breakpoint-down(lg) {
+            padding: 0;
+            background: transparent;
+            color: $primary;
+            border: 0;
+            margin: 0;
+            display: list-item;
+        }
+    }
 }

@@ -1,4 +1,5 @@
 .card {
+    // Found on project details page: lessons section, and home page: areas of expertise section.
     &--image-text {
         background-color: rgba(255, 255, 255, 0.25);
         height: 100%;
@@ -12,6 +13,7 @@
             letter-spacing: 1.5%;
         }
     }
+    // Flippable image-text cards
     &--flippable {
         height: px-to-rem(350);
         min-height: unset;
@@ -26,25 +28,35 @@
             transform: rotateY(180deg);
         }
     }
+    // Project Overview cards (found on project overview page and homepage: "things I've built" section.)
+    // A variant of these cards are used in the Project Details Page, on the Process section. CSS for that found below
     &--project {
+        height: 100%;
         img {
             width: 100%;
             height: unset;
-            max-height: 468px;
+            max-height: 375px;
             object-fit: cover;
             @include media-breakpoint-up(lg) {
-                height: 468px;
+                max-height: 475px;
+                height: 475px;
             }
         }
         &-text {
             position: relative;
             z-index: 10;
-            margin-top: -25%;
+            margin-top: -30%;
+            p {
+                margin-bottom: 1rem;
+            }
+            @include media-breakpoint-up(md) {
+                margin-top: -25%;
+            }
             @include media-breakpoint-up(lg) {
                 min-height: 238px;
             }
-            p {
-                margin-bottom: 1rem;
+            @include media-breakpoint-down(lg) {
+                padding: 10px;
             }
         }
         .text-button > p {
@@ -60,12 +72,22 @@
 
 // Found only on process section of pdp
 .process-card {
+    .card--project {
+        height: unset;
+        @include media-breakpoint-down(lg) {
+            height: px-to-rem(350);
+        }
+    }
     .card--project-text {
         position: absolute;
         bottom: 0;
         right: 0;
         min-height: unset;
-
+        overflow-y: auto;
+        max-height: px-to-rem(450);
+        @include media-breakpoint-down(lg) {
+            max-height: px-to-rem(325);
+        }
         p {
             margin-bottom: 0;
         }

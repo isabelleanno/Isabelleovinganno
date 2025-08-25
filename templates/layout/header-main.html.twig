@@ -1,6 +1,6 @@
 <header class="header-main header-overlay d-flex align-items-center	">
 	<div class="container">
-		<div class="row">
+		<div class="row mt-5">
 			{% block header %}
 				{# Logo #}
 				<div class="col-auto d-flex align-items-center justify-content-center">
@@ -11,7 +11,9 @@
 					{% include 'layout/navigation/main-nav.html.twig' %}
 				</div>
 				{# language switcher #}
-				{% include 'components/language-switch.html.twig' %}
+				<div class="col-auto d-none d-lg-flex flex-column justify-content-center">
+					{% include 'components/language-switch.html.twig' %}
+				</div>
 			{% endblock %}
 		</div>
 	</div>

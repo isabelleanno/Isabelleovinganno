@@ -1,18 +1,17 @@
 <div class="row">
-	<div class="row p-0">
-		<div class="col mb-3">
+	<div class="col-12 mb-3">
 		{% include 'components/header.html.twig' with { 
-			content: content,
-			headerCssClasses: "text-end",
-		} %}
-	</div>
+				content: content,
+				headerCssClasses: "text-end",
+			} %}
 	</div>
 	{% if content.image_text_card %}
-		<div class="row p-0">
-			{% if content.image_text_card %}
-				{% include 'components/cards/image-text-cards.html.twig' with {'cards': content.image_text_card} %}
-			{% endif %}
+		<div class="col-12 d-flex">
+			<div class="row">
+				{% if content.image_text_card %}
+					{% include 'components/cards/image-text-cards.html.twig' with {'cards': content.image_text_card} %}
+				{% endif %}
 			</div>
 		</div>
-	{% endif %}
-</div>
+	</div>
+{% endif %}</div>
