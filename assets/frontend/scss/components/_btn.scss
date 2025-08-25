@@ -16,6 +16,7 @@ Contains the styles for all the buttns on the site.
         // Outlined buttons
         &.btn-outline-#{$color-name} {
             color: $btn-color;
+            border: 1px solid $btn-color;
 
             &:hover {
                 @if lightness($color-value) > 50% {
@@ -40,7 +41,15 @@ Contains the styles for all the buttns on the site.
             border-color: lighten($color-value, 14%);
         }
     }
-
+    &-outline-white {
+        border: 1px solid white;
+        &:hover {
+            background-color: $white;
+            span {
+                color: $primary !important;
+            }
+        }
+    }
     // Arrow buttons
     &:has(.icon) {
         display: inline-flex;
