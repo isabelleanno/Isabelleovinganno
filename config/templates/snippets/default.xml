@@ -62,6 +62,44 @@
                         <title lang="en">Flag (NL)</title>
                     </meta>
                 </property>
+                <section name="anchor_tags">
+                    <meta>
+                        <title lang="en">Anchor (jump) links</title>
+                    </meta>
+                    <properties>
+                        <block name="anchor_links" default-type="link">
+                            <meta>
+                                <title lang="en"></title>
+                            </meta>
+                            <params>
+                                <param name="add_button_text">
+                                    <meta>
+                                        <title lang="en">Add link</title>
+                                    </meta>
+                                </param>
+                            </params>
+                            <types>
+                                <type name="link">
+                                    <meta>
+                                        <title lang="en">Link</title>
+                                    </meta>
+                                    <properties>
+                                        <property name="section_id" type="text_line" mandatory="true" colspan="6">
+                                            <meta>
+                                                <title lang="en">Section ID</title>
+                                            </meta>
+                                        </property>
+                                        <property name="title" type="text_line" mandatory="true" colspan="6">
+                                            <meta>
+                                                <title lang="en">Link Name</title>
+                                            </meta>
+                                        </property>
+                                    </properties>
+                                </type>
+                            </types>
+                        </block>
+                    </properties>
+                </section>
             </properties>
         </section>
         <section name="translations">
@@ -69,12 +107,12 @@
                 <title lang="en">Translations</title>
             </meta>
             <properties>
-                <property name="learn_more" type="text_line" colspan="4">
+                <property name="learn_more" type="text_line" colspan="6">
                     <meta>
                         <title lang="en">Learn More</title>
                     </meta>
                 </property>
-                <property name="services" type="text_line" colspan="4">
+                <property name="services" type="text_line" colspan="6">
                     <meta>
                         <title lang="en">Services</title>
                     </meta>

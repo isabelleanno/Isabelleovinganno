@@ -1,14 +1,23 @@
 <div class="col-auto d-flex d-lg-none flex-column justify-content-center">
 	{% include 'components/language-switch.html.twig' %}
 </div>
-{% for item in sulu_navigation_root_tree('main', 2) %}
+{% for item in sulu_navigation_root_tree('main', 2, true) %}
 	{% set is_active = (uuid is defined and uuid == item.uuid) %}
-	<li class="nav-item  {{ item.children ? 'has-children' }}">
-		<sulu-link class="nav-link d-flex align-items-center {% if is_active %} active{% endif %}" href="{{ item.uuid }}" title="{{ item.title }}">{{
-                item.title
-                }}</sulu-link>
+	{% set title = item.excerpt.title ? item.excerpt.title : item.title %}
+	<li class="nav-item my-3 my-xl {{ item.children ? 'has-children' }}">
+		<sulu-link class="nav-link d-flex align-items-center {% if is_active %} active{% endif %}" href="{{ item.uuid }}" title="{{ title }}">{{ title }}</sulu-link>
 		{% if item.children %}
 			{% include 'layout/navigation/nav-children.html.twig' %}
 		{% endif %}
 	</li>
 {% endfor %}
+
+{% if s_default.anchor_links is defined and s_default.anchor_links is not empty %}
+	{% for link in s_default.anchor_links %}
+		{% set url = link.section_id %}
+		{% set title = link.title %}
+		<li class="nav-item my-3 my-xl {{ loop.last ? ' btn btn-senary' : '' }}">
+			<a class="nav-link d-flex align-items-center" href="/#{{ url }}" title="{{ title }}">{{ title }}</a>
+		</li>
+	{% endfor %}
+{% endif %}

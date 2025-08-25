@@ -24,28 +24,13 @@
                 xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:property/sulu:params)"
             />
         </property>
-        <property name="arrow" type="single_select" colspan="6">
-            <meta>
-                <title lang="en">Arrow</title>
-            </meta>
+        <property name="arrow" type="checkbox" colspan="6">
             <params>
-                <param name="default_value" value="null" />
-                <param name="values" type="collection">
-                    <param name="null">
-                        <meta>
-                            <title lang="en">No arrow</title>
-                        </meta>
-                    </param>
-                    <param name="">
-                        <meta>
-                            <title lang="en">After text</title>
-                        </meta>
-                    </param>
-                    <param name="flex-row-reverse">
-                        <meta>
-                            <title lang="en">Before text</title>
-                        </meta>
-                    </param>
+                <param name="type" value="toggler" />
+                <param name="label">
+                    <meta>
+                        <title lang="en">Arrow</title>
+                    </meta>
                 </param>
             </params>
         </property>
