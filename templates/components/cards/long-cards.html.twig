@@ -5,11 +5,11 @@
 				<div class="row d-flex align-items-center p-5 flex-column {{ loop.index % 2 == 0 ? 'flex-lg-row-reverse' : 'flex-lg-row' }}">
 					<div class="col">
 						{% include 'content-blocks/text-button.html.twig'  
-                    with {
-                    'content': card,
-                    'headerCssClasses': 'mb-3',
-					'header_size': 'h3',
-                }  %}
+							with {
+							'content': card,
+							'headerCssClasses': 'mb-3',
+							'header_size': 'h3',
+						}  %}
 					</div>
 					<div class="col col-lg-4">
 						{% include 'components/image.html.twig' with {

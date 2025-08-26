@@ -50,6 +50,14 @@ Contains the styles for all the buttns on the site.
             }
         }
     }
+    &-outline-none {
+        border: 1px solid $primary;
+        &:hover {
+            border: 1px solid $primary;
+            opacity: 75%;
+        }
+    }
+
     // Arrow buttons
     &:has(.icon) {
         display: inline-flex;

@@ -9,18 +9,23 @@
 				{% set url = button.url %}
 				{% set tag = 'a' %}
 				{% set target = 'target="_blank" rel="noopener"' %}
-			{% else %}
+			{% elseif button.type == 'internal-link' %}
 				{% set url = button.uuid %}
 				{% set tag = 'sulu-link' %}
 				{% set target = '' %}
+			{% else %}
+				{% set url = button.file.url %}
+				{% set tag = 'a' %}
+				{% set target = 'target="_blank" rel="noopener"' %}
 			{% endif %}
 
+
 			{# For internal and external buttons #}
-			{% if button.type == 'external-link' or button.type == 'internal-link' %}
+			{% if button.type == 'external-link' or button.type == 'internal-link'  or button.type == 'download' %}
+
 				{% set btn_class = 'btn btn-' ~ (button.outlined ? 'outline-' : '') ~ button.background_color %}
 				{% set text_class = button.text_color ? 'text-' ~ button.text_color : '' %}
-
-				<{{tag}} href="{{ url }}" class="{{ btn_class }}" {{ target|raw }}>
+				<{{tag}} href="{{ url }}" class="{{ btn_class }}" {{ target|raw }} style="background-color: {{ button.custom_bg }};">
 					<span class="d-flex align-items-center gap-2">
 						<span class="{{ text_class }}">
 							{{ button.text }}

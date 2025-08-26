@@ -109,6 +109,32 @@
                     </section>
                 </properties>
             </type>
+            <type name="download">
+                <meta>
+                    <title lang="en">Download</title>
+                </meta>
+                <properties>
+                    <property name="file" type="single_media_selection" mandatory="true">
+                        <meta>
+                            <title lang="en">File</title>
+                        </meta>
+                    </property>
+                    <property name="text" type="text_line" mandatory="true">
+                        <meta>
+                            <title lang="en">Text</title>
+                        </meta>
+                    </property>
+                    <section name="settings">
+                        <meta>
+                            <title lang="en">Settings</title>
+                        </meta>
+                        <properties>
+                            <xi:include href="theme.xml"
+                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/*)" />
+                        </properties>
+                    </section>
+                </properties>
+            </type>
         </types>
     </block>
 </properties>
