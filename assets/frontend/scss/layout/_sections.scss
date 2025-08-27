@@ -1,0 +1,33 @@
+//Hero section (Home and pdp)
+
+.hero-section {
+    .container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @include media-breakpoint-down(lg) {
+            padding-top: 1.5rem;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        min-height: 100vh;
+    }
+}
+
+.hero-background-image {
+    background-size: cover;
+    background-position: center;
+    @include media-breakpoint-up(md) {
+        height: 100vh;
+    }
+}
+
+.hero-services {
+    border-left: 1px solid $white;
+    max-height: min-content;
+    p {
+        font-size: px-to-rem(18);
+    }
+}

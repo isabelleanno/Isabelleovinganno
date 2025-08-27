@@ -14,7 +14,7 @@
 			{% set spacing = block_content.settings.spacing_options|default(null) %}
 			{% set container_small = block_content.settings.container_small|default(false) %}
 			{% set section_classes = block_name ~ '-section bg-' ~ (block_content.background_color|default('white')) ~ (block_content.pdp_hero_background_image is defined ? ' hero-background-image' : '') %}
-			{% set section_img_gradient = (block_content.gradient is defined and block_content.gradient is not empty ? block_content.gradient|trim('background:.;') ~ ',' : 'linear-gradient(292deg,rgba(29, 25, 35, 0.87) 0%, rgba(29, 25, 35, 0.87) 100%),') %}
+			{% set section_img_gradient = (block_content.gradient is defined and block_content.gradient is not empty ? block_content.gradient|trim('background:.;') ~ ',' : 'linear-gradient(292deg,rgba(29, 25, 35, 0.75) 0%, rgba(29, 25, 35, 0.75) 100%),') %}
 			{% set section_bg_img = block_content.pdp_hero_background_image is defined and block_content.pdp_hero_background_image is not empty ? 'background-image:' ~ section_img_gradient ~ ' url(' ~ block_content.pdp_hero_background_image.url ~ ');' : null %}
 			{% set section_custom_bg = block_content.custom_background_color is defined and block_content.custom_background_color is not empty ? 'background-color:' ~ block_content.custom_background_color ~ ';' : null %}
 			{# Render #}

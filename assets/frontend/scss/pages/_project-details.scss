@@ -1,19 +1,3 @@
-// Hero section
-.hero-background-image {
-    background-size: cover;
-    background-position: center;
-    @include media-breakpoint-up(lg) {
-        height: 100vh;
-    }
-}
-
-.hero-services {
-    border-left: 1px solid $white;
-    max-height: min-content;
-    p {
-        font-size: px-to-rem(18);
-    }
-}
 // Process section
 .process-section {
     overflow: hidden;

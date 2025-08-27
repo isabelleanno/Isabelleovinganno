@@ -60,6 +60,21 @@ var swiper = new Swiper(".process-swiper", {
       },
     });
 
+// Dynamic height based on content
+function dynamicHeight(elements){
+    var height = 0;
+    elements.forEach(element => {
+       if (element.offsetHeight > height) {
+           height = element.offsetHeight;
+       }
+    });
+    elements.forEach(element => {
+        element.style.height = height + 'px';
+    });
+}
+let elements = document.querySelectorAll('.card--project-text');
+dynamicHeight(elements);
+
 // Import GSAP for cool animations!
 import { gsap } from "gsap"; 
  

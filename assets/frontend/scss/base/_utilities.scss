@@ -30,8 +30,10 @@ h5,
     filter: brightness(0) saturate(100%) invert(100%);
 }
 
-.border-right-white {
-    border-right: 1px solid $white;
+@each $color-name, $color-value in $theme-colors {
+    .border-right-#{$color-name} {
+        border-right: 1px solid #{$color-value};
+    }
 }
 
 .bg-lighter {
@@ -40,4 +42,14 @@ h5,
 
 .bordered {
     border: 2px solid $primary;
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+.h-lg-100 {
+    @include media-breakpoint-up(lg) {
+        height: 100%;
+    }
 }
