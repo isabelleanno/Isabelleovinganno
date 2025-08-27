@@ -3,7 +3,7 @@
 		<div class="mb-4 mb-xl-0 col-12 col-lg col-xl-4 me-lg-5">
 			{% include 'components/image.html.twig' with {
         	image: content.image,
-			imageCssClasses: 'rounded',
+			imageCssClasses: 'bordered rounded h-lg-100 object-fit-cover',
    		 } %}
 		</div>
 	{% endif %}
@@ -17,16 +17,18 @@
 				textCssClasses: 'mb-5'
 			} %}
 		{% if content.tech_stack is not empty %}
+
 			<div class="row">
+				{% set color = content.text_color %}
 				{% for item in content.tech_stack %}
 					{% if item.icon is not empty %}
-						<div class="col-auto text-center {{loop.last and loop.length > 2 ? '' : " border-right-white "}} {{ loop.first ? 'pe-4' : 'px-4' }}">
+						<div class="col-auto text-center {{loop.length < 2 or loop.last ? '' : " border-right-" ~ color }} {{ loop.first ? 'pe-4' : 'px-4' }}">
 							{% include 'components/image.html.twig' with { 
 								image: item.icon,
-								imageCssClasses: 'white-icon mb-2',
+								imageCssClasses: color ~ '-icon mb-2',
 								format: '32x32'
 							} %}
-							<p class="mb-0 text-white">{{item.text}}</p>
+							<p class="mb-0 text-{{color}}">{{item.text}}</p>
 						</div>
 					{% endif %}
 				{% endfor %}

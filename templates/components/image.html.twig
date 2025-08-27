@@ -12,7 +12,7 @@
 {% set imageCssClasses = imageCssClasses|default('') %}
 
 {% if image %}
-	{% set url = image.url %}
+	{% set url = image.url ? image.url : (s_default.fallback_image is defined and s_default.fallback_image) ? s_default.fallback_image : '' %}
 
 	{# Check if format exists in the image formats and use formatted URL #}
 	{% if format != 'none' and image.formats[format] is defined %}

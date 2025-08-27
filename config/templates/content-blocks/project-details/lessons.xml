@@ -37,8 +37,8 @@
                                 xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
                             />
                             <xi:include
-                                href="../../components/buttons/buttons.xml"
-                               xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:properties/sulu:*)"
+                                href="../../components/text.xml"
+                                xpointer="xmlns(sulu=http://schemas.sulu.io/template/template) xpointer(/sulu:template/sulu:properties/sulu:*)"
                             />
                             <xi:include
                                     href="../../components/cards/image-text-cards.xml"

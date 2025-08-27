@@ -6,8 +6,8 @@
 		{% endif %}
 		<picture class="logos-regular white-logos">
 			{% if mobile_logo %}
-				<source srcset="{{ mobile_logo }}" alt="" media="(max-width: 768px)">
-				<source srcset="{{ desktop_logo }}" alt="" media="(min-width: 767px)">
+				<source srcset="{{ mobile_logo }}" alt="" media="(max-width: 991px)">
+				<source srcset="{{ desktop_logo }}" alt="" media="(min-width: 992px)">
 			{% else %}
 				<source srcset="{{ desktop_logo }}" alt="">
 			{% endif %}
