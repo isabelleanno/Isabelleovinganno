@@ -12,6 +12,9 @@
         border-right: 1px solid #{$color-value};
     }
 }
+.border-right-white {
+    border-right: 1px solid white;
+}
 
 .bordered {
     border: 2px solid $primary;
