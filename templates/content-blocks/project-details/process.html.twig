@@ -1,28 +1,24 @@
 <div class="row overflow-visible">
-	{% if content.process_cards %}
-		<div class="row">
-			<div class="swiper process-swiper overflow-visible">
-				<div class="row swiper-pagination-wrapper">
-					<div class="col-6 pe-0 col-lg pe-lg">
-						{% include 'components/header.html.twig' with { 
+	<div class="row">
+		<div class="swiper process-swiper overflow-visible">
+			<div class="row swiper-pagination-wrapper">
+				<div class="col-6 pe-0 col-lg pe-lg">
+					{% include 'components/header.html.twig' with { 
 								content: content,
 								headerCssClasses: "mb-5",
 							} %}
-					</div>
-					<div class="col-6 ps-0 col-lg ps-lg d-flex align-items-center justify-content-end gap-2 gap-lg-4">
-						<div class="swiper-pagination"></div>
-						<div class="swiper-button-prev"></div>
-						<div class="swiper-button-next"></div>
-					</div>
 				</div>
-				<div class="swiper-wrapper">
-
-					{% for card in content.process_cards %}
-						{% include 'components/cards/project-cards.html.twig' with { card: card, colClass: "process-card swiper-slide" } %}
-					{% endfor %}
-
+				<div class="col-6 ps-0 col-lg ps-lg d-flex align-items-center justify-content-end gap-2 gap-lg-4">
+					<div class="swiper-pagination"></div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
 				</div>
 			</div>
+			<div class="swiper-wrapper">
+				{% for card in content.process_cards %}
+					{% include 'components/cards/project-cards.html.twig' with { card: card, colClass: "process-card swiper-slide" } %}
+				{% endfor %}
+			</div>
 		</div>
-	{% endif %}
+	</div>
 </div>

@@ -19,7 +19,7 @@
 			<div class="card w-100 h-100 overflow-hidden">
 				{% include 'components/image.html.twig' with {
 						image: image,
-						imageCssClasses: 'card--project-image',
+						imageCssClasses: 'card--project-image object-position-' ~ (card.image_alignment|default('center')),
 					} %}
 			</div>
 			{% if card.text_content and card.header %}
