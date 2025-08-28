@@ -26,6 +26,7 @@
         }
         .card-back {
             transform: rotateY(180deg);
+            overflow: auto;
         }
     }
     // Project Overview cards (found on project overview page and homepage: "things I've built" section.)
@@ -34,7 +35,7 @@
         height: 100%;
         img {
             width: 100%;
-            height: unset;
+            height: 375px;
             max-height: 375px;
             object-fit: cover;
             @include media-breakpoint-up(lg) {
