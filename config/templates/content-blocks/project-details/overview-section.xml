@@ -32,10 +32,35 @@
                                     <title lang="en">Optional custom color</title>
                                 </meta>
                             </property>
-                            <property name="image" type="single_media_selection">
+                            <property name="image" type="single_media_selection" colspan="6">
                                 <meta>
                                     <title lang="en">Image</title>
                                 </meta>
+                            </property>
+                            <property name="image_alignment" type="single_select" colspan="6">
+                                <meta>
+                                    <title lang="en">Horizontal alignment</title>
+                                </meta>
+                                <params>
+                                    <param name="default_value" value='center' />
+                                    <param name="values" type="collection">
+                                        <param name="center">
+                                            <meta>
+                                                <title lang="en">Center</title>
+                                            </meta>
+                                        </param>
+                                        <param name="left">
+                                            <meta>
+                                                <title lang="en">Left</title>
+                                            </meta>
+                                        </param>
+                                        <param name="right">
+                                            <meta>
+                                                <title lang="en">Right</title>
+                                            </meta>
+                                        </param>
+                                    </param>
+                                </params>
                             </property>
                             <xi:include
                                 href="../../components/headers.xml"

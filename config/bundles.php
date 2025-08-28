@@ -1,6 +1,6 @@
 <?php
 
-$bundles = [
+return [
     Symfony\Bundle\FrameworkBundle\FrameworkBundle::class => ['all' => true],
     Symfony\Bundle\TwigBundle\TwigBundle::class => ['all' => true],
     Symfony\Bundle\MonologBundle\MonologBundle::class => ['all' => true],
@@ -47,13 +47,7 @@ $bundles = [
     Sulu\Bundle\FormBundle\SuluFormBundle::class => ['all' => true],
     ONGR\ElasticsearchBundle\ONGRElasticsearchBundle::class => ['all' => true],
     Sulu\Bundle\ArticleBundle\SuluArticleBundle::class => ['all' => true],
+    Symfony\Bundle\WebProfilerBundle\WebProfilerBundle::class => ['dev' => true, 'test' => true],
+    Sulu\Bundle\TestBundle\SuluTestBundle::class => ['dev' => true, 'test' => true],
+    Symfony\Bundle\DebugBundle\DebugBundle::class => ['dev' => true, 'test' => true],
 ];
-
-// Only add dev/test bundles if not in production
-if (in_array($_ENV['APP_ENV'] ?? 'prod', ['dev', 'test'], true)) {
-    $bundles[Symfony\Bundle\WebProfilerBundle\WebProfilerBundle::class] = ['dev' => true, 'test' => true];
-    $bundles[Sulu\Bundle\TestBundle\SuluTestBundle::class] = ['dev' => true, 'test' => true];
-    $bundles[Symfony\Bundle\DebugBundle\DebugBundle::class] = ['dev' => true, 'test' => true];
-}
-
-return $bundles;

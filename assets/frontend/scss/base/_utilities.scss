@@ -6,7 +6,22 @@
 
  */
 
-// Important to override Bootstrap
+// General
+@each $color-name, $color-value in $theme-colors {
+    .border-right-#{$color-name} {
+        border-right: 1px solid #{$color-value};
+    }
+}
+
+.bordered {
+    border: 2px solid $primary;
+}
+
+.bg-lighter {
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
+// Typography
 .manrope {
     font-family: "Manrope", sans-serif !important;
 }
@@ -26,28 +41,21 @@ h5,
     color: $senary;
 }
 
+// Images & icons
 .white-icon {
     filter: brightness(0) saturate(100%) invert(100%);
 }
-
-@each $color-name, $color-value in $theme-colors {
-    .border-right-#{$color-name} {
-        border-right: 1px solid #{$color-value};
-    }
-}
-
-.bg-lighter {
-    background-color: rgba(255, 255, 255, 0.07);
-}
-
-.bordered {
-    border: 2px solid $primary;
-}
-
 .object-fit-cover {
     object-fit: cover;
 }
+.object-position-left {
+    object-position: left;
+}
+.object-position-right {
+    object-position: right;
+}
 
+// Responsive utilities
 .h-lg-100 {
     @include media-breakpoint-up(lg) {
         height: 100%;

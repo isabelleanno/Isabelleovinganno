@@ -1,9 +1,9 @@
 <div class="row">
 	{% if content.image.url is defined and content.image.url is not empty %}
-		<div class="mb-4 mb-xl-0 col-12 col-lg col-xl-4 me-lg-5">
+		<div class="mb-4 mb-xl-0 col-12 col-lg-4 col-xl col-xl-4 me-lg-3 me-xl-5">
 			{% include 'components/image.html.twig' with {
         	image: content.image,
-			imageCssClasses: 'bordered rounded h-lg-100 object-fit-cover',
+			imageCssClasses: 'bordered rounded h-lg-100 object-fit-cover object-position-' ~ (content.image_alignment|default('center')),
    		 } %}
 		</div>
 	{% endif %}
