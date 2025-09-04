@@ -32,7 +32,7 @@
 		{% endblock %}
 	</head>
 	<body
-		class="body--{{ content.title|default(null)|lower|replace({' ': '-'}) }}">
+		class="body--{{ content.title|default(null)|lower|replace({' ': '-'}) }}" id="{{template}}">
 		{# Header - now has access to logos via s_default #}
 		{% include 'layout/header-main.html.twig' %}
 

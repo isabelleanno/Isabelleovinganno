@@ -11,13 +11,12 @@
 		{% endif %}
 	</li>
 {% endfor %}
-
 {% if s_default.anchor_links is defined and s_default.anchor_links is not empty %}
 	{% for link in s_default.anchor_links %}
 		{% set url = link.section_id %}
 		{% set title = link.title %}
 		<li class="nav-item my-3 my-xl {{ loop.last ? ' btn btn-senary' : '' }}">
-			<a class="nav-link d-flex align-items-center" href="/#{{ url }}" title="{{ title }}">{{ title }}</a>
+			<a class="nav-link d-flex align-items-center" href="#{{ url }}" title="{{ title }}">{{ title }}</a>
 		</li>
 	{% endfor %}
 {% endif %}

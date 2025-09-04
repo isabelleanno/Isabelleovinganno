@@ -35,12 +35,12 @@
         height: 100%;
         img {
             width: 100%;
-            height: 375px;
-            max-height: 375px;
+            height: px-to-rem(375);
+            max-height: px-to-rem(375);
             object-fit: cover;
             @include media-breakpoint-up(lg) {
-                max-height: 475px;
-                height: 475px;
+                max-height: px-to-rem(475);
+                height: px-to-rem(475);
             }
         }
         &-text {
@@ -54,10 +54,10 @@
                 margin-top: -25%;
             }
             @include media-breakpoint-up(lg) {
-                min-height: 238px;
+                min-height: px-to-rem(238);
             }
             @include media-breakpoint-down(lg) {
-                padding: 10px;
+                padding: px-to-rem(10);
             }
         }
         .text-button > p {
@@ -85,9 +85,9 @@
         right: 0;
         min-height: unset;
         overflow-y: auto;
-        max-height: px-to-rem(450);
+        max-height: px-to-rem(350);
         @include media-breakpoint-down(lg) {
-            max-height: px-to-rem(325);
+            max-height: px-to-rem(200);
         }
         p {
             margin-bottom: 0;
