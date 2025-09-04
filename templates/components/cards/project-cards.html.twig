@@ -12,6 +12,7 @@
 {% set s_default_snippet = sulu_snippet_load_by_area('site_settings') %}
 {% set s_default = s_default_snippet ? s_default_snippet.content : {} %}
 {% set colClass = colClass|default("col-12 col-lg-6 mb-5") %}
+{% set locale = app.locale %}
 
 {% if image and card.text_content and card.header %}
 	<div class="{{ colClass }}">
@@ -31,7 +32,8 @@
 								'header_size': 'h6',
 							}  %}
 					{% if card.routePath is defined and card.routePath is not empty %}
-						<a href="{{card.routePath}}" class="btn btn-link text-start text-senary m-0">{{s_default.learn_more}}
+						{% set cardFullPath = app.request.baseUrl ~ '/' ~ app.locale ~ card.routePath %}
+						<a href="{{cardFullPath}}" class="btn btn-link text-start text-senary m-0">{{s_default.learn_more}}
 							{% include 'utilities/icon.html.twig' with {
 								icon: 'arrow'
 							} %}

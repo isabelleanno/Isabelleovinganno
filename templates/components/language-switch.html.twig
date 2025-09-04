@@ -1,7 +1,5 @@
-{% set englishFlag = s_default.English|default(null) %}
-{% set dutchFlag = s_default.Dutch|default(null) %}
-
 <div class="dropdown">
+	{% set currentURL = app.request.uri %}
 	<a class="dropdown-toggle d-flex align-items-center" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
 		{% if app.locale == 'en' %}
 			{% include 'utilities/icon.html.twig' with {
@@ -18,14 +16,16 @@
 	<ul class="dropdown-menu">
 		<li>
 			{% if app.locale == 'en' %}
-				<a class="dropdown-item d-flex align-items-center" href="/nl">
+				{% set switchURL = currentURL|replace({'/en': '/nl'}) %}
+				<a class="dropdown-item d-flex align-items-center" href="{{ switchURL }}">
 					{% include 'utilities/icon.html.twig' with {
 						icon: 'NL'
 					} %}
 					<p class="ms-2 mb-0">NL</p>
 				</a>
 			{% else %}
-				<a class="dropdown-item d-flex align-items-center" href="/">
+				{% set switchURL = currentURL|replace({'/nl': '/en'}) %}
+				<a class="dropdown-item d-flex align-items-center" href="{{ switchURL }}">
 					{% include 'utilities/icon.html.twig' with {
 						icon: 'USA'
 					} %}

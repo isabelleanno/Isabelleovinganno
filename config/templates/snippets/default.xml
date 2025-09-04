@@ -112,6 +112,16 @@
                         <title lang="en">Services</title>
                     </meta>
                 </property>
+                <property name="next" type="text_line" colspan="6">
+                    <meta>
+                        <title lang="en">Next</title>
+                    </meta>
+                </property>
+                <property name="previous" type="text_line" colspan="6">
+                    <meta>
+                        <title lang="en">Previous</title>
+                    </meta>
+                </property>
                 <property name="contact_success_msg_header" type="text_line" colspan="6">
                     <meta>
                         <title lang="en">Form Send Success Header</title>

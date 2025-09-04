@@ -11,7 +11,7 @@ $header-height: px-to-rem(60);
 }
 
 // Make text white on everything besides project overview page
-body:not(.body--project-overview) {
+body:not(#projectoverview) {
     @include media-breakpoint-up(lg) {
         .dropdown-toggle,
         .nav-item {
